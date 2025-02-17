@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Vídeo com Chat</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <style>
+        body {
+            background-color: #1a1a1a; /* Fundo escuro */
+            color: #fff;
+            font-family: 'Imprima', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Container do vídeo */
+        .video-container {
+            flex: 3;
+            padding: 20px;
+        }
+
+        /* Container do chat */
+        .chat-container {
+            flex: 1;
+            background-color: #000;
+            padding: 20px;
+            overflow-y: auto;
+            border-left: 2px solid #333;
+        }
+
+        /* Estilos do chat */
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid #333;
+            display: none; /* Inicialmente oculto */
+        }
+
+        .timestamp {
+            font-size: 0.8em;
+            color: gray;
+        }
+
+        .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .author {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .text {
+            font-size: 1em;
+            color: #fff;
+        }
+
+        /* Estilo do iframe do Wistia */
+        .wistia_embed {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- Container do vídeo -->
+    <div class="video-container">
+        <div class="wistia_embed wistia_async_wco6x2krtg" style="height:100%;width:100%"></div>
+    </div>
+
+    <!-- Container do chat -->
+    <div class="chat-container" id="chat">
+        <!-- Mensagens do chat -->
+        <div class="message">
+            <span class="timestamp">00:00:10</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lZQzHyx_crfvZCuDKrN4VK8PZIG1rS1rxZugS6u9uin7o=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">arthur</span>
+            <span class="text">pqp</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:00:52</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">22 mil inscritos parabéns deita</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:01:12</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lZQzHyx_crfvZCuDKrN4VK8PZIG1rS1rxZugS6u9uin7o=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">arthur</span>
+            <span class="text">Deita tá dark agora</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:01:17</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lZQzHyx_crfvZCuDKrN4VK8PZIG1rS1rxZugS6u9uin7o=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">arthur</span>
+            <span class="text">homem escuro</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:01:20</span>
+            <img class="avatar" src="https://yt4.ggpht.com/vsrzaM8zAAtna84bx4lYdwOdgkKSVB9Y7VnJdH-Z8Zt-XU-aFbdsFgdzeSUWw1Gj38igrHOQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">ted</span>
+            <span class="text">orra bateu mesmo</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:01:30</span>
+            <img class="avatar" src="https://yt4.ggpht.com/vsrzaM8zAAtna84bx4lYdwOdgkKSVB9Y7VnJdH-Z8Zt-XU-aFbdsFgdzeSUWw1Gj38igrHOQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">ted</span>
+            <span class="text">22k</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:01:34</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">tem que tomar uma pra comemorar</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:01:41</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kNn6ML5JlhLrSoExrtw_OWTxjwv-pPPh8GhTrE49w-bzrwzJrjG1FoMdgRo3BUt4v3Gw=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Renato Vídeos</span>
+            <span class="text">tem muito tempo que eu não vejo o homem deita deitado :grinning_face_with_sweat:</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:01:46</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lZQzHyx_crfvZCuDKrN4VK8PZIG1rS1rxZugS6u9uin7o=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">arthur</span>
+            <span class="text">ele tá mutado</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:02:51</span>
+            <img class="avatar" src="https://yt4.ggpht.com/vsrzaM8zAAtna84bx4lYdwOdgkKSVB9Y7VnJdH-Z8Zt-XU-aFbdsFgdzeSUWw1Gj38igrHOQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">ted</span>
+            <span class="text">Homem 22k inscritos</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:02:53</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">!</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:02:57</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">!aeee</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:03:02</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">!xerar</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:03:05</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">parecendo o predador nesse escuro</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:03:12</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lZQzHyx_crfvZCuDKrN4VK8PZIG1rS1rxZugS6u9uin7o=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">arthur</span>
+            <span class="text">Desmuta</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:03:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/vsrzaM8zAAtna84bx4lYdwOdgkKSVB9Y7VnJdH-Z8Zt-XU-aFbdsFgdzeSUWw1Gj38igrHOQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">ted</span>
+            <span class="text">kkkkkkkkk</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:03:32</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">kkkkkkk</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:03:34</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">do nada</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:03:34</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">!fala vai começar o jogo da suruba </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:03:49</span>
+            <img class="avatar" src="https://yt4.ggpht.com/vsrzaM8zAAtna84bx4lYdwOdgkKSVB9Y7VnJdH-Z8Zt-XU-aFbdsFgdzeSUWw1Gj38igrHOQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">ted</span>
+            <span class="text">!190</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:04:10</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">kkkkkkkkkk</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:04:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">porra é essa</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:04:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Kkkkkkkkkk</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:04:21</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">!kool </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:04:42</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Ta so a capa o deita </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:04:44</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">kkkkk</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:04:44</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lZQzHyx_crfvZCuDKrN4VK8PZIG1rS1rxZugS6u9uin7o=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">arthur</span>
+            <span class="text">onde vê os comando</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:04:54</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">!comandos </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:05:02</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lZQzHyx_crfvZCuDKrN4VK8PZIG1rS1rxZugS6u9uin7o=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">arthur</span>
+            <span class="text">!comandos</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:05:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!kool</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:05:27</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lZQzHyx_crfvZCuDKrN4VK8PZIG1rS1rxZugS6u9uin7o=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">arthur</span>
+            <span class="text">nss tem como lembrar disso td n</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:05:37</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Esses é de som kkkkk</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:05:39</span>
+            <img class="avatar" src="https://yt4.ggpht.com/WAk2Gdd4RV2HJ8tpsxkOZ8fTeSCovz-9SoNq_hxP8N2khcIbZJ5XsMdL10nQcEp10jTJrJooyA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Husband</span>
+            <span class="text">!bocadura</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:05:44</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Os de jogar são pouco </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:05:48</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">kkkkkkk</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:05:55</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">!m</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:06:10</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lZQzHyx_crfvZCuDKrN4VK8PZIG1rS1rxZugS6u9uin7o=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">arthur</span>
+            <span class="text">só mod pode usar é?</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:06:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Não </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:06:16</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lZQzHyx_crfvZCuDKrN4VK8PZIG1rS1rxZugS6u9uin7o=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">arthur</span>
+            <span class="text">QUE ISSO MANE</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:06:19</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Qq um pode </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:06:30</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!comandos</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:06:47</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lZQzHyx_crfvZCuDKrN4VK8PZIG1rS1rxZugS6u9uin7o=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">arthur</span>
+            <span class="text">mataro</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:06:50</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">!inv</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:06:55</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Agora volta </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:06:57</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Kkkkkk</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:07:00</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">1 minuto volta </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:07:04</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!brokiado</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:08:11</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!izi</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:08:37</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!memata</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:09:09</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!punheteiro</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:09:11</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!ptop</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:09:39</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">Alini 52</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:10:31</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">bora falar</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:10:34</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">farmar</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:10:40</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!m</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:11:05</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!a</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:11:05</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">https://youtu.be/ZIQv3KpGXcQ?si=IoJ-Q...</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:11:11</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!loja 2</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:11:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!m</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:11:32</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!brokiado</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:11:39</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">!yt ZIQv3KpGXcQ</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:11:40</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">!ytmostra</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:12:17</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">!senta</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:12:20</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">kkkkkkkkkk</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:12:52</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">é uma delicinha</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:12:57</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">!ytesconde</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:13:18</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">!babao</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:13:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!travesti</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:13:49</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Ta lentao </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:13:55</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">tá</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:14:00</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Deve tar na noia </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:14:03</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!memata</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:14:06</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Como o streamer </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:14:17</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Normalmente é rápidao kkkkkk</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:14:31</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">delay minimo</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:14:36</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">não percebi</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:14:41</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!izi</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:14:52</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">ta lixo mesmo , mt lento </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:14:56</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Melhor desligar até </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:15:07</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">kkkkkk</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:15:11</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Deve ser do YouTube sla</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:15:13</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">delay</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:15:16</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:15:29</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">2 mil incrítos deita tem q comemorar</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:15:36</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">22</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:16:04</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">salve bora comemorar</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:16:09</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">quartou</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:16:16</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">e isso ai</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:16:25</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!cachaceiro</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:16:51</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p peido</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:17:00</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!pgruta</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:17:08</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p grelha</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:17:20</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!m</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:17:34</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!xerando</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:17:45</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:17:54</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p morfo</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:18:04</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p hecta</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:18:11</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p rolha</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:18:40</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">!p fruta</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:18:54</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!,p porao</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:19:16</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!ip arroz</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:19:17</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p forma</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:19:44</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Lentao mane não dá </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:19:46</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">firma</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:19:54</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:20:42</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p sushi</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:20:46</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p joaos</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:21:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p urubu</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:21:36</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p vanha</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:21:48</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p vinha</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:21:54</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">kkkkk</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:22:05</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:22:22</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:22:29</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p fumar</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:22:34</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Desliga </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:22:37</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p beber</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:22:43</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">Mandei no zap a explicação </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:22:44</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p milho</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:22:46</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">De tar lento</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:23:03</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!o estou</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:23:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/XAJhowbIKvPKuW8F8cPYf2iSAMLiIUzHA1eUy5ESsEQsZf2vuUmS8zEuAhbB6w1gaFn3X20ohQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Jaum Bispo</span>
+            <span class="text">!banho </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:23:17</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">p! pinga</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:23:39</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">kkkkkk</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:23:44</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p ligou</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:24:16</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">ileso lkkk</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:24:19</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:24:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">é</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:24:40</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">quer que tento por em outra live</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:24:48</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">vou verificar a latência</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:25:04</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">:thumbs_up:</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:25:22</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">https://youtu.be/cLbvp-qy7tc?si=u4rNb...</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:25:51</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p tomas</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:26:59</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">a latencia ta a mesma</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:27:32</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">tendi</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:28:16</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:28:41</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p pirua</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:31:22</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:31:48</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p cupix</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:32:14</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p Renan</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:33:07</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p penta</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:33:43</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:33:58</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p diabo</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:34:20</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p rolão</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:34:47</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p arroz</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:35:01</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p lápis</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:35:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p foice</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:35:37</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:36:08</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!0 cerca</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:36:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p cerca</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:36:31</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p errou</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:36:51</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p porra</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:37:08</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p cinta</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:37:21</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p cinto</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:37:35</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:38:00</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p zebra</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:38:20</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p olhos</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:38:51</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p caçar</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:39:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p igual</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:39:35</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:40:04</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p sairá</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:40:46</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p praça</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:41:10</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p samba</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:41:23</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p pizza</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:41:41</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:42:00</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p salsa</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:42:14</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p passa</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:42:29</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p foder</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:42:48</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p Louro</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:43:04</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p galho</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:43:18</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p perdi</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:43:41</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:43:57</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p assar</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:44:13</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p grelha</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:44:42</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p patas</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:44:56</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p parou</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:45:13</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p sapos</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:45:41</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:46:01</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p shows</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:46:17</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p pirar</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:46:37</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p passo</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:46:54</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p miar</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:47:06</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p morre</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:47:13</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p deita</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:47:33</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p quase</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:47:45</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:48:11</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p salvo</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:48:34</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p quero</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:49:07</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p sexta</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:49:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p cesta</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:49:56</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!p</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:52:07</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!kool</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:52:43</span>
+            <img class="avatar" src="https://yt4.ggpht.com/gBIeXqlpuTsp7zZ_gTbVibOuGZMV2j0G0RfXcxWx6kUfGVx1Vz-yT3NiFwDXMPpINb66JB-0aDE=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Veterano</span>
+            <span class="text">kkkkkkkkk mod ama o deita</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:52:49</span>
+            <img class="avatar" src="https://yt4.ggpht.com/gBIeXqlpuTsp7zZ_gTbVibOuGZMV2j0G0RfXcxWx6kUfGVx1Vz-yT3NiFwDXMPpINb66JB-0aDE=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Veterano</span>
+            <span class="text">boa noite aí meu nobre</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:52:54</span>
+            <img class="avatar" src="https://yt4.ggpht.com/gBIeXqlpuTsp7zZ_gTbVibOuGZMV2j0G0RfXcxWx6kUfGVx1Vz-yT3NiFwDXMPpINb66JB-0aDE=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Veterano</span>
+            <span class="text">tempo</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:53:49</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">p!doando</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:53:58</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!pdoando</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:55:34</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!vadia</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:56:03</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!casa</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:56:37</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!fodasse</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:57:14</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!blokiar</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:57:20</span>
+            <img class="avatar" src="https://yt4.ggpht.com/gBIeXqlpuTsp7zZ_gTbVibOuGZMV2j0G0RfXcxWx6kUfGVx1Vz-yT3NiFwDXMPpINb66JB-0aDE=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Veterano</span>
+            <span class="text">kkkkkk joguinho fofo</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:57:31</span>
+            <img class="avatar" src="https://yt4.ggpht.com/gBIeXqlpuTsp7zZ_gTbVibOuGZMV2j0G0RfXcxWx6kUfGVx1Vz-yT3NiFwDXMPpINb66JB-0aDE=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Veterano</span>
+            <span class="text">cara com o mesmo nick</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:57:43</span>
+            <img class="avatar" src="https://yt4.ggpht.com/gBIeXqlpuTsp7zZ_gTbVibOuGZMV2j0G0RfXcxWx6kUfGVx1Vz-yT3NiFwDXMPpINb66JB-0aDE=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Veterano</span>
+            <span class="text">que</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:57:50</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!vadia</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">00:59:17</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!salame</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:00:28</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!alimento</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:01:04</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!veadao</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:01:38</span>
+            <img class="avatar" src="https://yt4.ggpht.com/V0JffprVX5admJupIJDUVlK3ZAVHqfgt44VJa607TiqiI_rNPlNYsluzC3qqU0exXcCbr3r7hg=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">hatersdobluezao</span>
+            <span class="text">!yt Nqmm3Bbpa8Y</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:01:48</span>
+            <img class="avatar" src="https://yt4.ggpht.com/V0JffprVX5admJupIJDUVlK3ZAVHqfgt44VJa607TiqiI_rNPlNYsluzC3qqU0exXcCbr3r7hg=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">hatersdobluezao</span>
+            <span class="text">!ytmostra</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:01:57</span>
+            <img class="avatar" src="https://yt4.ggpht.com/V0JffprVX5admJupIJDUVlK3ZAVHqfgt44VJa607TiqiI_rNPlNYsluzC3qqU0exXcCbr3r7hg=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">hatersdobluezao</span>
+            <span class="text">!ytcheio</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:02:21</span>
+            <img class="avatar" src="https://yt4.ggpht.com/V0JffprVX5admJupIJDUVlK3ZAVHqfgt44VJa607TiqiI_rNPlNYsluzC3qqU0exXcCbr3r7hg=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">hatersdobluezao</span>
+            <span class="text">!yt Nqmm3Bbpa8Y</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:03:01</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">kkkkk</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:03:32</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!maluco</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:03:48</span>
+            <img class="avatar" src="https://yt4.ggpht.com/V0JffprVX5admJupIJDUVlK3ZAVHqfgt44VJa607TiqiI_rNPlNYsluzC3qqU0exXcCbr3r7hg=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">hatersdobluezao</span>
+            <span class="text">!yt H2b5UOJrlT0</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:05:32</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">!comandos</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:10:32</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">colocaram</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:11:01</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">toma uma cerveja ai deitão</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:12:34</span>
+            <img class="avatar" src="https://yt4.ggpht.com/h2OcXOMtQHmXtCE0-IvqKDB4lrBzLyhbUFhKVk79bBut7DBABMvrQmzMDv7twEK9A5WuGq-CmQ=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Louro José </span>
+            <span class="text">só quando eu desbloquear meu pix</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:32:16</span>
+            <img class="avatar" src="https://yt4.ggpht.com/hFekl6WqONUumMOBx5iesdaHg545MOscj-gnjfHH9SNKp4O6y3eLYgHOVGEmxtqZRnpssk8DXg=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Dan Malakian</span>
+            <span class="text">porra deita, sacanagem oq aconteceu com a conta</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:36:43</span>
+            <img class="avatar" src="https://yt4.ggpht.com/hFekl6WqONUumMOBx5iesdaHg545MOscj-gnjfHH9SNKp4O6y3eLYgHOVGEmxtqZRnpssk8DXg=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Dan Malakian</span>
+            <span class="text">gege veigar</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:39:03</span>
+            <img class="avatar" src="https://yt4.ggpht.com/pp67WBB8DreMonDPyuZMOBW39U5wHpAyG7IXyZS-gSaVeKV71u98ASInicA5uyNO9VO6-utEkw=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Thiago Herói</span>
+            <span class="text">brutal</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:39:52</span>
+            <img class="avatar" src="https://yt4.ggpht.com/hFekl6WqONUumMOBx5iesdaHg545MOscj-gnjfHH9SNKp4O6y3eLYgHOVGEmxtqZRnpssk8DXg=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Dan Malakian</span>
+            <span class="text">são só, lembranças </span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:40:55</span>
+            <img class="avatar" src="https://yt4.ggpht.com/i2HeV1OPlYQfvhyUMKxxPwL_jOxMSaSF8g6YjlyO2ER6T-3RRHnmrbIDKaPBV3lWzQ0thS1CRA=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Homem Deita</span>
+            <span class="text">!ytesconde</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:41:10</span>
+            <img class="avatar" src="https://yt4.ggpht.com/FjL6aKI-XWPyhbTPWLwWvP74finpTFv1_tffe5XZ-xVBmA072EBPYs4RssgQZ71XrgCcz_7ePMI=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Aɱσɾҽʂ Vҽɾԃαԃҽιɾσʂ Y Sσყ RҽႦҽʅԃҽ SႦƚ🇲🇽</span>
+            <span class="text">:face-green-smiling::face-green-smiling:</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:46:20</span>
+            <img class="avatar" src="https://yt4.ggpht.com/RB9vOFRojrGJGySR3lVsE3S0Hc--ESmoloM5RQLrTsJ8UI1SHspxkmaahEkPmT-exr-UT-X2=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Deeptube Sem Censura</span>
+            <span class="text">veja depois deita</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:46:28</span>
+            <img class="avatar" src="https://yt4.ggpht.com/RB9vOFRojrGJGySR3lVsE3S0Hc--ESmoloM5RQLrTsJ8UI1SHspxkmaahEkPmT-exr-UT-X2=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Deeptube Sem Censura</span>
+            <span class="text">08:00</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:46:31</span>
+            <img class="avatar" src="https://yt4.ggpht.com/RB9vOFRojrGJGySR3lVsE3S0Hc--ESmoloM5RQLrTsJ8UI1SHspxkmaahEkPmT-exr-UT-X2=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">Deeptube Sem Censura</span>
+            <span class="text">mencionei vc</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:47:11</span>
+            <img class="avatar" src="https://yt4.ggpht.com/HVV4b4nzFyMvxgXoDKqFf9V7NW6jk_Jv9xnE-Xbhya2gOrZNnfQ7RyxM7YKcjIxDFjWQj2pEOZ8=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">UNIÃO INCEL MGTOW</span>
+            <span class="text">A comunidade de lol está de luto</span>
+        </div>
+        
+        <div class="message">
+            <span class="timestamp">01:47:29</span>
+            <img class="avatar" src="https://yt4.ggpht.com/HVV4b4nzFyMvxgXoDKqFf9V7NW6jk_Jv9xnE-Xbhya2gOrZNnfQ7RyxM7YKcjIxDFjWQj2pEOZ8=s64-c-k-c0x00ffffff-no-rj" />
+            <span class="author">UNIÃO INCEL MGTOW</span>
+            <span class="text">Farei um react da partida q você foi banido deita</span>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+    <script>
+        // Inicializa o Wistia
+        window._wq = window._wq || [];
+        _wq.push({
+            id: "wco6x2krtg",
+            onReady: function (video) {
+                const wistiaPlayer = video;
+
+                // Função para converter o timestamp no formato HH:MM:SS para segundos
+                function timestampToSeconds(timestamp) {
+                    const [hours, minutes, seconds] = timestamp.split(':').map(Number);
+                    return hours * 3600 + minutes * 60 + seconds;
+                }
+
+                // Função para verificar se o chat está no final
+                function isChatAtBottom(chatContainer) {
+                    const tolerance = 10; // Tolerância para considerar que está no final
+                    return chatContainer.scrollTop + chatContainer.clientHeight >= chatContainer.scrollHeight - tolerance;
+                }
+
+                // Função para rolar o chat para o final
+                function scrollChatToBottom() {
+                    const chatContainer = document.getElementById('chat');
+                    chatContainer.scrollTop = chatContainer.scrollHeight;
+                }
+
+                // Função para sincronizar o chat com o vídeo
+                function syncChatWithVideo() {
+                    const chatMessages = document.querySelectorAll('.message');
+                    wistiaPlayer.bind('secondchange', function (time) {
+                        const currentTime = Math.floor(time); // Tempo atual do vídeo em segundos
+                        let shouldScroll = isChatAtBottom(document.getElementById('chat')); // Verifica se o chat está no final
+
+                        chatMessages.forEach(message => {
+                            const timestamp = message.querySelector('.timestamp').textContent; // Pega o timestamp da mensagem
+                            const messageTime = timestampToSeconds(timestamp); // Converte o timestamp para segundos
+                            if (messageTime <= currentTime) {
+                                message.style.display = 'block'; // Mostra a mensagem
+                            } else {
+                                message.style.display = 'none'; // Oculta a mensagem
+                            }
+                        });
+
+                        // Rola para o final apenas se o chat já estava no final
+                        if (shouldScroll) {
+                            scrollChatToBottom();
+                        }
+                    });
+                }
+
+                // Inicia a sincronização
+                syncChatWithVideo();
+            }
+        });
+    </script>
+</body>
+</html>

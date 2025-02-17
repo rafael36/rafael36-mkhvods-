@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site de Vídeos</title>
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0f0f0f; /* Fundo escuro */
+            color: #fff; /* Texto branco */
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Grade de Vídeos */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Quadradinho do Vídeo */
+        .video-thumbnail {
+            background-color: #1f1f1f; /* Fundo escuro para o quadradinho */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .video-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Thumbnail do Vídeo */
+        .video-thumbnail img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Informações do Vídeo */
+        .video-info {
+            padding: 10px;
+        }
+
+        .video-info h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #fff; /* Título branco */
+        }
+
+        .video-info p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #aaa; /* Descrição cinza claro */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Vídeos</h1>
+        <div class="video-grid">
+            <!-- Vídeo 1 -->
+            <div class="video-thumbnail" onclick="window.location.href='site2.html'">
+                <img src="https://via.placeholder.com/250x140" alt="Thumbnail do Vídeo 1">
+                <div class="video-info">
+                    <h3>VUZCgFMH8wg</h3>
+                    <p>Descrição do Vídeo 1</p>
+                </div>
+            </div>
+
+            <!-- Vídeo 2 -->
+            <div class="video-thumbnail" onclick="window.location.href='video.html'">
+                <img src="https://via.placeholder.com/250x140" alt="Thumbnail do Vídeo 2">
+                <div class="video-info">
+                    <h3>Título do Vídeo 2</h3>
+                    <p>Descrição do Vídeo 2</p>
+                </div>
+            </div>
+
+            <!-- Vídeo 3 -->
+            <div class="video-thumbnail" onclick="window.location.href='site.html'">
+                <img src="https://i.imgur.com/HvCvjcV.png" alt="Thumbnail do Vídeo 3">
+                <div class="video-info">
+                    <h3>GRORIA SABADO DA GRORIA MARIAN</h3>
+                    <p>11/01/2024</p>
+                </div>
+            </div>
+
+            <!-- Adicione mais vídeos aqui -->
+        </div>
+    </div>
+
+</body>
+</html>
