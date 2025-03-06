@@ -21,6 +21,25 @@
             padding: 20px;
         }
 
+        /* Contêiner Flexível para os Títulos */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Estilo para o nome "Vini Sette" */
+        .header-container h1 a {
+            color: #fff; /* Cor inicial do texto */
+            text-decoration: none; /* Remove o sublinhado do link */
+            transition: color 0.3s ease; /* Transição suave para a cor */
+        }
+
+        /* Efeito hover para o nome "Vini Sette" */
+        .header-container h1 a:hover {
+            color: #00a8ff; /* Cor azul ao passar o mouse */
+        }
+
         /* Grade de Vídeos */
         .video-grid {
             display: grid;
@@ -72,7 +91,10 @@
 <body>
 
     <div class="container">
-        <h1>Vídeos</h1>
+        <div class="header-container">
+            <h1>Vídeos</h1>
+            <h1><a href="index2.html">Vini Sette Lives</a></h1> <!-- Link para index2.html -->
+        </div>
         <div class="video-grid">
             <!-- Vídeo 1 -->
             <div class="video-thumbnail" onclick="window.location.href='video4.html'">
@@ -83,7 +105,6 @@
                 </div>
             </div>
 
-            
             <div class="video-thumbnail" onclick="window.location.href='video3.html'">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczMSDTfbKIuPTw9zs6oO9gIhefpTqOoEdDlsY2X1vT64FQJzVBfI0DTVdetyO2sJuF7O2dkWisBcZ6mMO9Uqnj2Hz_w96cnnAVfOJCJBwn-wS4s9ifLwzXKpNZ0otzHxeHgnljcT_VirNSj-J56cHEQ=w1184-h666-s-no-gm" alt="Thumbnail do Vídeo 1">
                 <div class="video-info">
