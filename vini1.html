@@ -1,0 +1,2424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Vídeo com Chat</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <style>
+        body {
+            background-color: #1a1a1a; /* Fundo escuro */
+            color: #fff;
+            font-family: 'Imprima', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Container do vídeo */
+        .video-container {
+            flex: 3;
+            padding: 20px;
+        }
+
+        /* Container do chat */
+        .chat-container {
+            flex: 1;
+            background-color: #000;
+            padding: 20px;
+            overflow-y: auto;
+            border-left: 2px solid #333;
+        }
+
+        /* Estilos do chat */
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid #333;
+            display: none; /* Inicialmente oculto */
+        }
+
+        .timestamp {
+            font-size: 0.8em;
+            color: gray;
+        }
+
+        .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .author {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .text {
+            font-size: 1em;
+            color: #fff;
+        }
+
+        /* Estilo do iframe do Wistia */
+        .wistia_embed {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- Container do vídeo -->
+    <div class="video-container">
+        <div class="wistia_embed wistia_async_9i7t5kolly" style="height:100%;width:100%"></div>
+    </div>
+
+    <!-- Container do chat -->
+    <div class="chat-container" id="chat">
+        <!-- Mensagens do chat -->
+        <div class="message">
+            <span class="timestamp">01:08:00</span>
+            <img class="avatar" src="https://yt4.ggpht.com/s90kS49ZR4k9q1fH1p2uMDjtWB8tds-pB9Z5981wqlraKl19VWV3W0CmhN933eAzWveKnrfX"/>
+            <span class="author">Danylo Holanda</span>
+            <span class="text">EAE tio</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:08:06</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">kkķkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:08:08</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">kkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:08:11</span>
+            <img class="avatar" src="https://yt4.ggpht.com/fTdeTsZnTgsGmwJ7uRsdhoOxv_8rQ9zBbnEgtohdsteXvQ9CLesNszYtFhTlWrsA4Az9axCnDg"/>
+            <span class="author">Zarek zak Prince estro</span>
+            <span class="text">lkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:08:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">vini só quer as gatinha</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:08:32</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">JOB</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:08:37</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">MELOES</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:08:37</span>
+            <img class="avatar" src="https://yt4.ggpht.com/fTdeTsZnTgsGmwJ7uRsdhoOxv_8rQ9zBbnEgtohdsteXvQ9CLesNszYtFhTlWrsA4Az9axCnDg"/>
+            <span class="author">Zarek zak Prince estro</span>
+            <span class="text">PIX</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:08:48</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">é kid vini</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:08:51</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">SOCORRO KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:08:53</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:08:55</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">kkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:09:02</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Não senhor</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:09:05</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">kkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:09:06</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">É o velho do Saco, corram</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:09:07</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">KKKKKKKK TO MORRENDO KKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:09:19</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Capeta?</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:09:21</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:09:28</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">JA PULARAM KKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:09:31</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">kkkkķkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:09:39</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">i caral é a bomba gira</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:10:02</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">kkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:10:07</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">INDIO</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:10:12</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wrsXIcBO2WvOZ9gcAdz59CWPwQW_P8RcEppakl72vN8OB9XAGfR4Qzf0PzIzC0FiP25RvGH1"/>
+            <span class="author">chione.</span>
+            <span class="text">faaaala grande vinao</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:10:28</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">PAPAI NOEL</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:10:32</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:10:35</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:10:36</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+            <span class="author">Eduardo Nunes 🇦🇲</span>
+            <span class="text">KKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:10:36</span>
+            <img class="avatar" src="https://yt4.ggpht.com/6PwAe90DCVLDOAmFUvlnN6Y1T6R4mB9KCm5y8gs7doupL4_CnL41Spqn2YITSEQCXN1ix1HwwA"/>
+            <span class="author">Gamermsi pc</span>
+            <span class="text">:face-blue-smiling:</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:10:38</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ijVSmdbseNKwzRM_5DNo8uuooCoGa4YNdUf_CdaNdLRDzRnA-a564CEwiJrH_itEOGU-TX3fwg"/>
+            <span class="author">Caixista</span>
+            <span class="text">kkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:10:44</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">MUITA HUMILHACAO </span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:10:47</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">KKKKKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:10:55</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">vini sofrebdo bullyng</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:10:57</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">TA OSSO</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:10:59</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+            <span class="author">Eduardo Nunes 🇦🇲</span>
+            <span class="text">as mulheres amam o vini</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:11:02</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Pessoal foi pro Carnaval</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:11:05</span>
+            <img class="avatar" src="https://yt4.ggpht.com/s90kS49ZR4k9q1fH1p2uMDjtWB8tds-pB9Z5981wqlraKl19VWV3W0CmhN933eAzWveKnrfX"/>
+            <span class="author">Danylo Holanda</span>
+            <span class="text">só esculacho doido</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:11:07</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">tem que respeitar o Papai Noel, até no Carnaval</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:11:07</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">KKKKKKKKKKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:11:10</span>
+            <img class="avatar" src="https://yt4.ggpht.com/X7DW5nYY8jC2_lsARFyXL_QyEE2tgOElr2p-KakwCDksLO6byLEWNnt568rXsLYu3qoYbPg-"/>
+            <span class="author">Daniel Potuk</span>
+            <span class="text">fala vini</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:11:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">KKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:11:16</span>
+            <img class="avatar" src="https://yt4.ggpht.com/X7DW5nYY8jC2_lsARFyXL_QyEE2tgOElr2p-KakwCDksLO6byLEWNnt568rXsLYu3qoYbPg-"/>
+            <span class="author">Daniel Potuk</span>
+            <span class="text">como estão as coisas</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:11:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">kkkkkkkkk...ala seguradores do tafo kkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:11:36</span>
+            <img class="avatar" src="https://yt4.ggpht.com/y-PjamwCN8vpYPrjcB52rrRLt6dNNmCNAmDh_r2fbAdbh5WAlLTASCCSPPKAnDiG4uRuoo8G4A"/>
+            <span class="author">Lucas Baker </span>
+            <span class="text">bullying atrás de bullying doido</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:11:49</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">KKKKKKKKKKKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:11:53</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">klkkkkkkkkkkkķkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:11:58</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">DENUNCIA PORRA</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:11:59</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lp9OQ-_ykMGuXZ9KrcKyPSm9kA9vB9cMF5T5UXie-0OmMMmgygTjG1BuATiGxiSrkuCQ"/>
+            <span class="author">Ronaldo</span>
+            <span class="text">kkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:11:59</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wrsXIcBO2WvOZ9gcAdz59CWPwQW_P8RcEppakl72vN8OB9XAGfR4Qzf0PzIzC0FiP25RvGH1"/>
+            <span class="author">chione.</span>
+            <span class="text">KKKKKKKKKKKKKKKKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:02</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ijVSmdbseNKwzRM_5DNo8uuooCoGa4YNdUf_CdaNdLRDzRnA-a564CEwiJrH_itEOGU-TX3fwg"/>
+            <span class="author">Caixista</span>
+            <span class="text">kkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:02</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+            <span class="author">Eduardo Nunes 🇦🇲</span>
+            <span class="text">KKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:02</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Reportar</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:05</span>
+            <img class="avatar" src="https://yt4.ggpht.com/PFyjnNV5-SR2Rka7Y1EGZd5yk13EEgn2hO1L5qR2oG1GfKhXdpLQTw-62xx0zjTnGIRfOw1cB4E"/>
+            <span class="author">Livre Pensador</span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:07</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Da pra reportar ainda</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:07</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">kkkkkkk,</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:13</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+            <span class="author">Eduardo Nunes 🇦🇲</span>
+            <span class="text">KKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">AEWWWWWWWWWWWWWW</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:18</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lp9OQ-_ykMGuXZ9KrcKyPSm9kA9vB9cMF5T5UXie-0OmMMmgygTjG1BuATiGxiSrkuCQ"/>
+            <span class="author">Ronaldo</span>
+            <span class="text">bota em cana</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:18</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:19</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">BOA VINI</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:21</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">Apareceu um Pal Black</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:22</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">:rolling_on_the_floor_laughing::rolling_on_the_floor_laughing::rolling_on_the_floor_laughing::rolling_on_the_floor_laughing:</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ijVSmdbseNKwzRM_5DNo8uuooCoGa4YNdUf_CdaNdLRDzRnA-a564CEwiJrH_itEOGU-TX3fwg"/>
+            <span class="author">Caixista</span>
+            <span class="text">kskskksks</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:27</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">jkakakakakaka</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:34</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">AI SIM MANO </span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:39</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Ele baniu o cara errado kkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:43</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">KKKKKKKKKKKKK NOJO</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:45</span>
+            <img class="avatar" src="https://yt4.ggpht.com/6PwAe90DCVLDOAmFUvlnN6Y1T6R4mB9KCm5y8gs7doupL4_CnL41Spqn2YITSEQCXN1ix1HwwA"/>
+            <span class="author">Gamermsi pc</span>
+            <span class="text">:cat-orange-whistling:</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:46</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+            <span class="author">Eduardo Nunes 🇦🇲</span>
+            <span class="text">olha a cara de susto KKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:48</span>
+            <img class="avatar" src="https://yt4.ggpht.com/4zZKE1_fv_9ralWp5Y2nL772DhoR8x5QYDHGNdjDaNkBXy80JCJkhXZTnSpvz0gUxhS3yFfacg"/>
+            <span class="author">Peixoto</span>
+            <span class="text">Ta rindo de que?</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:12:58</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">mulher feia pra caral kkkk tirando onda com o vini</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:13:07</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">cada carniça kkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:13:10</span>
+            <img class="avatar" src="https://yt4.ggpht.com/4zZKE1_fv_9ralWp5Y2nL772DhoR8x5QYDHGNdjDaNkBXy80JCJkhXZTnSpvz0gUxhS3yFfacg"/>
+            <span class="author">Peixoto</span>
+            <span class="text">Vini, estao tirando onda!</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:13:23</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">LOTADO DE NOVINHAS HJ</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:13:25</span>
+            <img class="avatar" src="https://yt4.ggpht.com/fTdeTsZnTgsGmwJ7uRsdhoOxv_8rQ9zBbnEgtohdsteXvQ9CLesNszYtFhTlWrsA4Az9axCnDg"/>
+            <span class="author">Zarek zak Prince estro</span>
+            <span class="text">HOJE TA BOM EM VINI MUITA MULHERR</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:13:38</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Opa</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:13:41</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Que susto</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:13:44</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Kkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:13:49</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">NEM AS DO JOB QUER </span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:13:54</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">kkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:11</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">EXCLUIDO COITADO</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:14</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">KKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:19</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">só tem kid né aporrw</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/4zZKE1_fv_9ralWp5Y2nL772DhoR8x5QYDHGNdjDaNkBXy80JCJkhXZTnSpvz0gUxhS3yFfacg"/>
+            <span class="author">Peixoto</span>
+            <span class="text">É video fake Vini!!!</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:26</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">só tem criança</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:27</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Fake!!</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:27</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:30</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">FAKE</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:32</span>
+            <img class="avatar" src="https://yt4.ggpht.com/fTdeTsZnTgsGmwJ7uRsdhoOxv_8rQ9zBbnEgtohdsteXvQ9CLesNszYtFhTlWrsA4Az9axCnDg"/>
+            <span class="author">Zarek zak Prince estro</span>
+            <span class="text">KILKL´</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:32</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Reporta</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:34</span>
+            <img class="avatar" src="https://yt4.ggpht.com/4zZKE1_fv_9ralWp5Y2nL772DhoR8x5QYDHGNdjDaNkBXy80JCJkhXZTnSpvz0gUxhS3yFfacg"/>
+            <span class="author">Peixoto</span>
+            <span class="text">É uma cilada!!!</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:35</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Ele vai cair nesse papo</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:37</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lp9OQ-_ykMGuXZ9KrcKyPSm9kA9vB9cMF5T5UXie-0OmMMmgygTjG1BuATiGxiSrkuCQ"/>
+            <span class="author">Ronaldo</span>
+            <span class="text">kkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:40</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">DENUNCIA</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:44</span>
+            <img class="avatar" src="https://yt4.ggpht.com/4zZKE1_fv_9ralWp5Y2nL772DhoR8x5QYDHGNdjDaNkBXy80JCJkhXZTnSpvz0gUxhS3yFfacg"/>
+            <span class="author">Peixoto</span>
+            <span class="text">É UMA CILADA!!</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:52</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">NOEL KK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:14:56</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">só tem criança kkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:15:23</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">corre</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:15:26</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Arrastão</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:15:26</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">Todo Mundo Odeia o Papai Noel</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:15:38</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">CRIANÇAS</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:15:41</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">SAI FORA</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:15:59</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">filha do Vini</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:16:00</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">porwue esse chat Brasil não bane essas crianças?</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:16:08</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">DE MENOR DOIDO</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:16:08</span>
+            <img class="avatar" src="https://yt4.ggpht.com/4zZKE1_fv_9ralWp5Y2nL772DhoR8x5QYDHGNdjDaNkBXy80JCJkhXZTnSpvz0gUxhS3yFfacg"/>
+            <span class="author">Peixoto</span>
+            <span class="text">kkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:16:11</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">FAZ ISSO NAO</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:16:11</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">porra p tem criancas</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:16:17</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">kkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:16:21</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">kkkkkk olha os papo mano.</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:16:25</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">FAZ ISSO NAO VINI </span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:16:25</span>
+            <img class="avatar" src="https://yt4.ggpht.com/6PwAe90DCVLDOAmFUvlnN6Y1T6R4mB9KCm5y8gs7doupL4_CnL41Spqn2YITSEQCXN1ix1HwwA"/>
+            <span class="author">Gamermsi pc</span>
+            <span class="text">:face-blue-smiling::face-blue-smiling:</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:16:30</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ijVSmdbseNKwzRM_5DNo8uuooCoGa4YNdUf_CdaNdLRDzRnA-a564CEwiJrH_itEOGU-TX3fwg"/>
+            <span class="author">Caixista</span>
+            <span class="text">kkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:16:31</span>
+            <img class="avatar" src="https://yt4.ggpht.com/4zZKE1_fv_9ralWp5Y2nL772DhoR8x5QYDHGNdjDaNkBXy80JCJkhXZTnSpvz0gUxhS3yFfacg"/>
+            <span class="author">Peixoto</span>
+            <span class="text">kkkkkkkkkkkkkvai mesmo</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:16:42</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">kkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:16:45</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">capitão</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:16:55</span>
+            <img class="avatar" src="https://yt4.ggpht.com/4zZKE1_fv_9ralWp5Y2nL772DhoR8x5QYDHGNdjDaNkBXy80JCJkhXZTnSpvz0gUxhS3yFfacg"/>
+            <span class="author">Peixoto</span>
+            <span class="text">Ah pq os generais sao frouxos....</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:17:01</span>
+            <img class="avatar" src="https://yt4.ggpht.com/4zZKE1_fv_9ralWp5Y2nL772DhoR8x5QYDHGNdjDaNkBXy80JCJkhXZTnSpvz0gUxhS3yFfacg"/>
+            <span class="author">Peixoto</span>
+            <span class="text">Comecou</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:17:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">PAIZAO</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:17:28</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Vai sobrar pros soldados</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:17:31</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">se o careca ver já era</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:17:31</span>
+            <img class="avatar" src="https://yt4.ggpht.com/s90kS49ZR4k9q1fH1p2uMDjtWB8tds-pB9Z5981wqlraKl19VWV3W0CmhN933eAzWveKnrfX"/>
+            <span class="author">Danylo Holanda</span>
+            <span class="text">Ricardo Aragão KKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:17:32</span>
+            <img class="avatar" src="https://yt4.ggpht.com/6PwAe90DCVLDOAmFUvlnN6Y1T6R4mB9KCm5y8gs7doupL4_CnL41Spqn2YITSEQCXN1ix1HwwA"/>
+            <span class="author">Gamermsi pc</span>
+            <span class="text">:face-green-smiling:</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:17:35</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">kkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:17:42</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:17:42</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">KKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:17:49</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Fala pra devolver o nosso ouro</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:17:51</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">kkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:17:53</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:17:54</span>
+            <img class="avatar" src="https://yt4.ggpht.com/4zZKE1_fv_9ralWp5Y2nL772DhoR8x5QYDHGNdjDaNkBXy80JCJkhXZTnSpvz0gUxhS3yFfacg"/>
+            <span class="author">Peixoto</span>
+            <span class="text">Nad a ver!!</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:18:03</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">:rolling_on_the_floor_laughing::rolling_on_the_floor_laughing::rolling_on_the_floor_laughing::rolling_on_the_floor_laughing::rolling_on_the_floor_laughing::rolling_on_the_floor_laughing::rolling_on_the_floor_laughing::rolling_on_the_floor_laughing:</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:18:05</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">aquele que roubou nosso ouro</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:18:07</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ZRUlocgUlRRdsLF-GxxMLNb5NHwes6ykQn7E1bldd0anhclXtNOgJPgT6i2_TBMv9KgJ1ijU"/>
+            <span class="author">H.Máximo</span>
+            <span class="text">achei que 3ra o africanos</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:18:13</span>
+            <img class="avatar" src="https://yt4.ggpht.com/4zZKE1_fv_9ralWp5Y2nL772DhoR8x5QYDHGNdjDaNkBXy80JCJkhXZTnSpvz0gUxhS3yFfacg"/>
+            <span class="author">Peixoto</span>
+            <span class="text">Esse tuga ta viajando!</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:18:13</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Única coisa boa de Portugal é bacalhau</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:18:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">EXCULACHA ELE VINI</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:18:23</span>
+            <img class="avatar" src="https://yt4.ggpht.com/4zZKE1_fv_9ralWp5Y2nL772DhoR8x5QYDHGNdjDaNkBXy80JCJkhXZTnSpvz0gUxhS3yFfacg"/>
+            <span class="author">Peixoto</span>
+            <span class="text">Esse Tuga nao sabe de nada</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:18:25</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Zoa ele vini</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:18:26</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">piru mãns griande do mundo</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:18:41</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">kkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:18:43</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">que isso</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:18:45</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Kkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:18:45</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">A CASA PÁRECE UM CATIVEIRO</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:18:52</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">kkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:18:53</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">kkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:18:54</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">só macho dentro de um barraco no favelão</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:19:05</span>
+            <img class="avatar" src="https://yt4.ggpht.com/fTdeTsZnTgsGmwJ7uRsdhoOxv_8rQ9zBbnEgtohdsteXvQ9CLesNszYtFhTlWrsA4Az9axCnDg"/>
+            <span class="author">Zarek zak Prince estro</span>
+            <span class="text">O MLK BATENDO UMA KKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:19:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Só não pode bloquear as mulheres</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:19:21</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:19:25</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m1Hu3ivWIhB3HqWynDMzioSOdFj59b3480j10aEP_9I8f9s2Sbqh3WxiwdOVFdJfLD-g"/>
+            <span class="author">Vala Comum</span>
+            <span class="text">aquele portuga e famoso no tiktok ja passei por videos dele</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:19:43</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">MORENA</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:20:00</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">opa</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:20:01</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">Q DELICIA</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:20:08</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">kkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:20:08</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:20:12</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">KKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:20:27</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">BOCA OU RIVER?</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:20:37</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">"mais grande"</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:20:49</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">CARIOCA</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:20:50</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:20:50</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Pede pra mostrar</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:20:51</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">O Pelé comeu mais Pultas</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:20:53</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Gabriela</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:21:01</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Sabrina mamadeira, ela mesma</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:21:02</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Pede pra mostrar anisio</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:21:05</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">É ela</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:21:09</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">GORDINHA DO JOB DA MIMOSA</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:21:17</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">Moranguinho kkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:21:18</span>
+            <img class="avatar" src="https://yt4.ggpht.com/6PwAe90DCVLDOAmFUvlnN6Y1T6R4mB9KCm5y8gs7doupL4_CnL41Spqn2YITSEQCXN1ix1HwwA"/>
+            <span class="author">Gamermsi pc</span>
+            <span class="text">muda o assunto e manda mostrar</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:21:28</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:21:31</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Pede pra mostrar anisio</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:21:38</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Cadê o Max Sandler pra ver isso</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:21:47</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">GATINHO KKKKKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:22:14</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">KKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:22:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">kkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:22:25</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">sou do Rio Grande e me basta Tchê</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:22:25</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lp9OQ-_ykMGuXZ9KrcKyPSm9kA9vB9cMF5T5UXie-0OmMMmgygTjG1BuATiGxiSrkuCQ"/>
+            <span class="author">Ronaldo</span>
+            <span class="text">kkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:22:30</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">round 6</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:23:03</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">kkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:23:07</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">essa é de menor tbm cara</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:23:07</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">kkkkk os papos</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:23:27</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">EITA KKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:23:31</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">e criança mano pula</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:23:35</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">Internet pior que a da pensão, ta louco</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:23:45</span>
+            <img class="avatar" src="https://yt4.ggpht.com/fTdeTsZnTgsGmwJ7uRsdhoOxv_8rQ9zBbnEgtohdsteXvQ9CLesNszYtFhTlWrsA4Az9axCnDg"/>
+            <span class="author">Zarek zak Prince estro</span>
+            <span class="text">maravilhosa essa negra mano</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:23:48</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Davi luiz</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:23:50</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:23:51</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lp9OQ-_ykMGuXZ9KrcKyPSm9kA9vB9cMF5T5UXie-0OmMMmgygTjG1BuATiGxiSrkuCQ"/>
+            <span class="author">Ronaldo</span>
+            <span class="text">racismo</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:23:53</span>
+            <img class="avatar" src="https://yt4.ggpht.com/s90kS49ZR4k9q1fH1p2uMDjtWB8tds-pB9Z5981wqlraKl19VWV3W0CmhN933eAzWveKnrfX"/>
+            <span class="author">Danylo Holanda</span>
+            <span class="text">good girl</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:23:55</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">VALDERRAMA</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:23:56</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+            <span class="author">Eduardo Nunes 🇦🇲</span>
+            <span class="text">nao sei porque tem menor nesse site, negócio zoado do krlh</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:24:02</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">kkkkk diferentao</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:24:02</span>
+            <img class="avatar" src="https://yt4.ggpht.com/fTdeTsZnTgsGmwJ7uRsdhoOxv_8rQ9zBbnEgtohdsteXvQ9CLesNszYtFhTlWrsA4Az9axCnDg"/>
+            <span class="author">Zarek zak Prince estro</span>
+            <span class="text">maravilhosa gostrosak</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:24:17</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lp9OQ-_ykMGuXZ9KrcKyPSm9kA9vB9cMF5T5UXie-0OmMMmgygTjG1BuATiGxiSrkuCQ"/>
+            <span class="author">Ronaldo</span>
+            <span class="text">kaka brinks vini</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:24:34</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">DENUNCIA</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:25:17</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">o que</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:25:19</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:25:19</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Kkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:25:21</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">KKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:25:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Mostra ai</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:25:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">MOSTRA MAIS</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:25:31</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Pede pra mostrar vinai</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:25:34</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">mostrou as coxas</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:25:52</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">PIX</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:25:56</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">fala que vai mandar Pix, kkkk elas mostram tudo</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:26:08</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Porque pulou ?</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:26:08</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Pergunta se ela tem tatuagem no peito</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:26:13</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Perdeu a oportunidade</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:26:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">burro d mais </span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:26:28</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Urso, já tem muito tempo de Chat Brasil?</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:26:31</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">Tatuagem no buraco, que nem a Anitta</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:26:38</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">um mucado viu</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:26:50</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">Vini n sabe manter um papo com mulher. ele se perde, começa falar nada com nada</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:26:53</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">acho q uns mais uns 20 minutos</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:27:00</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">@Alemanha Já tá quase acabando</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:27:02</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Vou ver depois a parte que perdi. Vlw Urso</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:27:08</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">ja e</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:27:10</span>
+            <img class="avatar" src="https://yt4.ggpht.com/Ns_Mvi8co-I0nerk1ViMlTll7uWbHPxS9AddIIO8Ywza3Zjwi_xJUkIh6cEudnO4YjAdTAyC"/>
+            <span class="author">Alone7</span>
+            <span class="text">Bença</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:27:19</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">na piscina de boné</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:27:21</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">kkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:27:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">@Mateus Dantas Perdi a melhor parte então, Vou ver depois.</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:27:39</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Pula</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:27:41</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Carioca</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:27:46</span>
+            <img class="avatar" src="https://yt4.ggpht.com/fTdeTsZnTgsGmwJ7uRsdhoOxv_8rQ9zBbnEgtohdsteXvQ9CLesNszYtFhTlWrsA4Az9axCnDg"/>
+            <span class="author">Zarek zak Prince estro</span>
+            <span class="text">coitada da criança kkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:27:52</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">gente boa</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:27:55</span>
+            <img class="avatar" src="https://yt4.ggpht.com/6PwAe90DCVLDOAmFUvlnN6Y1T6R4mB9KCm5y8gs7doupL4_CnL41Spqn2YITSEQCXN1ix1HwwA"/>
+            <span class="author">Gamermsi pc</span>
+            <span class="text">:face-blue-smiling::face-blue-smiling::face-blue-smiling::face-blue-smiling::face-blue-smiling::face-blue-smiling:</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:27:56</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">kkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:27:57</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Adota ela vini</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:27:59</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+            <span class="author">Eduardo Nunes 🇦🇲</span>
+            <span class="text">Cadê os pais dessas crianças? Tem até um bebê ali mds</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:27:59</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">kkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">kkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:17</span>
+            <img class="avatar" src="https://yt4.ggpht.com/s90kS49ZR4k9q1fH1p2uMDjtWB8tds-pB9Z5981wqlraKl19VWV3W0CmhN933eAzWveKnrfX"/>
+            <span class="author">Danylo Holanda</span>
+            <span class="text">KKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:18</span>
+            <img class="avatar" src="https://yt4.ggpht.com/fTdeTsZnTgsGmwJ7uRsdhoOxv_8rQ9zBbnEgtohdsteXvQ9CLesNszYtFhTlWrsA4Az9axCnDg"/>
+            <span class="author">Zarek zak Prince estro</span>
+            <span class="text">valderrama kkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:19</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">kkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:20</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:23</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Kkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:24</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">Q isso</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:26</span>
+            <img class="avatar" src="https://yt4.ggpht.com/PFyjnNV5-SR2Rka7Y1EGZd5yk13EEgn2hO1L5qR2oG1GfKhXdpLQTw-62xx0zjTnGIRfOw1cB4E"/>
+            <span class="author">Livre Pensador</span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:28</span>
+            <img class="avatar" src="https://yt4.ggpht.com/s90kS49ZR4k9q1fH1p2uMDjtWB8tds-pB9Z5981wqlraKl19VWV3W0CmhN933eAzWveKnrfX"/>
+            <span class="author">Danylo Holanda</span>
+            <span class="text">flamenguista KKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:29</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">João Macalé kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:30</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">O Pai foi comprar cigarro, mas ele não fuma, se esqueceu</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:30</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Willian arao</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:31</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">kkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:34</span>
+            <img class="avatar" src="https://yt4.ggpht.com/fTdeTsZnTgsGmwJ7uRsdhoOxv_8rQ9zBbnEgtohdsteXvQ9CLesNszYtFhTlWrsA4Az9axCnDg"/>
+            <span class="author">Zarek zak Prince estro</span>
+            <span class="text">CHICLEEEEETINNN</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:36</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">que demonio</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:43</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">GLOBELEZA</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:44</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">kkkkk Davi Luiz depois de ser carbonizado</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:48</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Tião Macalé kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:28:54</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Zuou o cara</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:29:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">LARICA KKKKKKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:29:16</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Kkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:29:49</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">kkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:29:54</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Zé colmeia</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:30:06</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">LOIRINHA</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:30:16</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Job</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:30:19</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">kkkkk que maquiagem é essa</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:30:23</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Baiana gata</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:30:45</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">A CARA KKKKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:30:48</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:30:48</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">MEU DEUS</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:30:51</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">kkkkk o cara tá noiado</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:30:52</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Vixi</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:30:53</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Crêem Deus pai</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:30:54</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:30:55</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">OS OLHOS KKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:30:57</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Tá só a capa do batmam</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:30:57</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">cara torta </span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:01</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">cola de sapateiro kkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:07</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:08</span>
+            <img class="avatar" src="https://yt4.ggpht.com/fTdeTsZnTgsGmwJ7uRsdhoOxv_8rQ9zBbnEgtohdsteXvQ9CLesNszYtFhTlWrsA4Az9axCnDg"/>
+            <span class="author">Zarek zak Prince estro</span>
+            <span class="text">:face-green-smiling:</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:08</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">É o filho do Snoop Dog</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:09</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Corote</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:10</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">KKKKKKKKKKKKKKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:14</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">drogado</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">PASSANDO MAL KKKKKKKKKKKKKKKKKKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:20</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">kkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:23</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:26</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">Mais feio que o diabo</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:27</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Cola de sapateiro</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:32</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">"Bafando"</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:39</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Opa</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:41</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">JOB</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:43</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Opaaaa</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:48</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">A de laranja é a mais gata</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:49</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">kkkkkkk os tribufu</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:51</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">já tá tendo carnaval</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:31:53</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">KKKKKKKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:32:10</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">CHORINHO]</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:32:25</span>
+            <img class="avatar" src="https://yt4.ggpht.com/enLrwS9b5OtoIVg5QQxhuhBH0mbhaN-GFrgBaJEbPOfb1bqL8ksbassYsXCl7-jlqiLFza6j"/>
+            <span class="author">Cintra</span>
+            <span class="text">vou encerrar com você moça</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:32:45</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Quando tiver mulher deitada na cama é pq vai mostrar.</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:32:49</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Do job</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:32:54</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">kkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:32:57</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:32:57</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Essa é do job</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:32:58</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">deu nem atenção</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:32:59</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">EXCLUIDO [</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:33:27</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Que feinha</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:33:40</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">zaga do fluminense </span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:33:47</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:33:47</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">?</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:33:50</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">kkkkkk 28%</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:33:58</span>
+            <img class="avatar" src="https://yt4.ggpht.com/fTdeTsZnTgsGmwJ7uRsdhoOxv_8rQ9zBbnEgtohdsteXvQ9CLesNszYtFhTlWrsA4Az9axCnDg"/>
+            <span class="author">Zarek zak Prince estro</span>
+            <span class="text">FEIA ELE NAO QUER KKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:34:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">kkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:34:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">kkkkk a cara de nojo</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:34:25</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">MEU DEUS KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:34:28</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">KKKKKKKKKKKKKKK</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:34:31</span>
+            <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+            <span class="author">Lucas Silva </span>
+            <span class="text">kkkkkk Vini é zuado pelas mina</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:34:35</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">kkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:34:42</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Muda a cor do letreiro pra roxo</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:34:49</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+            <span class="author">Eduardo Nunes 🇦🇲</span>
+            <span class="text">vini, se eu tivesse um filho menor de idade, não deixaria ele entrar nesse site nunca</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:35:03</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">to numa fome ta bravo</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:35:12</span>
+            <img class="avatar" src="https://yt4.ggpht.com/wp6WLAxHcVmZv46gos8osxellGqweUR4gGnmKUtKUslWrpa7nE9ypud22UuqPo5FvLgkSQpIEw"/>
+            <span class="author">Marciano na lua</span>
+            <span class="text">Éééééé.... Ramo doano pessoal, se não cair nada em meia hora vou me embora. Ééééée......</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:35:14</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Até subiu audiencia</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:35:38</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Teve jogo ontem só</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:35:46</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Flamengo ganhou do vasco de 1 a 0</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:35:55</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Tem que denunciar mesmo</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:35:59</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Deve ser o rica games aquele último</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:36:04</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Ricagames Não faz isso.</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:36:05</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Hoje começa</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:36:07</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+            <span class="author">Eduardo Nunes 🇦🇲</span>
+            <span class="text">os pais só querem que a criança cale a boca, aí os pais dão um celular e nem se importam com o conteúdo que a criança acessa</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:36:09</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Ele é do bem</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:36:11</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">A Portela só desfila terça</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:36:21</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Não, esse ano vão ser 3 dias</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:36:33</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">@Alemanha tem um vídeo dele fazendo isso as 10 da manhã o Renan play repostou</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:36:38</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Hoje tem Mangueira e Imperatriz, Amanhã Unidos da Tijuca e na terça tem Portela</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:36:53</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Dividiram em 3 dias</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:37:02</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">@O bom de guerra Ihhhhhhhhhhhhhhhhhhh não sabia.</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:37:11</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">4 ou 5</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:37:34</span>
+            <img class="avatar" src="https://yt4.ggpht.com/s90kS49ZR4k9q1fH1p2uMDjtWB8tds-pB9Z5981wqlraKl19VWV3W0CmhN933eAzWveKnrfX"/>
+            <span class="author">Danylo Holanda</span>
+            <span class="text">o pessoal tá ansioso pra mangueira entrar</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:37:57</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+            <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+            <span class="text">Unidos de Padre MiguelImperatriz LeopoldinenseUnidos do ViradouroEstação Primeira de Mangueira</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:38:27</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">@O bom de guerra Tá em qual canal isso?</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:38:39</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Domingo, 2 de março - 1ª noite22h: Unidos de Padre Miguel23h30: Imperatriz Leopoldinense1h: Unidos do Viradouro2h30: Estação Primeira de Mangueira</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:38:54</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Segunda-feira, 3 de março - 2ª noite22h: Unidos da Tijuca23h30: Beija-Flor de Nilópolis1h: Acadêmicos do Salgueiro2h30: Unidos de Vila Isabel</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:39:06</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+            <span class="author">Eduardo Nunes 🇦🇲</span>
+            <span class="text">Vini, eu não aguentaria esse Carnaval, gente bêbada, fedida, gente estranha, feminista, calor horroroso</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:39:12</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">@Alemanha tá no canal cortes do Rica games</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:39:18</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Terça-feira, 4 de março - 3ª noite22h: Mocidade Independente de Padre Miguel23h30: Paraíso do Tuiuti1h: Acadêmicos do Grande Rio2h30: Portela</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:39:25</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Tá aí o cronograma</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:39:48</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">eu vou me arrumar pro show</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:39:57</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Valeu Vini, amanhã de noite eu volto</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:40:06</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+            <span class="author">Eduardo Nunes 🇦🇲</span>
+            <span class="text">Vini, os assaltantes agradecem as pessoas que vão ficar bêbadas nesse Carnaval, não vai faltar celular para eles roubarem</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:40:12</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">kkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:40:20</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Tenho show pra fazer hoje</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:40:26</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">@O bom de guerra Eu vi aqui. kkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:40:27</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Tá rolando um evento lá com 50 bandas</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:40:33</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Reza kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:40:34</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Tô indo galera, valeuu</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:40:50</span>
+            <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+            <span class="author">Mateus Dantas</span>
+            <span class="text">Vini fazendo reza kkkkkkk</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:40:53</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">@Mateus Dantas Vlw mano! boa viagem aí.</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:41:16</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">@alemanha coloca rica games batendo as 10 da manhã no ometv que aparece</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:41:44</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">25 Kg o peso do Esquerda Radical</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:41:56</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">@O bom de guerra Foi o Klebin que encontrou ele, o Renanplay reagiu. Eu vi aqui.</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:42:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Esse cara é Judeu?</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:42:29</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">25 Kg o peso do Esquerda</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:43:37</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">Entrou um forte, tem o respeito do Vini</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:47:28</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">caiu audiência pq?</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:48:25</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Estou aqui ouvindo, devo confessar que é até uma reza bonita. Eu sou evangélico.</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:48:38</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Palavras de fé</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:48:43</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">Deus pode, Deus quer, mas soltou o Diabo</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:50:21</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">É bonita ou não, Vini?</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:50:40</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Na sua opinião</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:51:19</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Verdade</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:52:25</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Se fosse só falando de Deus, Jesus, e Espírito Santo seria uma oração perfeita.</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:52:32</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">A verdade é essa</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:53:13</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Muito bom mesmo</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:53:32</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Melhor coisa para ouvir antes de dormir</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:54:11</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Vc deveria voltar com essa rádio</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:54:19</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Quando se mudar</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:54:35</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Pela Twitch mesmo sei lá</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:55:19</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">A Twitch tem esse negócio msm</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:55:41</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Vini, vou sair aqui resolver um negócio. Até mais tarde.</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:55:45</span>
+            <img class="avatar" src="https://yt4.ggpht.com/YWejJvPJGTON7reUOE9PCdW6nAc3TVYGvp0XFIIOmHPqFrDqgUjBr1dwD6AJOti6teSKwgD74uw"/>
+            <span class="author">Alemanha </span>
+            <span class="text">Boa noite ai</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:56:25</span>
+            <img class="avatar" src="https://yt4.ggpht.com/KQXRNNHGpKLR4lUxTcwGU2Cd14dCyPt047qVyWW6wDWUsBH1cuLpmPltuMJ_JrgY7w4xNr6DGeQ"/>
+            <span class="author">Chakal</span>
+            <span class="text">Olha Aeew vamo doando!</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:57:22</span>
+            <img class="avatar" src="https://yt4.ggpht.com/KQXRNNHGpKLR4lUxTcwGU2Cd14dCyPt047qVyWW6wDWUsBH1cuLpmPltuMJ_JrgY7w4xNr6DGeQ"/>
+            <span class="author">Chakal</span>
+            <span class="text">Expressionismo voltou Vini?</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:57:29</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">um Russo Japonês que toca Piano</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:58:32</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">Vini e a guerra na Ucrânia que nunca acaba</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:58:40</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">A twitch tá com muita propaganda</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">01:59:50</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">Esse fontineli que deu um relógio falso pra ima GP como pagamento</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">02:00:11</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lX0sQt1DReDvzA6nqdISOQLRto8N1fbffNdaeHln4Ovg"/>
+            <span class="author">Sempre que você ler os comentários eu estarei lá</span>
+            <span class="text">Bostil til til</span>
+            </div>
+            <div class="message">
+            <span class="timestamp">02:00:51</span>
+            <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+            <span class="author">O bom de guerra</span>
+            <span class="text">valeu</span>
+            </div>
+            
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+    <script>
+        // Inicializa o Wistia
+        window._wq = window._wq || [];
+        _wq.push({
+            id: "9i7t5kolly",
+            onReady: function (video) {
+                const wistiaPlayer = video;
+
+                // Função para converter o timestamp no formato HH:MM:SS para segundos
+                function timestampToSeconds(timestamp) {
+                    const [hours, minutes, seconds] = timestamp.split(':').map(Number);
+                    return hours * 3600 + minutes * 60 + seconds;
+                }
+
+                // Função para verificar se o chat está no final
+                function isChatAtBottom(chatContainer) {
+                    const tolerance = 10; // Tolerância para considerar que está no final
+                    return chatContainer.scrollTop + chatContainer.clientHeight >= chatContainer.scrollHeight - tolerance;
+                }
+
+                // Função para rolar o chat para o final
+                function scrollChatToBottom() {
+                    const chatContainer = document.getElementById('chat');
+                    chatContainer.scrollTop = chatContainer.scrollHeight;
+                }
+
+                // Função para sincronizar o chat com o vídeo
+                function syncChatWithVideo() {
+                    const chatMessages = document.querySelectorAll('.message');
+                    wistiaPlayer.bind('secondchange', function (time) {
+                        const currentTime = Math.floor(time); // Tempo atual do vídeo em segundos
+                        let shouldScroll = isChatAtBottom(document.getElementById('chat')); // Verifica se o chat está no final
+
+                        chatMessages.forEach(message => {
+                            const timestamp = message.querySelector('.timestamp').textContent; // Pega o timestamp da mensagem
+                            const messageTime = timestampToSeconds(timestamp); // Converte o timestamp para segundos
+                            if (messageTime <= currentTime) {
+                                message.style.display = 'block'; // Mostra a mensagem
+                            } else {
+                                message.style.display = 'none'; // Oculta a mensagem
+                            }
+                        });
+
+                        // Rola para o final apenas se o chat já estava no final
+                        if (shouldScroll) {
+                            scrollChatToBottom();
+                        }
+                    });
+                }
+
+                // Inicia a sincronização
+                syncChatWithVideo();
+            }
+        });
+    </script>
+</body>
+</html>
