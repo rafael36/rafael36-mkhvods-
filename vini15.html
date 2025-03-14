@@ -1,0 +1,3238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Vídeo com Chat</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <style>
+        body {
+            background-color: #1a1a1a; /* Fundo escuro */
+            color: #fff;
+            font-family: 'Imprima', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Container do vídeo */
+        .video-container {
+            flex: 3;
+            padding: 20px;
+        }
+
+        /* Container do chat */
+        .chat-container {
+            flex: 1;
+            background-color: #000;
+            padding: 20px;
+            overflow-y: auto;
+            border-left: 2px solid #333;
+        }
+
+        /* Estilos do chat */
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid #333;
+            display: none; /* Inicialmente oculto */
+        }
+
+        .timestamp {
+            font-size: 0.8em;
+            color: gray;
+        }
+
+        .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .author {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .text {
+            font-size: 1em;
+            color: #fff;
+        }
+
+        /* Estilo do iframe do Wistia */
+        .wistia_embed {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- Container do vídeo -->
+    <div class="video-container">
+        <div class="wistia_embed wistia_async_07gx0usx69" style="height:100%;width:100%"></div>
+    </div>
+
+    <!-- Container do chat -->
+    <div class="chat-container" id="chat">
+        <!-- Mensagens do chat -->
+        
+<div class="message">
+    <span class="timestamp">00:00:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/tJWhwmid9dbUl00GLqcfpWwT-337IkAtLWqpzMVX8Fal-ywHn2Ajc3RuArILMJeRKdRkVWtkisw"/>
+    <span class="author">Vini Sette Lives</span>
+    <span class="text">https://livepix.gg/vinisette</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:00:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/hIAtVnJhzenkNyBySFFdQOfeToy_prOe1kpxKtw9Ymxm_ztJMVd-wrdFrFKwU3cFfCY04ExE"/>
+    <span class="author">TATTOO GENTE BOA</span>
+    <span class="text">Beleza</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:00:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_mk08Q43YhOapeS3iUn8juMQp6rgXW7HWUWmQYYXSYA9qI"/>
+    <span class="author">Pedro Gomes</span>
+    <span class="text">Prata</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:00:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/XSi_76Eu-tdYY568Hp1jQkzn1XE2HYZibO2U8cyh1dWizZLB3EJhpVisBoGDihVRQZfHuLIyPQ"/>
+    <span class="author">FruFru </span>
+    <span class="text">bom dia vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:01:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">salve, Vinão. E se Deus é por nós, quem será contra nós?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:02:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/qCq7e3eAbEhG4Fgswp2adqYC5Rw03yARTZnXGg2ATPs2lIyJMTa3UFIO98oVIO_TE_CMprBB"/>
+    <span class="author">SAGA</span>
+    <span class="text">kkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:02:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/XSi_76Eu-tdYY568Hp1jQkzn1XE2HYZibO2U8cyh1dWizZLB3EJhpVisBoGDihVRQZfHuLIyPQ"/>
+    <span class="author">FruFru </span>
+    <span class="text">vini ficou sabendo que o Trump taxou 25% os aços e os metais do Brasil? lula em vez de resolver fica sentando vendo a merda acontecer</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:02:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">por que você não raspa a barba?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:03:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">boa tarde Vini acabei de descer da laje estava tomando vitamina D</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:03:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nb488et7bv73M50JMw8-Mf1AYA-Av6x4e36t6AYwAZVw"/>
+    <span class="author">sofia viana</span>
+    <span class="text">vai passar sufoco na cadeia, 20 pessoas na cela</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:03:12</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nb488et7bv73M50JMw8-Mf1AYA-Av6x4e36t6AYwAZVw"/>
+    <span class="author">sofia viana</span>
+    <span class="text">vai passar sufoco na cadeia, 20 pessoas na cela,</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:03:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/qCq7e3eAbEhG4Fgswp2adqYC5Rw03yARTZnXGg2ATPs2lIyJMTa3UFIO98oVIO_TE_CMprBB"/>
+    <span class="author">SAGA</span>
+    <span class="text">Vini fica estiloso com barba</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:03:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_mk08Q43YhOapeS3iUn8juMQp6rgXW7HWUWmQYYXSYA9qI"/>
+    <span class="author">Pedro Gomes</span>
+    <span class="text">Pinta a barba de acaju vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:03:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">Vini, antigamente quando você não tinha barba, você pegava muita mulher?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:03:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/qCq7e3eAbEhG4Fgswp2adqYC5Rw03yARTZnXGg2ATPs2lIyJMTa3UFIO98oVIO_TE_CMprBB"/>
+    <span class="author">SAGA</span>
+    <span class="text">kkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:03:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Kkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:03:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">brocreado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:04:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">Live meio dia? isso é realmente muito raro</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:04:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Vc tem mtos amigos </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:04:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">Vini, faria uma Live com o wallacy gamer?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:04:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">até seu chat esta menos tóxico </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:05:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Vini vc reparou que quando as meninas frequentava o apartamento do lixo elas eram feia? a renkel, Duda e Cecília tão lindas hj em dia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:05:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">aqueles apartamentos rolava droga e álcool o dia todo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:05:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">boa tarde</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:05:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">é live gravado??</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:06:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">o senhor está sendo aguardado na manifestação do dia 16 em Copacabana</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:06:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">Vini, o wallacy gamer tem muita história para contar mesmo, ele é uma excelente pessoa com os fãs</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:06:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Vini eu tomo 2L e meio de água por dia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:07:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">Vini, vou ficar esperto, acabei de vê uma notícia de que uma princesa da mimosa deu um golpe no cara aí</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:07:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/_xOZd_Vb81_QRSeQ1wjkyouRi2zvvMdUKrzoQVGGB6dlyvWutARzDMZydqNHx7kKMeI8d4Bo"/>
+    <span class="author">Deep Insider</span>
+    <span class="text">Boa tarde Vini! Está bonito hoje</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:08:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Vini citar religião ocultas e crime? eu não sabia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:08:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/_xOZd_Vb81_QRSeQ1wjkyouRi2zvvMdUKrzoQVGGB6dlyvWutARzDMZydqNHx7kKMeI8d4Bo"/>
+    <span class="author">Deep Insider</span>
+    <span class="text">O que você não gostou? </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:08:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/_xOZd_Vb81_QRSeQ1wjkyouRi2zvvMdUKrzoQVGGB6dlyvWutARzDMZydqNHx7kKMeI8d4Bo"/>
+    <span class="author">Deep Insider</span>
+    <span class="text">Eu não falei mal</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:08:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/_xOZd_Vb81_QRSeQ1wjkyouRi2zvvMdUKrzoQVGGB6dlyvWutARzDMZydqNHx7kKMeI8d4Bo"/>
+    <span class="author">Deep Insider</span>
+    <span class="text">Só coloquei oq vc falou amigo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Vini se você quiser responder alguém da Dep essa e a hora o deep insider tem credibilidade</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bAuk97Td9fXi1YkZTEBu6iwUFh8A4YX2zfSm9_KdhHfBKLZz6c3mHuanjWmQd6dAp_br8bASkHo"/>
+    <span class="author">Parque do Zé Colmeia</span>
+    <span class="text">salve vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/_xOZd_Vb81_QRSeQ1wjkyouRi2zvvMdUKrzoQVGGB6dlyvWutARzDMZydqNHx7kKMeI8d4Bo"/>
+    <span class="author">Deep Insider</span>
+    <span class="text">Sinaliza que eu apago</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">vini, antigamente as mulheres da mimosa eram mais honestas, hoje as mulheres querem dá até golpe nos clientes. Fico triste de vê que um lugar tão bacana como a mimosa está tendo esse tipo de gente</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:10:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Vini até que a casa nova do deita e boa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:10:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, SERÁ QUE A TRAVESTI QUER QUE VOCÊ PEÇA PERDÃO A ELA?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:10:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/YJeNOA93P5eufoPa6E0eCDmq6Q82Uh6EKraTF-nHI5jGFR2VoW9Lh_62GGJahlbH8wyAGczrG0E"/>
+    <span class="author">Neitan </span>
+    <span class="text">Boa tarde Vini começando cedo hj</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/_xOZd_Vb81_QRSeQ1wjkyouRi2zvvMdUKrzoQVGGB6dlyvWutARzDMZydqNHx7kKMeI8d4Bo"/>
+    <span class="author">Deep Insider</span>
+    <span class="text">Se não tiver algo q agrade me fala Vini, meu objetivo é apenas noticiar o que acontece. Mas pode marcar lá os comentários q eu apago.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">tropa de Cristo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/_xOZd_Vb81_QRSeQ1wjkyouRi2zvvMdUKrzoQVGGB6dlyvWutARzDMZydqNHx7kKMeI8d4Bo"/>
+    <span class="author">Deep Insider</span>
+    <span class="text">EU QUERO SER DA TROPA DE CRISTO VINAO!!!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:31</span>
+    <img class="avatar" src="https://yt4.ggpht.com/qCq7e3eAbEhG4Fgswp2adqYC5Rw03yARTZnXGg2ATPs2lIyJMTa3UFIO98oVIO_TE_CMprBB"/>
+    <span class="author">SAGA</span>
+    <span class="text">o sette um cortes é gente boa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:31</span>
+    <img class="avatar" src="https://yt4.ggpht.com/YJeNOA93P5eufoPa6E0eCDmq6Q82Uh6EKraTF-nHI5jGFR2VoW9Lh_62GGJahlbH8wyAGczrG0E"/>
+    <span class="author">Neitan </span>
+    <span class="text">Sou cristão conservador posso fazer parte da tropa de Cristo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Vamos denunciar a perseguição religiosa </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bAuk97Td9fXi1YkZTEBu6iwUFh8A4YX2zfSm9_KdhHfBKLZz6c3mHuanjWmQd6dAp_br8bASkHo"/>
+    <span class="author">Parque do Zé Colmeia</span>
+    <span class="text">Glória</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">Vini, você vai tentar evangelizar a deep tube? É isso?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/MI4rzd9SQ_ApGSBaDg0bCotnW-UeDjPJ3jVRl2P7m155qqIkCpshvMfkv8BBC5DAh0ujhYNa"/>
+    <span class="author">Teste 1</span>
+    <span class="text">Quem vai ganhar hoje, real madrid ou atletico de madrid?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">Tá certo mesmo Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">KKKK</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/qCq7e3eAbEhG4Fgswp2adqYC5Rw03yARTZnXGg2ATPs2lIyJMTa3UFIO98oVIO_TE_CMprBB"/>
+    <span class="author">SAGA</span>
+    <span class="text">General Vini falou ta falado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">isso aí Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">é isso aí vini. Estou com você</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">Tem gente achando que vai te acovardar </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">o Sr está sofrendo perseguição religiosa, oremos </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">vamos orar por você</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">Os filhos do diabo criou um fake meu na semana passada para caluniar o homem de Deus usando minha imagem</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/k1zCTOiIcQ-Tt5pCOzZ6wio3FJu8Jtlv3EK4oMt4vx4Nz1lcPzPYQINz7aBqU6d-2_tTJ5SdDA"/>
+    <span class="author">Evandjelo</span>
+    <span class="text">aeeewee</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">eu mesmo estou orando para você desde que entrei na deep tube, Deus é com nós</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:14:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Deus está com o casca grossa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:14:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/k1zCTOiIcQ-Tt5pCOzZ6wio3FJu8Jtlv3EK4oMt4vx4Nz1lcPzPYQINz7aBqU6d-2_tTJ5SdDA"/>
+    <span class="author">Evandjelo</span>
+    <span class="text">Vini, vi a live de 3 anos atrás quando tu foste comer com o Mateus. Ele é novinho, não é? Pensara eu que fosse uma velhaco.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:14:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">tropa de Cristo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:14:58</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">eu vou ser membro</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bfcJRaG3j3O92txz1YQxpnuCjlZBK3XnSZYBrP7soSAIMo0qKo7SOV2EWVwGNFgtysdX5hMtgw"/>
+    <span class="author">Guinness</span>
+    <span class="text">Vini, a nova onda do momento pra ganhar dinheiro é IA vertical!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Elkarv6myzGkaTGPN5iFQ0fEj95kgozGhd74O-Rge5eTLttMp9X3PhmViB_Oc52P6Qzgbz4bDA"/>
+    <span class="author">Øystein Aarseth</span>
+    <span class="text">Kkkkkkkkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/MI4rzd9SQ_ApGSBaDg0bCotnW-UeDjPJ3jVRl2P7m155qqIkCpshvMfkv8BBC5DAh0ujhYNa"/>
+    <span class="author">Teste 1</span>
+    <span class="text">vai rivalizar com a tropa de israel?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">tá vendo aí cacete</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Eu to aqui</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/k1zCTOiIcQ-Tt5pCOzZ6wio3FJu8Jtlv3EK4oMt4vx4Nz1lcPzPYQINz7aBqU6d-2_tTJ5SdDA"/>
+    <span class="author">Evandjelo</span>
+    <span class="text">Vinão acordou no pique hoje:finger-red-number-one::finger-red-number-one:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">fale mesmo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Voltei de bucho cheio</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/qCq7e3eAbEhG4Fgswp2adqYC5Rw03yARTZnXGg2ATPs2lIyJMTa3UFIO98oVIO_TE_CMprBB"/>
+    <span class="author">SAGA</span>
+    <span class="text">Vini está parecendo o Rica Games proclamando o comando da pracinha</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8kE3LA01KlmB7nskZUIKln20j27IemY3mMVwxT89lnFB1VKmb3HO5Rb8_Yre9xGhE-6BMsp6_Q"/>
+    <span class="author">Padre sonso</span>
+    <span class="text">estou com vc vinao grandao</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Elkarv6myzGkaTGPN5iFQ0fEj95kgozGhd74O-Rge5eTLttMp9X3PhmViB_Oc52P6Qzgbz4bDA"/>
+    <span class="author">Øystein Aarseth</span>
+    <span class="text">Do nada isso vini? Vão realmente ter a Tropa de Cristo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">Vini, você sentiu Deus falando com você essa madrugada sobre isso?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">posta deep insider</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Novinho nada, tenho 26 anos nas costas já</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">26 anos é novo, o Vini é um ancião de 80 anos, nós jovens somos seus discípulos </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, hoje na marmita tinha arroz, purê de batata, calabresa temperada com cebola e tomate, e um ovo cozido. Mandei bem?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bfcJRaG3j3O92txz1YQxpnuCjlZBK3XnSZYBrP7soSAIMo0qKo7SOV2EWVwGNFgtysdX5hMtgw"/>
+    <span class="author">Guinness</span>
+    <span class="text">Amém, Vini! Deus é soberano sobre todas as coisas! Os servos do demônio irão cair em nome de Jesus! Isso é uma profecia! A Deeptube é de Jesus!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Mateus Dantas sua genética e parecida com a da Alessandra Negrini. parabéns</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/cveN7pyDoB5epJnfuFQ6jU1P-n46tmUYIVc8umYFv7LswsnxdwxY5dyykOJUGF2z3IH4cuTCj84"/>
+    <span class="author">APÓSTOLO VALDEMIRO SANTIAGO</span>
+    <span class="text">O TRUMP , DISSE QUE VAI TAXAR O SEU CANAL</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8kE3LA01KlmB7nskZUIKln20j27IemY3mMVwxT89lnFB1VKmb3HO5Rb8_Yre9xGhE-6BMsp6_Q"/>
+    <span class="author">Padre sonso</span>
+    <span class="text">quero entrar para tropa de Cristo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">As máquinas pararam, agora quem fala grosso somos nós!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Falsos imperador já mandou crucificar Cristo , falsas rainhas já blasfemaram seu nome na história, mas ele segue vivo </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">@Culinária Invertebrada :bug: Nem tanto, nem tanto....</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:17:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Acabei de voltar agora do almoço</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:17:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">meio - dia e horário de almoçar Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:17:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Já deixei um chocolate separado aqui pra sobremesa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:17:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">Vini, amanhã a deep tube vai mudar para sempre?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:17:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/cveN7pyDoB5epJnfuFQ6jU1P-n46tmUYIVc8umYFv7LswsnxdwxY5dyykOJUGF2z3IH4cuTCj84"/>
+    <span class="author">APÓSTOLO VALDEMIRO SANTIAGO</span>
+    <span class="text">O SENHOR FALA, FALA, MAS NÃO CUMPRE</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:17:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Elkarv6myzGkaTGPN5iFQ0fEj95kgozGhd74O-Rge5eTLttMp9X3PhmViB_Oc52P6Qzgbz4bDA"/>
+    <span class="author">Øystein Aarseth</span>
+    <span class="text">Vai ser igual a tropa do deita? Vai ter Telegram para causar o terror no azulao, Amarelo, Deita e Maldito da vila prudente?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:17:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Tá melhorando</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:17:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">@Mateus Dantas, na semana passada criaram um fake meu pra caluniar o vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, ME COLOCA NASSA TROPA, QUE VOU ARREBENTAR COM ESSA TURMA. VOU COMEÇAR PELO DEITA, ELE É UM DROGADO</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">@Guilherme Delara Foi mesmo? Achei que era vc falando um monte de barbaridade aqui</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/eXIpTsFYYXf8yHRUanGLCKZfMb4aA5blz8hJ_vXe4FdiCeRlQUvW8lGiLbWf7Q-l06CKsFtd"/>
+    <span class="author">jaison vale</span>
+    <span class="text">vinni vai entregar todos os crimes do bluezão</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/k1zCTOiIcQ-Tt5pCOzZ6wio3FJu8Jtlv3EK4oMt4vx4Nz1lcPzPYQINz7aBqU6d-2_tTJ5SdDA"/>
+    <span class="author">Evandjelo</span>
+    <span class="text">15:25 já. a live hoje veio tarde</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/cTtR21d9cvncJ67OkRzMXZOsh_y6EfAXjfAA9RB5FJIKT1LK0Xkc3jxDKV89qxBO3VlG-2t8"/>
+    <span class="author">ZNS</span>
+    <span class="text">boa tarde grande vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">Já tiveram imperadores perseguindo cristãos e nunca foi o suficiente para eles desistirem, estão achando que um mendigo vai fazer um servo de jeová desistir</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bfcJRaG3j3O92txz1YQxpnuCjlZBK3XnSZYBrP7soSAIMo0qKo7SOV2EWVwGNFgtysdX5hMtgw"/>
+    <span class="author">Guinness</span>
+    <span class="text">Vini, estava afastado por muito tempo na internet por estar focando em algumas coisas. Me aproximei de Cristo, parei com antigos vícios (álcool) e comecei a focar em negócios, livros e autocuidado.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bfcJRaG3j3O92txz1YQxpnuCjlZBK3XnSZYBrP7soSAIMo0qKo7SOV2EWVwGNFgtysdX5hMtgw"/>
+    <span class="author">Guinness</span>
+    <span class="text">Foi a melhor coisa que fiz da minha vida</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, minha compra bateu aí já? Tá pra chegar amanhã</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">O DEITA USA TODO TIPO DE DROGA</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, quem é a pessoa por trás desses "milhares" de pedidos?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Que isso Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/k1zCTOiIcQ-Tt5pCOzZ6wio3FJu8Jtlv3EK4oMt4vx4Nz1lcPzPYQINz7aBqU6d-2_tTJ5SdDA"/>
+    <span class="author">Evandjelo</span>
+    <span class="text">@Icarus o Lúcido :raising_hands::raising_hands::raising_hands::raising_hands:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Nem imperadores e nem rainhas, quem manda é Jesus</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:10</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Saquear em que sentido?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">Mateus você será da tropa de Cristo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Então vai acabar com o canal?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/qCq7e3eAbEhG4Fgswp2adqYC5Rw03yARTZnXGg2ATPs2lIyJMTa3UFIO98oVIO_TE_CMprBB"/>
+    <span class="author">SAGA</span>
+    <span class="text">Vini, a tropa de cristi será anunciada no canal Vini Silva?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/qCq7e3eAbEhG4Fgswp2adqYC5Rw03yARTZnXGg2ATPs2lIyJMTa3UFIO98oVIO_TE_CMprBB"/>
+    <span class="author">SAGA</span>
+    <span class="text">cristo*</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">@Eduardo Nunes 🇦🇲 Não sei se sou digno </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">KKKKKKK</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">chat Brasil foi proibido?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">amém</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/cTtR21d9cvncJ67OkRzMXZOsh_y6EfAXjfAA9RB5FJIKT1LK0Xkc3jxDKV89qxBO3VlG-2t8"/>
+    <span class="author">ZNS</span>
+    <span class="text">eles estão querendo prejudicar o nosso missionário, mas Deus é maior !</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Kkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Que isso </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Nunca vi te perseguirem por pregar a palavra dele </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Ele vai acabar com o canal? Alguém me explica isso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:31</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">Vini acordo cheio da unção</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/cTtR21d9cvncJ67OkRzMXZOsh_y6EfAXjfAA9RB5FJIKT1LK0Xkc3jxDKV89qxBO3VlG-2t8"/>
+    <span class="author">ZNS</span>
+    <span class="text">Amém</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">Mateus Dantas, o vini está sério com esse negócio, veado. Está até falando que amanhã será um dia importante</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/qCq7e3eAbEhG4Fgswp2adqYC5Rw03yARTZnXGg2ATPs2lIyJMTa3UFIO98oVIO_TE_CMprBB"/>
+    <span class="author">SAGA</span>
+    <span class="text">@Mateus Dantas acabar não vai não</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/YJeNOA93P5eufoPa6E0eCDmq6Q82Uh6EKraTF-nHI5jGFR2VoW9Lh_62GGJahlbH8wyAGczrG0E"/>
+    <span class="author">Neitan </span>
+    <span class="text">Vai acabar esse canal de humor?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/_Bds73plInya2E4CuCp4EwLaP-WLXZ7dz6BnNNTUaH9eifiJ5cgoK0ZQ0vrziKAW01mb_gbK"/>
+    <span class="author">Francisco Saraiva | Negócios &amp; Investimentos </span>
+    <span class="text">Caraca não acredito</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, MAS TEM QUE ESCOLHER A RELIGIÃO PRINCIPAL DA TROPA. EU VOTO QUE SEJA A CATÓLICA</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/_Bds73plInya2E4CuCp4EwLaP-WLXZ7dz6BnNNTUaH9eifiJ5cgoK0ZQ0vrziKAW01mb_gbK"/>
+    <span class="author">Francisco Saraiva | Negócios &amp; Investimentos </span>
+    <span class="text">Livezinha no almoço </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Atenção Vini Sette decreta o fim do seu canal de lives</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:22:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">Mateus, ele vai lançar a tropa de Cristo para evangelizar a deep tube</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:22:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Clipem aí</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:22:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/_Bds73plInya2E4CuCp4EwLaP-WLXZ7dz6BnNNTUaH9eifiJ5cgoK0ZQ0vrziKAW01mb_gbK"/>
+    <span class="author">Francisco Saraiva | Negócios &amp; Investimentos </span>
+    <span class="text">Kd Babonildo meu amigo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:22:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">Agora é só no canal Vini Silva</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:22:12</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">A mão vai pesar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:22:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bfcJRaG3j3O92txz1YQxpnuCjlZBK3XnSZYBrP7soSAIMo0qKo7SOV2EWVwGNFgtysdX5hMtgw"/>
+    <span class="author">Guinness</span>
+    <span class="text">Amém! estou contigo, Vini! estou contigo nesse projeto da Tropa de Cristo! O diabo jamais prevalecerá, quem a única autoridade que existe é a dEle!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:22:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/tXZEII9L2jU9I7p5CFVIxbQIvGUMQIyaT8Bl7IP-iMu3gNepqMoemTb3y1aav4FoIspBHdhtIA"/>
+    <span class="author">Pif Paf Man</span>
+    <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:22:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/tXZEII9L2jU9I7p5CFVIxbQIvGUMQIyaT8Bl7IP-iMu3gNepqMoemTb3y1aav4FoIspBHdhtIA"/>
+    <span class="author">Pif Paf Man</span>
+    <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:22:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Querem calar um servo de Deus e Jesus de pregar sua palavra, olha a audácia </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:22:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, eu não sou santo, mas também não sou bandido</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">mão vai pesar trio satânico deep tube</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">@Mateus Dantas, Já entrou no meu canal?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Kkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/qCq7e3eAbEhG4Fgswp2adqYC5Rw03yARTZnXGg2ATPs2lIyJMTa3UFIO98oVIO_TE_CMprBB"/>
+    <span class="author">SAGA</span>
+    <span class="text">isso mesmo Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">@Guilherme Delara Quando aconteceu essa situação eu não era moderador </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:10</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">Todas as hostes do mal vai tremer</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Tropa de Cristo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Se Deus é por nós, quem será contra nós </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l8Y_NiWaUqXUXCfmY36ZqeN5GMY3Ee0lPRL3KMSqw"/>
+    <span class="author">Rafael</span>
+    <span class="text">gordão racista. kkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ngkrJatL3mN-eEvr-gLRzbxKgyrNaI3bzx0ORZgMwZdRQ"/>
+    <span class="author">Luna</span>
+    <span class="text">Voltei hoje, estou chorando de emoção com esse momento</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/gjkZAA95YSasqFvWvmO9X2Dj5QifU9O5BOgsqFrxOTVmiy6bOki6mNAdq68pUCglDOMjfqNeVrE"/>
+    <span class="author">Leonardo Cruz</span>
+    <span class="text">Agora o bagulho ficou sério</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l8Y_NiWaUqXUXCfmY36ZqeN5GMY3Ee0lPRL3KMSqw"/>
+    <span class="author">Rafael</span>
+    <span class="text">deixe de conversa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">A justiça divina ainda vai chegar a todos que estão te difamando </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, eu não sou santo, mas também não sou bandido</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/cTtR21d9cvncJ67OkRzMXZOsh_y6EfAXjfAA9RB5FJIKT1LK0Xkc3jxDKV89qxBO3VlG-2t8"/>
+    <span class="author">ZNS</span>
+    <span class="text">o missionário está apenas querendo pregar a palavra, e os inimigos tentando derrubar .</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, minha compra bateu aí já? Tá pra chegar amanhã</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/qCq7e3eAbEhG4Fgswp2adqYC5Rw03yARTZnXGg2ATPs2lIyJMTa3UFIO98oVIO_TE_CMprBB"/>
+    <span class="author">SAGA</span>
+    <span class="text">a revolução tem que começar no esgoto da Internet</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">As máquinas pararam, agora quem fala grosso somos nós!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/RCxZ1avYmCERdy0wQlvYjUVWb6CmSkYFtvLbBxqw57gF1Ipkp2bjj9G14qXSMyjL5sBH4SUtfA"/>
+    <span class="author">Lula Oficial </span>
+    <span class="text">kkkk tudo isso pra fracassar no final</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, eu não sou santo, mas também não sou bandido</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:12</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Não vão calar a palavra de Cristo </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/gjkZAA95YSasqFvWvmO9X2Dj5QifU9O5BOgsqFrxOTVmiy6bOki6mNAdq68pUCglDOMjfqNeVrE"/>
+    <span class="author">Leonardo Cruz</span>
+    <span class="text">kkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">kkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">Vini fechado com Jesus VS Mendigo servo de Satanás, a vitória é clara</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Elkarv6myzGkaTGPN5iFQ0fEj95kgozGhd74O-Rge5eTLttMp9X3PhmViB_Oc52P6Qzgbz4bDA"/>
+    <span class="author">Øystein Aarseth</span>
+    <span class="text">Não vai ter mais reacts? Não vai ter mais canal de humor?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Atenção Vini Sette decreta o fim do seu canal de lives</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Acabou o canal</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">três demônio contra Vini bem vence</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">essa será a batalha final antes do Apocalipse</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Aqui vai virar o Vini Silva</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Explica essa história professor, tu vai acabar com o canal mesmo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/eXIpTsFYYXf8yHRUanGLCKZfMb4aA5blz8hJ_vXe4FdiCeRlQUvW8lGiLbWf7Q-l06CKsFtd"/>
+    <span class="author">jaison vale</span>
+    <span class="text">vini vai ganhar esse processo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/cTtR21d9cvncJ67OkRzMXZOsh_y6EfAXjfAA9RB5FJIKT1LK0Xkc3jxDKV89qxBO3VlG-2t8"/>
+    <span class="author">ZNS</span>
+    <span class="text">isso fica gravado para uma possível defesa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Isso aí tá mal explicado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/RCxZ1avYmCERdy0wQlvYjUVWb6CmSkYFtvLbBxqw57gF1Ipkp2bjj9G14qXSMyjL5sBH4SUtfA"/>
+    <span class="author">Lula Oficial </span>
+    <span class="text">Como que vai ser o fim do canal se o vini depende de doação pra sobreviver kkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/RCxZ1avYmCERdy0wQlvYjUVWb6CmSkYFtvLbBxqw57gF1Ipkp2bjj9G14qXSMyjL5sBH4SUtfA"/>
+    <span class="author">Lula Oficial </span>
+    <span class="text">Como que vai ser o fim do canal se o vini depende de doação pra sobreviver kkkkkk.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/RCxZ1avYmCERdy0wQlvYjUVWb6CmSkYFtvLbBxqw57gF1Ipkp2bjj9G14qXSMyjL5sBH4SUtfA"/>
+    <span class="author">Lula Oficial </span>
+    <span class="text">Como que vai ser o fim do canal se o vini depende de doação pra sobreviver kkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">O Vini está sendo perseguido ele está em uma batalha e precisa professar a palavra.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Explica essa história professor, tu vai acabar com o canal mesmo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Isso tá mal explicado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Elkarv6myzGkaTGPN5iFQ0fEj95kgozGhd74O-Rge5eTLttMp9X3PhmViB_Oc52P6Qzgbz4bDA"/>
+    <span class="author">Øystein Aarseth</span>
+    <span class="text">Foi banido pessoal? Tao vendo meu comentário?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">ele não vai acabar com canal vai pregar palavra em uma forma de afronta demônio que tão se levantando</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Todos os canais vão acabar e vai ficar só o canal Vini Silva, é isso que eu entendi</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">@Øystein Aarseth Não mano</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:28:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Elkarv6myzGkaTGPN5iFQ0fEj95kgozGhd74O-Rge5eTLttMp9X3PhmViB_Oc52P6Qzgbz4bDA"/>
+    <span class="author">Øystein Aarseth</span>
+    <span class="text">Responde aí vini? O povo do canal gosta dos seus conteúdos religiosos mas também gostamos de chat brasil e reacts</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:28:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Responde aí professor</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:28:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Explica isso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/cTtR21d9cvncJ67OkRzMXZOsh_y6EfAXjfAA9RB5FJIKT1LK0Xkc3jxDKV89qxBO3VlG-2t8"/>
+    <span class="author">ZNS</span>
+    <span class="text">vai ter chat Brasil hoje, vini ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/gjkZAA95YSasqFvWvmO9X2Dj5QifU9O5BOgsqFrxOTVmiy6bOki6mNAdq68pUCglDOMjfqNeVrE"/>
+    <span class="author">Leonardo Cruz</span>
+    <span class="text">kkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Não presto atenção em que?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">kkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Elkarv6myzGkaTGPN5iFQ0fEj95kgozGhd74O-Rge5eTLttMp9X3PhmViB_Oc52P6Qzgbz4bDA"/>
+    <span class="author">Øystein Aarseth</span>
+    <span class="text">Kkkkkkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Então explica direito isso cara</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">Os servos do demônio se uniram para ferrar o Vini, mas eu acredito que ele vai sair por cima, o mal nunca vence, ele pode ganhar uma batalha, mas ele jamais vence a guerra, eu acredito em Vini sette</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ngkrJatL3mN-eEvr-gLRzbxKgyrNaI3bzx0ORZgMwZdRQ"/>
+    <span class="author">Luna</span>
+    <span class="text">Deeptube vai tremer, a tempestade de glória vai descer e todas as maldições vão cair por terra</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l8Y_NiWaUqXUXCfmY36ZqeN5GMY3Ee0lPRL3KMSqw"/>
+    <span class="author">Rafael</span>
+    <span class="text">esse gordão é 171. kkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/gjkZAA95YSasqFvWvmO9X2Dj5QifU9O5BOgsqFrxOTVmiy6bOki6mNAdq68pUCglDOMjfqNeVrE"/>
+    <span class="author">Leonardo Cruz</span>
+    <span class="text">Mateus ele tá declarando guerra calma aí</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l8Y_NiWaUqXUXCfmY36ZqeN5GMY3Ee0lPRL3KMSqw"/>
+    <span class="author">Rafael</span>
+    <span class="text">fica blasfemando</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Elkarv6myzGkaTGPN5iFQ0fEj95kgozGhd74O-Rge5eTLttMp9X3PhmViB_Oc52P6Qzgbz4bDA"/>
+    <span class="author">Øystein Aarseth</span>
+    <span class="text">Mas você já faz isso vini.. Sempre tem reacts religiosos no canal</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:30:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">mkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:30:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ngkrJatL3mN-eEvr-gLRzbxKgyrNaI3bzx0ORZgMwZdRQ"/>
+    <span class="author">Luna</span>
+    <span class="text">Até quando o Vini faz Chat Brasil ele faz pra evangelizar os ímpios e impuros</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:30:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">O Vini tá fervendo, o que aconteceu com ele hoje</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:30:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/fQ2jvUPF1cG9cHAMKSE2Eq0Yjck1QEzFeRcSoJTwXkwHV4rLHHv9riOyfrXm5tQtpxVobml72bw"/>
+    <span class="author">Silvana </span>
+    <span class="text">:eye:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:30:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">A Justiça Divina é inevitável</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:30:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vc tem o seu canal do Vini Silva</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:31:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/k1zCTOiIcQ-Tt5pCOzZ6wio3FJu8Jtlv3EK4oMt4vx4Nz1lcPzPYQINz7aBqU6d-2_tTJ5SdDA"/>
+    <span class="author">Evandjelo</span>
+    <span class="text">@Mateus Dantas acho que chegou a intimação</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:31:10</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Acabou o milho, acabou a pipoca! Perseguição religiosa não vai ocorrer, não podem impedir a palavra de Cristo </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:31:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ngkrJatL3mN-eEvr-gLRzbxKgyrNaI3bzx0ORZgMwZdRQ"/>
+    <span class="author">Luna</span>
+    <span class="text">Eu sou da Tropa de Cristo, amém</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:31:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">E quem ficar em cima do muro, vai ser bloqueado?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:31:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/cTtR21d9cvncJ67OkRzMXZOsh_y6EfAXjfAA9RB5FJIKT1LK0Xkc3jxDKV89qxBO3VlG-2t8"/>
+    <span class="author">ZNS</span>
+    <span class="text">@Evandjelo eu também acho !</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:31:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/MHwy7DkRgiDS7FGKJsSMwLrhmk0hrF-g3iT30tgBUFCE-tpXOEK-ZUQmRpsIMqYY6lpAZSDx"/>
+    <span class="author">Pedro Henrique Albuquerque </span>
+    <span class="text">estou com você Vini! Deus abençoe sempre! </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:31:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">E quem ficar em cima do muro, vai ser bloqueado?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:31:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">Eu to com raiva daquele mendigo, ele tá tentando ferrar com o Vini sem motivo algum, o cara tem inveja da paz espiritual do Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:31:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">kkkkkkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:32:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Calma Vini, pelo amor de Deus</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:32:12</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Meu Deus, o que aconteceu pra ele estar assim hoje</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:32:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">eita glória tão lascado trio satânico</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:32:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Elkarv6myzGkaTGPN5iFQ0fEj95kgozGhd74O-Rge5eTLttMp9X3PhmViB_Oc52P6Qzgbz4bDA"/>
+    <span class="author">Øystein Aarseth</span>
+    <span class="text">Tá com muita ira vini... Calma aí</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:32:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Ele tá fervendo </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:32:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Q7Aj7iaONFnLjlsidYvBtI0ahxhtoqgvTnxfZxkJfklO6bwgBcGyny1zHXvbKbB7chtMNbMF"/>
+    <span class="author">agasilva75</span>
+    <span class="text">cuidado pra não ficar fanático Vini Deus não aceita fanatismo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:32:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">@Mateus Dantas ou vc tá com Cristo, ou não está </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:32:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, EU TÔ NA TROPA! VAI SER UM PRAZER BOTAR PRA LASCAR NO DEITA, ELE É UM DROGADO 🙏🏿:skull_and_crossbones:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:32:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">Vamo acabar com eles Vini, a gente vai derrotar o mal</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:32:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Q7Aj7iaONFnLjlsidYvBtI0ahxhtoqgvTnxfZxkJfklO6bwgBcGyny1zHXvbKbB7chtMNbMF"/>
+    <span class="author">agasilva75</span>
+    <span class="text">salve Mateus Dantas</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:32:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">@agasilva75 Salve amigo, será que vem o tetra? kkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:32:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/fQ2jvUPF1cG9cHAMKSE2Eq0Yjck1QEzFeRcSoJTwXkwHV4rLHHv9riOyfrXm5tQtpxVobml72bw"/>
+    <span class="author">Silvana </span>
+    <span class="text">:flushed_face:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:33:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Calma Vini, pelo amor de Deus</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:33:10</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Mateus, uma pessoa não pode servir a dois deuses </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:33:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/gjkZAA95YSasqFvWvmO9X2Dj5QifU9O5BOgsqFrxOTVmiy6bOki6mNAdq68pUCglDOMjfqNeVrE"/>
+    <span class="author">Leonardo Cruz</span>
+    <span class="text">Vini vai exorcizar a Deeptube</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:33:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">Como que Deus não aceita fanático? os fanáticos por Deus são os que ele mais gosta</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:33:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">E quem ficar em cima do muro, vai ser bloqueado?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:33:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">demônio vão gritar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:33:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Q7Aj7iaONFnLjlsidYvBtI0ahxhtoqgvTnxfZxkJfklO6bwgBcGyny1zHXvbKbB7chtMNbMF"/>
+    <span class="author">agasilva75</span>
+    <span class="text">Mateus domingo começa o show rumo ao tetra</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:33:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Elkarv6myzGkaTGPN5iFQ0fEj95kgozGhd74O-Rge5eTLttMp9X3PhmViB_Oc52P6Qzgbz4bDA"/>
+    <span class="author">Øystein Aarseth</span>
+    <span class="text">Kkkkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:33:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/fQ2jvUPF1cG9cHAMKSE2Eq0Yjck1QEzFeRcSoJTwXkwHV4rLHHv9riOyfrXm5tQtpxVobml72bw"/>
+    <span class="author">Silvana </span>
+    <span class="text">você viu o que tá acontecendo com frei Gilson?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:33:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/WXyQ_nbbB5OnUm3NFDBwlYNMYDpIvDCyyMaQR_H6wH1iOHq2R6BGcZn24fys1TktmNjyACV-4A"/>
+    <span class="author">VINICIUS BRASIL</span>
+    <span class="text">EAY VINI SETE</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:34:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/fQ2jvUPF1cG9cHAMKSE2Eq0Yjck1QEzFeRcSoJTwXkwHV4rLHHv9riOyfrXm5tQtpxVobml72bw"/>
+    <span class="author">Silvana </span>
+    <span class="text">a live do frei Gilson tá batendo um milhão</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:34:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/WXyQ_nbbB5OnUm3NFDBwlYNMYDpIvDCyyMaQR_H6wH1iOHq2R6BGcZn24fys1TktmNjyACV-4A"/>
+    <span class="author">VINICIUS BRASIL</span>
+    <span class="text">LIVE NO ALMOÇO</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:34:31</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">Boa Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:34:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, mas a gente não deve se preocupar com outras coisas a não ser os demônios dessa deeptube?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:34:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Um homem não pode servir a dois senhores. Está com Cristo ou não está </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:34:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ngkrJatL3mN-eEvr-gLRzbxKgyrNaI3bzx0ORZgMwZdRQ"/>
+    <span class="author">Luna</span>
+    <span class="text">Acho que ele tá falando do Lisinho</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Não faria mais sentido criar um grupo pra evangelizar para outras pessoas sem ser da deeptube?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/cTtR21d9cvncJ67OkRzMXZOsh_y6EfAXjfAA9RB5FJIKT1LK0Xkc3jxDKV89qxBO3VlG-2t8"/>
+    <span class="author">ZNS</span>
+    <span class="text">os servos do demônio estão tirando a paz do nosso missionário , Deus está vendo esses falsos testemunhos e essa perseguição</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">kkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Mateus, não tema imperadores ou rainhas, tema apenas o senhor </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/gjkZAA95YSasqFvWvmO9X2Dj5QifU9O5BOgsqFrxOTVmiy6bOki6mNAdq68pUCglDOMjfqNeVrE"/>
+    <span class="author">Leonardo Cruz</span>
+    <span class="text">kkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">Tem três servos do mal perseguindo o Vini, estão se levantando contra ele, os inscritos verdadeiros vão defende-lo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">Mateus tá viajando kk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bAuk97Td9fXi1YkZTEBu6iwUFh8A4YX2zfSm9_KdhHfBKLZz6c3mHuanjWmQd6dAp_br8bASkHo"/>
+    <span class="author">Parque do Zé Colmeia</span>
+    <span class="text">assim seja!!!!!!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:36:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Não, ainda tô confuso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:36:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Mateus, só tema a Deus, não precisa temer farinhas ou imperadores </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:36:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">O HOMEM DEITA VAI SER O PRIMEIRO QUE VOU BOTAR PRA LASCAR, ELE USA TODO TIPO DE DROGA.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:36:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">O HOMEM DEITA VAI SER O PRIMEIRO QUE VOU BOTAR PRA LASCAR, ELE USA TODO TIPO DE DROGA.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:36:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/cTtR21d9cvncJ67OkRzMXZOsh_y6EfAXjfAA9RB5FJIKT1LK0Xkc3jxDKV89qxBO3VlG-2t8"/>
+    <span class="author">ZNS</span>
+    <span class="text">@Icarus o Lúcido nosso professor deve ter sido intimado por essas falsas acusações</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">A perseguição contra o Rica Games também tá forte</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, eu não sou santo, mas também não sou bandido</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X_dH7WJz9I-mrnY76L39Z88Fqqntz9kffedsRWiT7b8aE4cOh89y0aeSn33NHXL_N4CmhMx6UQ"/>
+    <span class="author">Icarus o Lúcido</span>
+    <span class="text">Eu vi, estou com muita raiva desses perseguidores</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Q7Aj7iaONFnLjlsidYvBtI0ahxhtoqgvTnxfZxkJfklO6bwgBcGyny1zHXvbKbB7chtMNbMF"/>
+    <span class="author">agasilva75</span>
+    <span class="text">vini queira comprar essa briga somente o Criador consegue batalhar vc e uma simpatia criatura somente ore</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/k1zCTOiIcQ-Tt5pCOzZ6wio3FJu8Jtlv3EK4oMt4vx4Nz1lcPzPYQINz7aBqU6d-2_tTJ5SdDA"/>
+    <span class="author">Evandjelo</span>
+    <span class="text">Vini Sette canalizou o divino hoje</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, NÃO COLOCA O @MATEUS DANTAS NA TROPA, ELE OUVE MÚSICA DO KAPETA</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, eu não sou santo, mas também não sou bandido</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:38:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Eu não sinto que devo pertencer a tropa e nem quero sair daqui do canal, o que eu faço?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:38:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ngkrJatL3mN-eEvr-gLRzbxKgyrNaI3bzx0ORZgMwZdRQ"/>
+    <span class="author">Luna</span>
+    <span class="text">Lisinho, toma cuidado, quem fica em cima do muro cai no colo do diabo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:38:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Temer somente Deus, não aos homens, sejam imperadores, rainhas ou juizes</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:39:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bAuk97Td9fXi1YkZTEBu6iwUFh8A4YX2zfSm9_KdhHfBKLZz6c3mHuanjWmQd6dAp_br8bASkHo"/>
+    <span class="author">Parque do Zé Colmeia</span>
+    <span class="text">vam bora !!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:39:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">kk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:39:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Eu to falando sair por vontade própria</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:39:31</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Não falei nada de vc tirar gente daqui</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:39:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Tu entendeu errado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:39:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/cTtR21d9cvncJ67OkRzMXZOsh_y6EfAXjfAA9RB5FJIKT1LK0Xkc3jxDKV89qxBO3VlG-2t8"/>
+    <span class="author">ZNS</span>
+    <span class="text">isso é covardia com um senhor de idade, com várias faculdades além do mais prega a palavra de Deus</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:39:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Minha compra já bateu aí Vini?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:40:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">kkkkkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:40:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:40:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">2 desodorantes </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:40:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bAuk97Td9fXi1YkZTEBu6iwUFh8A4YX2zfSm9_KdhHfBKLZz6c3mHuanjWmQd6dAp_br8bASkHo"/>
+    <span class="author">Parque do Zé Colmeia</span>
+    <span class="text">oferecimento sete lojas</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:40:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Desodorantes anti transpirante</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:40:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">MATEUS DANTAS VAI TUMULTUAR A TROPA, VINI!!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:41:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Vini, pela pregação acho que sua real missão é mesmo evangelizar </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:41:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Esse serve pra passar na sacola?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:41:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Esse mesmo, são dois em nome do Mateus Dantas</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:41:12</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Q7Aj7iaONFnLjlsidYvBtI0ahxhtoqgvTnxfZxkJfklO6bwgBcGyny1zHXvbKbB7chtMNbMF"/>
+    <span class="author">agasilva75</span>
+    <span class="text">porco rosa chapeiro vance Bruno Garcia que se cuidem o chicote vai estralar Vini foi convocado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:41:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">O meu foi desodorante, chega amanhã</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:41:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Esse serve pra passar na sacola?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:41:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Q7Aj7iaONFnLjlsidYvBtI0ahxhtoqgvTnxfZxkJfklO6bwgBcGyny1zHXvbKbB7chtMNbMF"/>
+    <span class="author">agasilva75</span>
+    <span class="text">passar na sacola qualé Mateus kkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:42:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">@agasilva75 O Vini que fala do antitranspirante na sacola kkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:43:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nINHTJPhny_c9j8w68T5GJ0ox512fxaQYW8iJah4xAu7E"/>
+    <span class="author">Max Sandler</span>
+    <span class="text">Bora. almoçar Bar do Betinho santo cristo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:43:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/eXIpTsFYYXf8yHRUanGLCKZfMb4aA5blz8hJ_vXe4FdiCeRlQUvW8lGiLbWf7Q-l06CKsFtd"/>
+    <span class="author">jaison vale</span>
+    <span class="text">bluezão fala que tu não tem igreja</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:43:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Verdade Vini </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:43:58</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">verdade Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, uma pergunta genuína: se Deus não tem autoridade sobre o diabo, pq ele não manda o diabo não fazer mais nada aqui?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nINHTJPhny_c9j8w68T5GJ0ox512fxaQYW8iJah4xAu7E"/>
+    <span class="author">Max Sandler</span>
+    <span class="text">E agora a palavra amiga com bispo Vini.Rede IURD</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/OlGiCxJF9UoiuAURLfUkLCaBy1qmhnKQyekCtoApoVkV5ayxdcrxaeqFv7Hu0-9orBHONb-ldA"/>
+    <span class="author">Magnum </span>
+    <span class="text">A mão pesará nós demônios em carne</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Q7Aj7iaONFnLjlsidYvBtI0ahxhtoqgvTnxfZxkJfklO6bwgBcGyny1zHXvbKbB7chtMNbMF"/>
+    <span class="author">agasilva75</span>
+    <span class="text">esses demônios aqui na deep tem nome chapeiro vance Bruno Garcia porco rosa vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bAuk97Td9fXi1YkZTEBu6iwUFh8A4YX2zfSm9_KdhHfBKLZz6c3mHuanjWmQd6dAp_br8bASkHo"/>
+    <span class="author">Parque do Zé Colmeia</span>
+    <span class="text">seja forte e corajoso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Essa palavra é muito necessária pra muita gente </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Elkarv6myzGkaTGPN5iFQ0fEj95kgozGhd74O-Rge5eTLttMp9X3PhmViB_Oc52P6Qzgbz4bDA"/>
+    <span class="author">Øystein Aarseth</span>
+    <span class="text">Viva a tropa de Cristo!!!!! Viva nosso grande missionário vini silva</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, uma pergunta genuína: se Deus não tem autoridade sobre o diabo, pq ele não manda o diabo não fazer mais nada aqui?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">já aprendi algo novo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:46:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Mas esse grupo não existe no Vini Silva?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:46:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">@Mateus Dantas se Deus fizer isso, ele tira o livre arbítrio, o bem tem que ser uma escolha, se vc não tem o outro lado, não tem escolha </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ngkrJatL3mN-eEvr-gLRzbxKgyrNaI3bzx0ORZgMwZdRQ"/>
+    <span class="author">Luna</span>
+    <span class="text">Tropa de choque santa do Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Q7Aj7iaONFnLjlsidYvBtI0ahxhtoqgvTnxfZxkJfklO6bwgBcGyny1zHXvbKbB7chtMNbMF"/>
+    <span class="author">agasilva75</span>
+    <span class="text">Otan organização do tratado do Atlântico Norte pra quem não sabe</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nINHTJPhny_c9j8w68T5GJ0ox512fxaQYW8iJah4xAu7E"/>
+    <span class="author">Max Sandler</span>
+    <span class="text">qual grupo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Tem</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Eu quis dizer que tem</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">kk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Falei errado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, uma pergunta genuína: se Deus tem autoridade sobre o diabo, pq ele não manda o diabo não fazer mais nada aqui?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Elkarv6myzGkaTGPN5iFQ0fEj95kgozGhd74O-Rge5eTLttMp9X3PhmViB_Oc52P6Qzgbz4bDA"/>
+    <span class="author">Øystein Aarseth</span>
+    <span class="text">Mateus tá no capeta</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Agora foi certo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, O FREDERIC ROGER É INIMIGO DA TROPA TAMBÉM???</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">EU FALEI ERRADO!!!!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:58</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">diabo só tocou em Jô permissão de Deus</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">EU FALEI ERRADO, PRESTA ATENÇÃO</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/OlGiCxJF9UoiuAURLfUkLCaBy1qmhnKQyekCtoApoVkV5ayxdcrxaeqFv7Hu0-9orBHONb-ldA"/>
+    <span class="author">Magnum </span>
+    <span class="text">Mateus ta sendo desviado, tem que ser salvo antes que o pior aconteça</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nINHTJPhny_c9j8w68T5GJ0ox512fxaQYW8iJah4xAu7E"/>
+    <span class="author">Max Sandler</span>
+    <span class="text">ihhhhhhh kkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Ja respondi essa Mateus, fácil essa questão </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, uma pergunta genuína: se Deus tem autoridade sobre o diabo, pq ele não manda o diabo não fazer mais nada aqui?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, O FREDERIC ROGER É INIMIGO DA TROPA TAMBÉM???</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">EU FALEI ERRADOOO</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Presta atenção!!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Q7Aj7iaONFnLjlsidYvBtI0ahxhtoqgvTnxfZxkJfklO6bwgBcGyny1zHXvbKbB7chtMNbMF"/>
+    <span class="author">agasilva75</span>
+    <span class="text">Vini trás de volta a ovelha Mateus Dantas pro seu rebanho</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nINHTJPhny_c9j8w68T5GJ0ox512fxaQYW8iJah4xAu7E"/>
+    <span class="author">Max Sandler</span>
+    <span class="text">ele falou errado vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, uma pergunta genuína: se Deus tem autoridade sobre o diabo, pq ele não manda o diabo não fazer mais nada aqui?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Eu falei errado cacete</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Presta atenção aqui cara</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:58</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Ele não viu que eu falei errado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Ele não manda o diabo fazer mais nada pq o caminho de Deus é uma escolha, ele nos deu o livre arbítrio, se ele simplesmente forçar a saída do antagonista, não vai existir escolha </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Q7Aj7iaONFnLjlsidYvBtI0ahxhtoqgvTnxfZxkJfklO6bwgBcGyny1zHXvbKbB7chtMNbMF"/>
+    <span class="author">agasilva75</span>
+    <span class="text">Vini eu acho que e a Verônica batendo tambor pro Mateus</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nINHTJPhny_c9j8w68T5GJ0ox512fxaQYW8iJah4xAu7E"/>
+    <span class="author">Max Sandler</span>
+    <span class="text">que grupo e esse Vini?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:50:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/_UEzUtIZObLTfzcDuWxvy_UYlrWPI4kU3ZemU3r0uQy1L1bVU161bf5BJyk24ZXx4LyQKn39UjE"/>
+    <span class="author">M1ST3R</span>
+    <span class="text">Vini p vc qual e o melhor o f22 raptor ou su 57 felon ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:51:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Tudo se resume a Deus criar o livre arbítrio, se ele forçar a fazer tudo que a gente acha que entende, não seria livre arbítrio </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:51:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VAMOS USAR O PODER DA FÉ PARA VER O JAVALI MORTO 🙏🏿:skull_and_crossbones:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:51:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">vini eu quero descer direito pro inferno</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:51:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/4hY_9FbwPz0VTWVwxf77jbAcopyVa8UFrnWDIAqVO1lz2ZmUI0k0KbZyS76-QsZdnHkdZoALvw"/>
+    <span class="author">Lucasdrk_</span>
+    <span class="text">Deus criou lúcifer sabendo que iria se rebelar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:51:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/DCBCNU2al39if2zRTUBD_yUjXbIDJAulG9-ay3uwD-v_KSBLsdv3vgHwmUQ6xF4kROM_Gzk6aQ"/>
+    <span class="author">Levi Bühler</span>
+    <span class="text">Tudo está exatamente como Deus planeja </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:51:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nmtsXDHjV3vsi3WJxNLeR6_m62bNa4V324lnRtnFy0u-rpS5RDcRIx863T-hajBZ4JOA"/>
+    <span class="author">Adilei Braga</span>
+    <span class="text">Olá! Vi a injustiça que você está sofrendo e quero te ajudar. Ofereço meus serviços de advocacia gratuitamente. Meu escritório fica na Av. Presidente Vargas, 500.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:51:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">entendi Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:52:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">agora entendi</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:52:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+    <span class="author">O bom de guerra</span>
+    <span class="text">Não entendi o título da live</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:52:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lNMMxatuetZwaNCF66TihsX6EKSc1dG4M-frIpzPcD_w"/>
+    <span class="author">L LAGE</span>
+    <span class="text">salve dr vinão a mão de Deus vai pesar na alice e caveira?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:52:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+    <span class="author">O bom de guerra</span>
+    <span class="text">kkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:53:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nmtsXDHjV3vsi3WJxNLeR6_m62bNa4V324lnRtnFy0u-rpS5RDcRIx863T-hajBZ4JOA"/>
+    <span class="author">Adilei Braga</span>
+    <span class="text">O senhor já está sendo acessorado judicialmente?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:53:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Cara, eu fiz uma pergunta séria, só que eu escrevi errado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:53:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Tu caiu metralhando pra cima de mim po</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:53:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nINHTJPhny_c9j8w68T5GJ0ox512fxaQYW8iJah4xAu7E"/>
+    <span class="author">Max Sandler</span>
+    <span class="text">ollembta de mim tbm Vini?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Eu falei um negócio errado e tu já veio falando uns 300 sermão de uma vez</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nINHTJPhny_c9j8w68T5GJ0ox512fxaQYW8iJah4xAu7E"/>
+    <span class="author">Max Sandler</span>
+    <span class="text">tá lendo chat não Mateus</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/cNUF23CgeSGqXEjQmN_9CJRQGNxGWjCmDjzWtP3xYw52MPpamgTwsQVqQwByzmDhkF34UHYdsA"/>
+    <span class="author">Big Smoke THE RETURNS</span>
+    <span class="text">Boa tarde</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/4hY_9FbwPz0VTWVwxf77jbAcopyVa8UFrnWDIAqVO1lz2ZmUI0k0KbZyS76-QsZdnHkdZoALvw"/>
+    <span class="author">Lucasdrk_</span>
+    <span class="text">Vini você ora em línguas estranhas ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:56:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">Vini você acha que igreja de jesus vai passa pela tribulação ou Será tirada?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:56:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nINHTJPhny_c9j8w68T5GJ0ox512fxaQYW8iJah4xAu7E"/>
+    <span class="author">Max Sandler</span>
+    <span class="text">quarta na IURD sábado no Adão e domingo reflexao</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:56:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Q7Aj7iaONFnLjlsidYvBtI0ahxhtoqgvTnxfZxkJfklO6bwgBcGyny1zHXvbKbB7chtMNbMF"/>
+    <span class="author">agasilva75</span>
+    <span class="text">Vini vou parar de te mandar putarias no insta</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:57:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, MAS NA TROPA, QUEM FOR CATÓLICO PODE ORAR PARA O SANTO FAVORITO?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:57:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/oUA-Emzt_Vw99hulc-RWFP7eX5sZk1P3kMJnkjWwkf7LSWWllYP2d-CVLv2BkEbq1TR2ouQ5Jg"/>
+    <span class="author">Taurus 57</span>
+    <span class="text">Vini, tem que pegar um desses e passar a ripa pra que sirva de aviso pros demais</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:58:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">vini tem memória jovem</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:58:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, MAS NA TROPA, QUEM FOR CATÓLICO PODE ORAR PARA O SANTO FAVORITO? :folded_hands::church::smiling_face_with_halo:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:59:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/_UEzUtIZObLTfzcDuWxvy_UYlrWPI4kU3ZemU3r0uQy1L1bVU161bf5BJyk24ZXx4LyQKn39UjE"/>
+    <span class="author">M1ST3R</span>
+    <span class="text">conheceu o RR soares ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:59:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kCawMGCxJp35m5W6Q86tseJ454KnjRv7WBNhTliUEgFks"/>
+    <span class="author">Luan Marinho</span>
+    <span class="text">Boa tarde Vinni</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:59:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/cTtR21d9cvncJ67OkRzMXZOsh_y6EfAXjfAA9RB5FJIKT1LK0Xkc3jxDKV89qxBO3VlG-2t8"/>
+    <span class="author">ZNS</span>
+    <span class="text">o senhor já andou pelo barreiro no Jatobá MG ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:59:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/4hY_9FbwPz0VTWVwxf77jbAcopyVa8UFrnWDIAqVO1lz2ZmUI0k0KbZyS76-QsZdnHkdZoALvw"/>
+    <span class="author">Lucasdrk_</span>
+    <span class="text">Quantos países você já evangelizou vini ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:59:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">você já pregou na rua?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:59:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/OlGiCxJF9UoiuAURLfUkLCaBy1qmhnKQyekCtoApoVkV5ayxdcrxaeqFv7Hu0-9orBHONb-ldA"/>
+    <span class="author">Magnum </span>
+    <span class="text">Vini, se o cara que agiu de má fé com o senhor e sentiu a mão pesar, se ele se arrepender você perdoa?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:00:10</span>
+    <img class="avatar" src="https://yt4.ggpht.com/oUA-Emzt_Vw99hulc-RWFP7eX5sZk1P3kMJnkjWwkf7LSWWllYP2d-CVLv2BkEbq1TR2ouQ5Jg"/>
+    <span class="author">Taurus 57</span>
+    <span class="text">Vini, pela sua idade vc tem direito de morder um mingau do governo hein</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:00:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, MAS NA TROPA, QUEM FOR CATÓLICO PODE ORAR PARA O SANTO FAVORITO? :folded_hands::church::smiling_face_with_halo:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:00:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lNMMxatuetZwaNCF66TihsX6EKSc1dG4M-frIpzPcD_w"/>
+    <span class="author">L LAGE</span>
+    <span class="text">a mão tem que pesar nessa galera hen vinão</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:01:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">kk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:01:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/qCq7e3eAbEhG4Fgswp2adqYC5Rw03yARTZnXGg2ATPs2lIyJMTa3UFIO98oVIO_TE_CMprBB"/>
+    <span class="author">SAGA</span>
+    <span class="text">kkkkkkkkkkkk é</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:01:31</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">mamata do PT kk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:01:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">tem bastante mordomia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:01:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/_UEzUtIZObLTfzcDuWxvy_UYlrWPI4kU3ZemU3r0uQy1L1bVU161bf5BJyk24ZXx4LyQKn39UjE"/>
+    <span class="author">M1ST3R</span>
+    <span class="text">@Cachorro do profeta kkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:01:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/qCq7e3eAbEhG4Fgswp2adqYC5Rw03yARTZnXGg2ATPs2lIyJMTa3UFIO98oVIO_TE_CMprBB"/>
+    <span class="author">SAGA</span>
+    <span class="text">bolsa família, bpc loas e +</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:01:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">éééééééééé ramo doando pessoal se não cair nada em meia hora eu vou me embora éééééééééé</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:02:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ijVSmdbseNKwzRM_5DNo8uuooCoGa4YNdUf_CdaNdLRDzRnA-a564CEwiJrH_itEOGU-TX3fwg"/>
+    <span class="author">Caixista</span>
+    <span class="text">esquerda tem até vale gás</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:02:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">até se a pessoa for testemunha de jeova?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:02:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lwIF96GynaPvXpp__zDLA1nU46YA_jCAe6K_1eMic"/>
+    <span class="author">Aristophanes Of Athens</span>
+    <span class="text">VINI VAI LANÇAR UMA GUERRA SANTA</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:02:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ijVSmdbseNKwzRM_5DNo8uuooCoGa4YNdUf_CdaNdLRDzRnA-a564CEwiJrH_itEOGU-TX3fwg"/>
+    <span class="author">Caixista</span>
+    <span class="text">eu tenho desejo de ser pregador, mas minha dicção é horrível</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:02:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/4hY_9FbwPz0VTWVwxf77jbAcopyVa8UFrnWDIAqVO1lz2ZmUI0k0KbZyS76-QsZdnHkdZoALvw"/>
+    <span class="author">Lucasdrk_</span>
+    <span class="text">Eita !</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:03:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/_UEzUtIZObLTfzcDuWxvy_UYlrWPI4kU3ZemU3r0uQy1L1bVU161bf5BJyk24ZXx4LyQKn39UjE"/>
+    <span class="author">M1ST3R</span>
+    <span class="text">Vini vc acha que o Sérgio sacani está se convertendo ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:03:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_mk08Q43YhOapeS3iUn8juMQp6rgXW7HWUWmQYYXSYA9qI"/>
+    <span class="author">Pedro Gomes</span>
+    <span class="text">Presidente, professor ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:03:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, qual o palpite pro Fla x Flu de hoje?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:03:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X3CjKOb-YOcFDPD9-elm6XgAP2dtWBVQ9K-eA_-AEq1VwfRdcedM1_DuACciqPb112tomKxD_00"/>
+    <span class="author">JOÃO_ TEXTO</span>
+    <span class="text">o que rolou, Vini ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:03:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">Vini, se tiver uma testemunha de jeova aqui, a pessoa pode entrar?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:04:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X3CjKOb-YOcFDPD9-elm6XgAP2dtWBVQ9K-eA_-AEq1VwfRdcedM1_DuACciqPb112tomKxD_00"/>
+    <span class="author">JOÃO_ TEXTO</span>
+    <span class="text">@Mateus Dantas quais as últimas atualizações ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:04:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, ERA BOM PEGAR DE UM POR UM, QUANDO FOR FAZER OS ORAÇÕES. SE CONCENTRAVA EM UM DE CADA VEZ, PEDIA LOGO UMA PRAGA PESADA NA VIDA DO INDIVÍDUO :folded_hands::folded_hands::folded_hands::folded_hands:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:05:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">o Mateus pode entrar no reino de Deus, ele toca guitarra</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:05:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">@JOÃO_ TEXTO Vai tudo virar canal Vini Silva, ele quer fazer uma tropa pra combater os demônios da deeptube</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:05:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Vini a carne não descongelou hj vou almoçar omelete cm presunto</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:05:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, ERA BOM PEGAR DE UM POR UM, QUANDO FOR FAZER OS ORAÇÕES. SE CONCENTRAVA EM UM DE CADA VEZ, AÍ PEDIA LOGO UMA PRAGA PESADA NA VIDA DO INDIVÍDUO :folded_hands::folded_hands::folded_hands::folded_hands:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:06:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X3CjKOb-YOcFDPD9-elm6XgAP2dtWBVQ9K-eA_-AEq1VwfRdcedM1_DuACciqPb112tomKxD_00"/>
+    <span class="author">JOÃO_ TEXTO</span>
+    <span class="text">@Mateus Dantas como assim tudo virar Vini Silva ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:06:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Não toco guitarra</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:07:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Vini você acha que inveja do ogro e pelo fato do sonho dele ser famoso e você ter vivido com a verdadeira fama</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:07:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">@JOÃO_ TEXTO Vini apareceu aqui fervendo falando que amanhã vai fazer uma tropa só com o pessoal de Cristo pra derrubar os capeta</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:07:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/oUA-Emzt_Vw99hulc-RWFP7eX5sZk1P3kMJnkjWwkf7LSWWllYP2d-CVLv2BkEbq1TR2ouQ5Jg"/>
+    <span class="author">Taurus 57</span>
+    <span class="text">Vini, vc tem muita bagagem pra tá de bobeira aqui nessa deep tube , isso aqui é muita exposição e queimação</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:07:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Basicamente é isso, acabou a palhaçada aqui</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:07:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, ERA BOM PEGAR DE UM POR UM, QUANDO FOR FAZER OS ORAÇÕES. SE CONCENTRAVA EM UM DE CADA VEZ, PEDIA LOGO UMA PRAGA PESADA NA VIDA DO INDIVÍDUO :folded_hands::folded_hands::folded_hands::folded_hands:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:08:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">o vini acordou radical hoje</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:08:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/kdH6dlXXyShWvrNg_K3ZxZjzwbBHXO8jWPRHggbIsazoM459YI47hmEAHIYMNhghn9Tne2PV"/>
+    <span class="author">boca de xexinha </span>
+    <span class="text">professor estou morrendo de dor na barriga tem alguma oração pra melhorar?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:08:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Do RR Soares?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:08:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_mk08Q43YhOapeS3iUn8juMQp6rgXW7HWUWmQYYXSYA9qI"/>
+    <span class="author">Pedro Gomes</span>
+    <span class="text">Rr soares é pilantra </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:08:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Vini você ficou meu coração hj</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:09:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+    <span class="author">Eduardo Nunes 🇦🇲</span>
+    <span class="text">vini, se a pessoa for testemunha de jeova, ela pode entrar na tropa do Cristo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:09:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/y-9KeXV0-xy7464-STkLB-1_pL8zCLwj04Y-_5IDY65N-AtHiQm3SrQbUjrHOUDyzI3fbelZbFs"/>
+    <span class="author">Brenno Richard</span>
+    <span class="text">caraca vini live agora, que top!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:09:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/k1zCTOiIcQ-Tt5pCOzZ6wio3FJu8Jtlv3EK4oMt4vx4Nz1lcPzPYQINz7aBqU6d-2_tTJ5SdDA"/>
+    <span class="author">Evandjelo</span>
+    <span class="text">Assisti a um podcast no qual falaste sobre tua esposa. Sinto muito por tua perda.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:09:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/JTLTXDekigf0KccOQsoBMU6zT-a0FdBkGKax7TR0DiXn2XbiVKMrWI9gVPtMaD3d70jQoI-T"/>
+    <span class="author">Leandro Silva</span>
+    <span class="text">Vini faz quanto tempo que você não vai ao monte na madrugada clamar?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:10:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Vini e guerreiro :disappointed_face:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:10:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/_UEzUtIZObLTfzcDuWxvy_UYlrWPI4kU3ZemU3r0uQy1L1bVU161bf5BJyk24ZXx4LyQKn39UjE"/>
+    <span class="author">M1ST3R</span>
+    <span class="text">Vini vc podia voltar a fazer as lives da madruga igual na época das crentes no começo do canal</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:11:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/oUA-Emzt_Vw99hulc-RWFP7eX5sZk1P3kMJnkjWwkf7LSWWllYP2d-CVLv2BkEbq1TR2ouQ5Jg"/>
+    <span class="author">Taurus 57</span>
+    <span class="text">Vc tinha que tentar amar novamente, se dar essa chance pois só um outro amor pra superar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:11:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Grande Kaskudo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:11:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/W8YXei5Sj3UgMcIGwcNRQ-ajXSCfucR-Q8J1oy2zzlrtGRusPw1NFSKD4Wts1VUefrOC6rLQWg"/>
+    <span class="author">Pikachu Pei</span>
+    <span class="text">VINI ESTAVA SUPER MAL SEM ANIMO ATE QUE DEUS MANDOU O BLUEZAO EM CARNE IR SALVAR NOSSO VINI</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:12:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X3CjKOb-YOcFDPD9-elm6XgAP2dtWBVQ9K-eA_-AEq1VwfRdcedM1_DuACciqPb112tomKxD_00"/>
+    <span class="author">JOÃO_ TEXTO</span>
+    <span class="text">A real é que só me inscrevo no canal do Vini pra comentar, pq essa parada de deetube e brigas me dá aflição</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:12:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3fxA__efSEqDuy_uDHqPqb6ZDkgmY0GgW9bYy7K3WfFI9ysPcd1S95yJDWf_bXLxTGBCSque"/>
+    <span class="author">O bom de guerra</span>
+    <span class="text">Eu lembro quando o vini tinha o outro canal de 80k de inscritos se ainda estivesse em pé teria 1 milhão de seguidores hoje</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:12:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/oUA-Emzt_Vw99hulc-RWFP7eX5sZk1P3kMJnkjWwkf7LSWWllYP2d-CVLv2BkEbq1TR2ouQ5Jg"/>
+    <span class="author">Taurus 57</span>
+    <span class="text">Aí foi quando vc fez a besteira de pedir ajuda pro ogro banguela</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:12:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Q7Aj7iaONFnLjlsidYvBtI0ahxhtoqgvTnxfZxkJfklO6bwgBcGyny1zHXvbKbB7chtMNbMF"/>
+    <span class="author">agasilva75</span>
+    <span class="text">Vini eu kaskudo também tem uma parcela nessa sua recuperação</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:12:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">Graças ao bluezao hoje temos o vini sette, temos que agradecer eternamente ao bluezao</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:12:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">calma Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:12:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/JTLTXDekigf0KccOQsoBMU6zT-a0FdBkGKax7TR0DiXn2XbiVKMrWI9gVPtMaD3d70jQoI-T"/>
+    <span class="author">Leandro Silva</span>
+    <span class="text">Vini é um homem que sofreu muito já na vida.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:12:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/_UEzUtIZObLTfzcDuWxvy_UYlrWPI4kU3ZemU3r0uQy1L1bVU161bf5BJyk24ZXx4LyQKn39UjE"/>
+    <span class="author">M1ST3R</span>
+    <span class="text">meus sentimentos Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:13:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/4__qbftlvck25B38kxIyI7-x20ALW5aXXBGACadXZtH0_uN2eEQmfbPPY2srz9kA3whBZ7Sq"/>
+    <span class="author">Tulio Maravilha</span>
+    <span class="text">vini está emocionado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:13:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/1Bqixl2KjxC4HUULE_NBDCBZ16x5_EkVSGZDYFKQZW-RhMrudg85oJLhD5bciaWbKdlz-QYa"/>
+    <span class="author">Marco Aparecido E. Silva</span>
+    <span class="text">k</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:13:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">complicado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:13:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/cTtR21d9cvncJ67OkRzMXZOsh_y6EfAXjfAA9RB5FJIKT1LK0Xkc3jxDKV89qxBO3VlG-2t8"/>
+    <span class="author">ZNS</span>
+    <span class="text">eu acompanho o vini a 6 anos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:13:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">calma Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:13:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/JTLTXDekigf0KccOQsoBMU6zT-a0FdBkGKax7TR0DiXn2XbiVKMrWI9gVPtMaD3d70jQoI-T"/>
+    <span class="author">Leandro Silva</span>
+    <span class="text">Vini é um homem muito sofrido. já passou por muita coisa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:14:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lNMMxatuetZwaNCF66TihsX6EKSc1dG4M-frIpzPcD_w"/>
+    <span class="author">L LAGE</span>
+    <span class="text">que bonitinho vininho emocionado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:14:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/4__qbftlvck25B38kxIyI7-x20ALW5aXXBGACadXZtH0_uN2eEQmfbPPY2srz9kA3whBZ7Sq"/>
+    <span class="author">Tulio Maravilha</span>
+    <span class="text">A mao vai pesar no javali e na 28% que processaram o nosso missionário</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:15:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bAuk97Td9fXi1YkZTEBu6iwUFh8A4YX2zfSm9_KdhHfBKLZz6c3mHuanjWmQd6dAp_br8bASkHo"/>
+    <span class="author">Parque do Zé Colmeia</span>
+    <span class="text">verdade vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:15:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/4__qbftlvck25B38kxIyI7-x20ALW5aXXBGACadXZtH0_uN2eEQmfbPPY2srz9kA3whBZ7Sq"/>
+    <span class="author">Tulio Maravilha</span>
+    <span class="text">Quando o processo do ogro chegar faz igual o walacy gamer r taca fogo:fire:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:15:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">kkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:15:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X3CjKOb-YOcFDPD9-elm6XgAP2dtWBVQ9K-eA_-AEq1VwfRdcedM1_DuACciqPb112tomKxD_00"/>
+    <span class="author">JOÃO_ TEXTO</span>
+    <span class="text">O Vini podia fazer igual o super Xandao, equilibrar assuntos bíblicos e reacts de assuntos relevantes(sem as babaquices da deetube) e o chat brasil</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:15:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">O que tu sente quando olha pra mim Vini?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:16:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/oUA-Emzt_Vw99hulc-RWFP7eX5sZk1P3kMJnkjWwkf7LSWWllYP2d-CVLv2BkEbq1TR2ouQ5Jg"/>
+    <span class="author">Taurus 57</span>
+    <span class="text">Vini, todas essas pessoas do mal que te perseguem vão sentir a mão de Deus pesar bonito</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:16:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kPDMU8J-5OP_YtAcKVXOoReR_tew_AUnKDv_uWHEeEUrz_hb-YzHO526b6KJ0TceMuJQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">@Mateus Dantas Faz tempo que você não vai ao Bela Mix com o Vinão?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:16:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Obrigado meu Deus por essa refeição :folded_hands:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:16:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/kdH6dlXXyShWvrNg_K3ZxZjzwbBHXO8jWPRHggbIsazoM459YI47hmEAHIYMNhghn9Tne2PV"/>
+    <span class="author">boca de xexinha </span>
+    <span class="text">o senhor lembra quando tava indo no durão sentar o dedo no lixo e Deus tocou o seu coração no meio da calçada?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:17:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/oUA-Emzt_Vw99hulc-RWFP7eX5sZk1P3kMJnkjWwkf7LSWWllYP2d-CVLv2BkEbq1TR2ouQ5Jg"/>
+    <span class="author">Taurus 57</span>
+    <span class="text">@Matheus Dantas Respeita o nosso velhinho nesse momento tão difícil</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:17:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/JTLTXDekigf0KccOQsoBMU6zT-a0FdBkGKax7TR0DiXn2XbiVKMrWI9gVPtMaD3d70jQoI-T"/>
+    <span class="author">Leandro Silva</span>
+    <span class="text">@boca de xexinha, o Vini colocou a peça na mochila, colocou a mochila nas costas e pensou "vô ou num vô, vô. vô ou num vô, vô"</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:18:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/W8YXei5Sj3UgMcIGwcNRQ-ajXSCfucR-Q8J1oy2zzlrtGRusPw1NFSKD4Wts1VUefrOC6rLQWg"/>
+    <span class="author">Pikachu Pei</span>
+    <span class="text">DEUS COLOCOU BLUEZAO NA SUA VIDA. ELE TE TIROU DA RUA E DA MENDIGAGEM. TE DEU DOADORES E VISIBILIDADE. A PERGUNTA QUE NAO QUE CALAR. BLUEZAO E UM SANTO OU JESUS CRISTO?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:18:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Pikachu kkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:18:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/oUA-Emzt_Vw99hulc-RWFP7eX5sZk1P3kMJnkjWwkf7LSWWllYP2d-CVLv2BkEbq1TR2ouQ5Jg"/>
+    <span class="author">Taurus 57</span>
+    <span class="text">@Mateus Dantas se não eu vou te bloquear hein</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:18:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/4__qbftlvck25B38kxIyI7-x20ALW5aXXBGACadXZtH0_uN2eEQmfbPPY2srz9kA3whBZ7Sq"/>
+    <span class="author">Tulio Maravilha</span>
+    <span class="text">Vini aquele vídeo que o ogro falou que te processou 100% dos comentários estão te defendendo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:18:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">BLUEZAO é cão em forma de luz kkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:19:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">não lembro</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:19:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/y-9KeXV0-xy7464-STkLB-1_pL8zCLwj04Y-_5IDY65N-AtHiQm3SrQbUjrHOUDyzI3fbelZbFs"/>
+    <span class="author">Brenno Richard</span>
+    <span class="text">pastor Marcos Antônio</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:19:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/y-9KeXV0-xy7464-STkLB-1_pL8zCLwj04Y-_5IDY65N-AtHiQm3SrQbUjrHOUDyzI3fbelZbFs"/>
+    <span class="author">Brenno Richard</span>
+    <span class="text">caso mirelle</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:19:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">pastor barba?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:21:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/4__qbftlvck25B38kxIyI7-x20ALW5aXXBGACadXZtH0_uN2eEQmfbPPY2srz9kA3whBZ7Sq"/>
+    <span class="author">Tulio Maravilha</span>
+    <span class="text">Vini está emocionado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:21:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/kdH6dlXXyShWvrNg_K3ZxZjzwbBHXO8jWPRHggbIsazoM459YI47hmEAHIYMNhghn9Tne2PV"/>
+    <span class="author">boca de xexinha </span>
+    <span class="text">@Mateus Dantas meu sonho era fazer amor ctg no porta mala do teu carro :smiling_face_with_heart_eyes:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:21:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/oUA-Emzt_Vw99hulc-RWFP7eX5sZk1P3kMJnkjWwkf7LSWWllYP2d-CVLv2BkEbq1TR2ouQ5Jg"/>
+    <span class="author">Taurus 57</span>
+    <span class="text">Queima :heart_on_fire::fire:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:21:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/k1zCTOiIcQ-Tt5pCOzZ6wio3FJu8Jtlv3EK4oMt4vx4Nz1lcPzPYQINz7aBqU6d-2_tTJ5SdDA"/>
+    <span class="author">Evandjelo</span>
+    <span class="text">Calma, Vini. tás nos nervos.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:21:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">justiça vai chegar demônios deep tube</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:21:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/y-9KeXV0-xy7464-STkLB-1_pL8zCLwj04Y-_5IDY65N-AtHiQm3SrQbUjrHOUDyzI3fbelZbFs"/>
+    <span class="author">Brenno Richard</span>
+    <span class="text">era o O pastor Felipe Garcia ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:21:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Lindo Lindo Simplesmente Lindo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:22:10</span>
+    <img class="avatar" src="https://yt4.ggpht.com/kdH6dlXXyShWvrNg_K3ZxZjzwbBHXO8jWPRHggbIsazoM459YI47hmEAHIYMNhghn9Tne2PV"/>
+    <span class="author">boca de xexinha </span>
+    <span class="text">@Mateus Dantas bora marcar de comer batata frita no teu carro?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:22:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Vawa4F_nhGqOMt5zkjHRbeG-KzMJZ9m6DXwLuL0tJ3dSvSHWw1WR6yGcaG82JrojosUov2UzXw"/>
+    <span class="author">lucas BONDUKI</span>
+    <span class="text">VINI FAZ VAKINHA PRA UM ADVOGADO ESSE OGRO ACHA QUE DINHEIRO PAGA TUDO ELE VAI SE FUDE LA NA FRENTE</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:22:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">glória a Deus</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:22:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">Vini Deus escolheu nos pra ouvir essa pregação linda</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:23:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X3CjKOb-YOcFDPD9-elm6XgAP2dtWBVQ9K-eA_-AEq1VwfRdcedM1_DuACciqPb112tomKxD_00"/>
+    <span class="author">JOÃO_ TEXTO</span>
+    <span class="text">Marcos Pereira</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:24:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">por isso tem que ouvir os dois lados, muitas mulheres acusam homem de assédio</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:24:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/9LikMpvF8SlND-bUCTKp8lwj7z1PAchhIcaxYzsRffuL6cd5H1PAzLwRWOa8IQS1k1ZgStxQiQ"/>
+    <span class="author">V@ndo</span>
+    <span class="text">live foi boa ensinamentos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:25:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/k1zCTOiIcQ-Tt5pCOzZ6wio3FJu8Jtlv3EK4oMt4vx4Nz1lcPzPYQINz7aBqU6d-2_tTJ5SdDA"/>
+    <span class="author">Evandjelo</span>
+    <span class="text">vinão é a bíblia viva</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:25:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/oUA-Emzt_Vw99hulc-RWFP7eX5sZk1P3kMJnkjWwkf7LSWWllYP2d-CVLv2BkEbq1TR2ouQ5Jg"/>
+    <span class="author">Taurus 57</span>
+    <span class="text">Vini eu tenho vontade de dar um tapa na cara de cada um desses que te caluniam</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:26:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">se eu vejo esse 28% eu do uma surra</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:26:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/oUA-Emzt_Vw99hulc-RWFP7eX5sZk1P3kMJnkjWwkf7LSWWllYP2d-CVLv2BkEbq1TR2ouQ5Jg"/>
+    <span class="author">Taurus 57</span>
+    <span class="text">Vou dar um tapão cara</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:26:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PlIruESNmTOaT9PS3WrTRhM454O-uzCR4sz8gsBtYjzVq2e5XNDGLieGVdUh4veXAjcSuOnq"/>
+    <span class="author">Culinária Invertebrada 🐛</span>
+    <span class="text">esse 28% vai apanha que nem macho</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:27:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/zDzF2P6ofxUL3aavMTla6zFLdN25TuuBT-wBkT1ydnTia20cVpIvb15MXgdKirJ35d3Hh7qykw"/>
+    <span class="author">Nego Ney</span>
+    <span class="text">:hand-pink-waving:VINI O BLUEZÃO DISSE QUE VAI TE COLOCAR NA CADEIA</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:27:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/k1zCTOiIcQ-Tt5pCOzZ6wio3FJu8Jtlv3EK4oMt4vx4Nz1lcPzPYQINz7aBqU6d-2_tTJ5SdDA"/>
+    <span class="author">Evandjelo</span>
+    <span class="text">a mão de Taurus vai pesar junto com a de Deus</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:27:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/zDzF2P6ofxUL3aavMTla6zFLdN25TuuBT-wBkT1ydnTia20cVpIvb15MXgdKirJ35d3Hh7qykw"/>
+    <span class="author">Nego Ney</span>
+    <span class="text">:hand-pink-waving:VINI O BLUEZÃO DISSE QUE VAI TE COLOCAR NA CADEIA</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:27:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/oUA-Emzt_Vw99hulc-RWFP7eX5sZk1P3kMJnkjWwkf7LSWWllYP2d-CVLv2BkEbq1TR2ouQ5Jg"/>
+    <span class="author">Taurus 57</span>
+    <span class="text">Vem na mão seus safados</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:27:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">mas já?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:27:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Pera ai Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:27:31</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Calma ai Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:27:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/kdH6dlXXyShWvrNg_K3ZxZjzwbBHXO8jWPRHggbIsazoM459YI47hmEAHIYMNhghn9Tne2PV"/>
+    <span class="author">boca de xexinha </span>
+    <span class="text">mateus gostoso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:27:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/kdH6dlXXyShWvrNg_K3ZxZjzwbBHXO8jWPRHggbIsazoM459YI47hmEAHIYMNhghn9Tne2PV"/>
+    <span class="author">boca de xexinha </span>
+    <span class="text">professor o bonde vai descer?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:27:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">fica aí cara</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:28:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/k1zCTOiIcQ-Tt5pCOzZ6wio3FJu8Jtlv3EK4oMt4vx4Nz1lcPzPYQINz7aBqU6d-2_tTJ5SdDA"/>
+    <span class="author">Evandjelo</span>
+    <span class="text">a tropa do deita</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:28:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">já almocei sim senhor</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:28:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/y-9KeXV0-xy7464-STkLB-1_pL8zCLwj04Y-_5IDY65N-AtHiQm3SrQbUjrHOUDyzI3fbelZbFs"/>
+    <span class="author">Brenno Richard</span>
+    <span class="text">fica ai vini pede uma quentinha</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:28:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Fica mais meia hora aí</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:28:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/kdH6dlXXyShWvrNg_K3ZxZjzwbBHXO8jWPRHggbIsazoM459YI47hmEAHIYMNhghn9Tne2PV"/>
+    <span class="author">boca de xexinha </span>
+    <span class="text">os meninos do morro vão queimar arquivo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:28:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Bora, eu vou lá contigo almoçar de novo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:28:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/aQvxB2uV-8fIMhOT7SAZeVJBb4LrdS12pXXoWrE3uyMWiNb_FI4KLHmEeQ8HIzMnsda6c5YQrg"/>
+    <span class="author">Mozart</span>
+    <span class="text">boa tarde, grande Vini!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:28:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Vawa4F_nhGqOMt5zkjHRbeG-KzMJZ9m6DXwLuL0tJ3dSvSHWw1WR6yGcaG82JrojosUov2UzXw"/>
+    <span class="author">lucas BONDUKI</span>
+    <span class="text">PQ AINDA NAO COMEU VINI</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:28:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Vawa4F_nhGqOMt5zkjHRbeG-KzMJZ9m6DXwLuL0tJ3dSvSHWw1WR6yGcaG82JrojosUov2UzXw"/>
+    <span class="author">lucas BONDUKI</span>
+    <span class="text">??</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:28:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/y-9KeXV0-xy7464-STkLB-1_pL8zCLwj04Y-_5IDY65N-AtHiQm3SrQbUjrHOUDyzI3fbelZbFs"/>
+    <span class="author">Brenno Richard</span>
+    <span class="text">fica ai vini pede uma quentinha</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:28:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/k1zCTOiIcQ-Tt5pCOzZ6wio3FJu8Jtlv3EK4oMt4vx4Nz1lcPzPYQINz7aBqU6d-2_tTJ5SdDA"/>
+    <span class="author">Evandjelo</span>
+    <span class="text">que delícia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:28:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/kdH6dlXXyShWvrNg_K3ZxZjzwbBHXO8jWPRHggbIsazoM459YI47hmEAHIYMNhghn9Tne2PV"/>
+    <span class="author">boca de xexinha </span>
+    <span class="text">@Mateus Dantas eu posso ir c vcs?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:29:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">vou na rua tomar um café</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:29:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/oUA-Emzt_Vw99hulc-RWFP7eX5sZk1P3kMJnkjWwkf7LSWWllYP2d-CVLv2BkEbq1TR2ouQ5Jg"/>
+    <span class="author">Taurus 57</span>
+    <span class="text">Não fala isso Vini, aí que esses filhos do mal ficam doidos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:29:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">capaz de esbarrar contigo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:29:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">mermão agora deu fome o vini falando desse macarrão</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:29:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/y-9KeXV0-xy7464-STkLB-1_pL8zCLwj04Y-_5IDY65N-AtHiQm3SrQbUjrHOUDyzI3fbelZbFs"/>
+    <span class="author">Brenno Richard</span>
+    <span class="text">vini quanto é uma quentinha? pede ai e fica com a gente</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:29:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/kdH6dlXXyShWvrNg_K3ZxZjzwbBHXO8jWPRHggbIsazoM459YI47hmEAHIYMNhghn9Tne2PV"/>
+    <span class="author">boca de xexinha </span>
+    <span class="text">@Mateus Dantas passa de carro aqui na minha casa pra gente tomar um leitinho</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:30:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Vawa4F_nhGqOMt5zkjHRbeG-KzMJZ9m6DXwLuL0tJ3dSvSHWw1WR6yGcaG82JrojosUov2UzXw"/>
+    <span class="author">lucas BONDUKI</span>
+    <span class="text">MANDO A METADE DA QUENTINHA~</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:30:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/k1zCTOiIcQ-Tt5pCOzZ6wio3FJu8Jtlv3EK4oMt4vx4Nz1lcPzPYQINz7aBqU6d-2_tTJ5SdDA"/>
+    <span class="author">Evandjelo</span>
+    <span class="text">e-mails dos fieis?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:30:31</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Ns_Mvi8co-I0nerk1ViMlTll7uWbHPxS9AddIIO8Ywza3Zjwi_xJUkIh6cEudnO4YjAdTAyC"/>
+    <span class="author">Alone7</span>
+    <span class="text">olha ae o vinao</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:30:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">fica aí que a gente manda a comida</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:30:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Ué Vini, vai trancar a faculdade?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:30:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Agora que o calor tá passando</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:30:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/kdH6dlXXyShWvrNg_K3ZxZjzwbBHXO8jWPRHggbIsazoM459YI47hmEAHIYMNhghn9Tne2PV"/>
+    <span class="author">boca de xexinha </span>
+    <span class="text">Vou mandar o macarrão e a coca é quanto?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:31:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/y-9KeXV0-xy7464-STkLB-1_pL8zCLwj04Y-_5IDY65N-AtHiQm3SrQbUjrHOUDyzI3fbelZbFs"/>
+    <span class="author">Brenno Richard</span>
+    <span class="text">vini quanto é uma quentinha? pede ai e fica com a gente</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:31:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">bora tomar um café</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:31:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/kdH6dlXXyShWvrNg_K3ZxZjzwbBHXO8jWPRHggbIsazoM459YI47hmEAHIYMNhghn9Tne2PV"/>
+    <span class="author">boca de xexinha </span>
+    <span class="text">é quanto o macarrão?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:31:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/hIAtVnJhzenkNyBySFFdQOfeToy_prOe1kpxKtw9Ymxm_ztJMVd-wrdFrFKwU3cFfCY04ExE"/>
+    <span class="author">TATTOO GENTE BOA</span>
+    <span class="text">Gostei</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:31:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">20 reais o macarrão</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:31:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/kdH6dlXXyShWvrNg_K3ZxZjzwbBHXO8jWPRHggbIsazoM459YI47hmEAHIYMNhghn9Tne2PV"/>
+    <span class="author">boca de xexinha </span>
+    <span class="text">professor é quanto o macarrão?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:31:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">AINDA É AMANHÃ? PENSEI QUE A TROPA JÁ TAVA VALENDO HOJE, VINI???</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:31:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Ns_Mvi8co-I0nerk1ViMlTll7uWbHPxS9AddIIO8Ywza3Zjwi_xJUkIh6cEudnO4YjAdTAyC"/>
+    <span class="author">Alone7</span>
+    <span class="text">:yougotthis:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:31:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/kdH6dlXXyShWvrNg_K3ZxZjzwbBHXO8jWPRHggbIsazoM459YI47hmEAHIYMNhghn9Tne2PV"/>
+    <span class="author">boca de xexinha </span>
+    <span class="text">tô achando q o vini vai pro xilindro</span>
+    </div>
+        
+
+
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+    <script>
+        // Inicializa o Wistia
+        window._wq = window._wq || [];
+        _wq.push({
+            id: "07gx0usx69",
+            onReady: function (video) {
+                const wistiaPlayer = video;
+
+                // Função para converter o timestamp no formato HH:MM:SS para segundos
+                function timestampToSeconds(timestamp) {
+                    const [hours, minutes, seconds] = timestamp.split(':').map(Number);
+                    return hours * 3600 + minutes * 60 + seconds;
+                }
+
+                // Função para verificar se o chat está no final
+                function isChatAtBottom(chatContainer) {
+                    const tolerance = 10; // Tolerância para considerar que está no final
+                    return chatContainer.scrollTop + chatContainer.clientHeight >= chatContainer.scrollHeight - tolerance;
+                }
+
+                // Função para rolar o chat para o final
+                function scrollChatToBottom() {
+                    const chatContainer = document.getElementById('chat');
+                    chatContainer.scrollTop = chatContainer.scrollHeight;
+                }
+
+                // Função para sincronizar o chat com o vídeo
+                function syncChatWithVideo() {
+                    const chatMessages = document.querySelectorAll('.message');
+                    wistiaPlayer.bind('secondchange', function (time) {
+                        const currentTime = Math.floor(time); // Tempo atual do vídeo em segundos
+                        let shouldScroll = isChatAtBottom(document.getElementById('chat')); // Verifica se o chat está no final
+
+                        chatMessages.forEach(message => {
+                            const timestamp = message.querySelector('.timestamp').textContent; // Pega o timestamp da mensagem
+                            const messageTime = timestampToSeconds(timestamp); // Converte o timestamp para segundos
+                            if (messageTime <= currentTime) {
+                                message.style.display = 'block'; // Mostra a mensagem
+                            } else {
+                                message.style.display = 'none'; // Oculta a mensagem
+                            }
+                        });
+
+                        // Rola para o final apenas se o chat já estava no final
+                        if (shouldScroll) {
+                            scrollChatToBottom();
+                        }
+                    });
+                }
+
+                // Inicia a sincronização
+                syncChatWithVideo();
+            }
+        });
+    </script>
+</body>
+</html>
