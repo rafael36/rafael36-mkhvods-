@@ -68,6 +68,23 @@
             border-radius: 10px;
             overflow: hidden;
         }
+        @media (max-width: 768px) {
+        body {
+            flex-direction: column;
+        }
+
+        .video-container, .chat-container {
+            width: 100%;
+            height: 50%; /* Divide a tela em duas metades */
+            padding: 10px;
+        }
+
+        .chat-container {
+            border-left: none;
+            border-top: 2px solid #333;
+        }
+    }
+
     </style>
 </head>
 <body>
