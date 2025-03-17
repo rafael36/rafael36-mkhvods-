@@ -1,6 +1,26 @@
-    // Inicializa o Wistia
+// scripts.js
+
+// Função para extrair o ID do vídeo do HTML
+function getWistiaVideoId() {
+    const wistiaEmbed = document.querySelector('.wistia_embed');
+    if (wistiaEmbed) {
+        // Extrai o ID da classe (ex: "wistia_async_07gx0usx69")
+        const classList = wistiaEmbed.classList;
+        for (const className of classList) {
+            if (className.startsWith('wistia_async_')) {
+                return className.replace('wistia_async_', ''); // Remove o prefixo
+            }
+        }
+    }
+    return null; // Retorna null se não encontrar o ID
+}
+
+// Inicializa o Wistia
+const videoId = getWistiaVideoId();
+if (videoId) {
     window._wq = window._wq || [];
     _wq.push({
+        id: videoId, // Usa o ID extraído do HTML
         onReady: function (video) {
             const wistiaPlayer = video;
 
@@ -50,3 +70,6 @@
             syncChatWithVideo();
         }
     });
+} else {
+    console.error('ID do vídeo não encontrado no HTML.');
+}
