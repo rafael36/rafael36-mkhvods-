@@ -68,6 +68,27 @@
             border-radius: 10px;
             overflow: hidden;
         }
+            @media (max-width: 768px) and (orientation: portrait) {
+        body {
+            flex-direction: column;
+        }
+
+        .video-container {
+            flex: 0 0 25%; /* Reduz a altura do vídeo para 35% da tela */
+            height: 40%; /* Vídeo ocupa 40% da tela */
+            padding: 10px;
+        }
+
+        .chat-container {
+            height: 60%; /* Chat ocupa 60% da tela */
+            padding: 10px;
+            border-left: none;
+            border-top: 2px solid #333;
+        }
+        .w-chrome.notranslate {
+        height: 100% !important; /* O vídeo ocupa toda a altura do container */
+        }
+    }
     </style>
 </head>
 <body>
