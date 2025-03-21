@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Vídeo com Chat</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Botão de menu com três pontinhos -->
+    <button id="menuButton" class="menu-button">
+        <i class="fas fa-ellipsis-v"></i> <!-- Ícone de três pontinhos -->
+    </button>
+
+    <!-- Menu de opções -->
+    <div id="menuOptions" class="menu-options">
+        <button id="chatOption" class="menu-option">Chat</button>
+        <button id="disqusOption" class="menu-option">Disqus</button>
+        <button id="descriptionOption" class="menu-option">Descrição do Vídeo</button>
+        <button id="downloadOption" class="menu-option">Download</button>
+    </div>
+
+    <!-- Container do vídeo -->
+    <div class="video-container">
+        <div class="wistia_embed wistia_async_5ygm12z6w2" style="height:100%;width:100%"></div>
+    </div>
+
+    <!-- Container do chat -->
+    <div class="chat-container" id="chat">
+        <!-- Mensagens do chat -->
+        <div class="message">
+            <span class="timestamp">00:45:35</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m68CowtJTqpE4F5egzBbZs4u-RRgu6gxyYFBViSBeU3z4"/>
+            <span class="author">Monk Silva</span>
+            <span class="text">pelo telefone é quanto vini?</span>
+        </div>
+        <div class="message">
+            <span class="timestamp">00:45:43</span>
+            <img class="avatar" src="https://yt4.ggpht.com/4__qbftlvck25B38kxIyI7-x20ALW5aXXBGACadXZtH0_uN2eEQmfbPPY2srz9kA3whBZ7Sq"/>
+            <span class="author">Tulio Maravilha</span>
+            <span class="text">se.precisar de testemunha pode contar com o pessoal do chat</span>
+        </div>
+    </div>
+
+    <!-- Container do Disqus -->
+    <div id="disqus" class="chat-container" style="display: none;">
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    <!-- Container da descrição do vídeo -->
+    <div id="description" class="chat-container" style="display: none;">
+        <h3>Descrição do Vídeo</h3>
+        <p>Nenhuma descrição foi adicionada ao vídeo.</p>
+    </div>
+
+    <!-- Link de download (oculto inicialmente) -->
+    <a id="downloadLink" href="https://embed-ssl.wistia.com/deliveries/6f8f03828f26b3b663d63e0140599b697cf08c80.bin?disposition=attachment&filename=Come%C3%A7ando+mais+um+dia-ixCLvwhmd3w.mp4" style="display: none;"></a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

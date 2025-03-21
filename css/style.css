@@ -6,6 +6,51 @@ body {
     padding: 0;
     display: flex;
     height: 100vh;
+    position: relative; /* Para posicionar o botão de menu */
+}
+
+/* Botão de menu */
+.menu-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+}
+
+.menu-button i {
+    font-size: 20px; /* Tamanho do ícone */
+}
+
+/* Menu de opções */
+.menu-options {
+    display: none; /* Inicialmente oculto */
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.menu-option {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    background: none;
+    border: none;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+}
+
+.menu-option:hover {
+    background-color: #444;
 }
 
 /* Container do vídeo */
@@ -21,6 +66,12 @@ body {
     padding: 20px;
     overflow-y: auto;
     border-left: 2px solid #333;
+}
+
+/* Estilo para o container do Disqus e descrição */
+#disqus,
+#description {
+    display: none; /* Inicialmente oculto */
 }
 
 /* Estilos do chat */
@@ -60,6 +111,7 @@ body {
     border-radius: 10px;
     overflow: hidden;
 }
+
 @media (max-width: 1768px) and (orientation: portrait) {
     body {
         flex-direction: column;
@@ -77,7 +129,21 @@ body {
         border-left: none;
         border-top: 2px solid #333;
     }
+
+        /* Botão de menu */
+    .menu-button {
+        top: 580px;
+        right: 5px;
+    }
+
+    /* Menu de opções */
+    .menu-options {
+        top: 50px;
+        right: 10px;
+
+    }
+
     .w-chrome.notranslate {
-    height: 100% !important; /* O vídeo ocupa toda a altura do container */
+        height: 100% !important; /* O vídeo ocupa toda a altura do container */
     }
 }

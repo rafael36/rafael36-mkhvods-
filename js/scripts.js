@@ -73,3 +73,79 @@ if (videoId) {
 } else {
     console.error('ID do vídeo não encontrado no HTML.');
 }
+
+// Função para carregar o Disqus dinamicamente
+function loadDisqus() {
+    // Verifica se o Disqus já foi carregado
+    if (!window.disqusLoaded) {
+        window.disqusLoaded = true; // Marca como carregado
+
+        // Cria o script do Disqus
+        const disqusScript = document.createElement('script');
+        disqusScript.src = 'https://mkhvods.disqus.com/embed.js';
+        disqusScript.setAttribute('data-timestamp', +new Date());
+        (document.head || document.body).appendChild(disqusScript);
+    }
+}
+
+// Função para controlar o menu de opções
+function setupMenu() {
+    const menuButton = document.getElementById('menuButton');
+    const menuOptions = document.getElementById('menuOptions');
+    const chatContainer = document.getElementById('chat');
+    const disqusContainer = document.getElementById('disqus');
+    const descriptionContainer = document.getElementById('description');
+    const downloadLink = document.getElementById('downloadLink');
+
+    // Mostra ou oculta o menu ao clicar no botão
+    menuButton.addEventListener('click', function () {
+        if (menuOptions.style.display === 'block') {
+            menuOptions.style.display = 'none'; // Oculta o menu
+        } else {
+            menuOptions.style.display = 'block'; // Mostra o menu
+        }
+    });
+
+    // Oculta o menu ao clicar fora dele
+    document.addEventListener('click', function (event) {
+        if (!menuButton.contains(event.target) && !menuOptions.contains(event.target)) {
+            menuOptions.style.display = 'none'; // Oculta o menu
+        }
+    });
+
+    // Alterna entre chat, Disqus e descrição
+    const chatOption = document.getElementById('chatOption');
+    const disqusOption = document.getElementById('disqusOption');
+    const descriptionOption = document.getElementById('descriptionOption');
+    const downloadOption = document.getElementById('downloadOption');
+
+    chatOption.addEventListener('click', function () {
+        chatContainer.style.display = 'block';
+        disqusContainer.style.display = 'none';
+        descriptionContainer.style.display = 'none';
+        menuOptions.style.display = 'none'; // Oculta o menu após a seleção
+    });
+
+    disqusOption.addEventListener('click', function () {
+        chatContainer.style.display = 'none';
+        disqusContainer.style.display = 'block';
+        descriptionContainer.style.display = 'none';
+        loadDisqus(); // Carrega o Disqus dinamicamente
+        menuOptions.style.display = 'none'; // Oculta o menu após a seleção
+    });
+
+    descriptionOption.addEventListener('click', function () {
+        chatContainer.style.display = 'none';
+        disqusContainer.style.display = 'none';
+        descriptionContainer.style.display = 'block';
+        menuOptions.style.display = 'none'; // Oculta o menu após a seleção
+    });
+
+    downloadOption.addEventListener('click', function () {
+        downloadLink.click(); // Simula o clique no link de download
+        menuOptions.style.display = 'none'; // Oculta o menu após a seleção
+    });
+}
+
+// Inicializa o menu
+setupMenu();
