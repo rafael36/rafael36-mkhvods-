@@ -27,6 +27,21 @@ body {
     transition: color 0.3s ease; /* Transição suave para a cor */
 }
 
+.header-container h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+.header-container nav a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+
 /* Efeito hover para o nome "Vini Sette" */
 .header-container h1 a:hover {
     color: #00a8ff; /* Cor azul ao passar o mouse */
