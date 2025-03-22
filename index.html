@@ -20,7 +20,7 @@
             min-height: 100vh;
             font-family: 'Roboto', Arial, sans-serif;
             position: relative;
-            overflow: hidden;
+            overflow: auto; /* Permite rolagem */
         }
 
         /* Animação do gradiente de fundo */
@@ -38,12 +38,13 @@
 
         /* Fundo de partículas */
         #particles-js {
-            position: absolute;
+            position: fixed; /* Fixo para não interferir na rolagem */
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: 0; /* Fica atrás de todo o conteúdo */
+            pointer-events: none; /* Desativa interações com o toque */
         }
 
         .title {
@@ -227,6 +228,23 @@
         particlesJS.load('particles-js', 'particles.json', function() {
             console.log('Partículas carregadas!');
         });
+
+        // Desativa interações com as partículas em dispositivos móveis
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        if (isMobile) {
+            particlesJS('particles-js', {
+                interactivity: {
+                    events: {
+                        onhover: {
+                            enable: false, // Desativa o hover no mobile
+                        },
+                        onclick: {
+                            enable: false, // Desativa o clique no mobile
+                        },
+                    },
+                },
+            });
+        }
 
         // Botão de voltar ao topo
         const backToTopButton = document.querySelector('.back-to-top');
