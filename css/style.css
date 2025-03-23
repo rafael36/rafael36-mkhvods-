@@ -98,7 +98,7 @@ body {
     margin: 10px 0;
     padding: 10px;
     border-bottom: 1px solid #333;
-    display: block; /* Alterei para block para garantir visibilidade */
+    display: none; /* Inicialmente oculto */
     word-break: break-word; /* Quebra palavras longas para evitar overflow horizontal */
 }
 
