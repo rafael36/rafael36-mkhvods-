@@ -64,8 +64,27 @@ body {
     flex: 1;
     background-color: #000;
     padding: 20px;
-    overflow-y: auto;
+    overflow-y: auto; /* Rolagem vertical */
+    overflow-x: hidden; /* Remove rolagem horizontal */
     border-left: 2px solid #333;
+}
+
+/* Estilizando a barra de rolagem no Chrome/Safari */
+.chat-container::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+.chat-container::-webkit-scrollbar-track {
+    background: #000; /* Cor do fundo da barra (preto) */
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+    background: #333; /* Cor da barra em si (cinza escuro) */
+    border-radius: 4px; /* Bordas arredondadas na barra */
+}
+
+.chat-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor ao passar o mouse */
 }
 
 /* Estilo para o container do Disqus e descrição */
@@ -79,7 +98,14 @@ body {
     margin: 10px 0;
     padding: 10px;
     border-bottom: 1px solid #333;
-    display: none; /* Inicialmente oculto */
+    display: block; /* Alterei para block para garantir visibilidade */
+    word-break: break-word; /* Quebra palavras longas para evitar overflow horizontal */
+}
+
+/* Garante que o conteúdo da mensagem não ultrapasse o container */
+.message span {
+    display: inline-block;
+    max-width: 100%;
 }
 
 .timestamp {
@@ -112,6 +138,7 @@ body {
     overflow: hidden;
 }
 
+/* Media Query para Retrato */
 @media (max-width: 1768px) and (orientation: portrait) {
     body {
         flex-direction: column;
@@ -130,7 +157,7 @@ body {
         border-top: 2px solid #333;
     }
 
-        /* Botão de menu */
+    /* Botão de menu */
     .menu-button {
         top: 580px;
         right: 5px;
@@ -140,7 +167,6 @@ body {
     .menu-options {
         top: 50px;
         right: 10px;
-
     }
 
     .w-chrome.notranslate {
