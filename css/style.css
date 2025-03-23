@@ -53,11 +53,10 @@ body {
     background-color: #444;
 }
 
-/* Container do vídeo */
+/* Container do vídeo margin-top: 30px; /* Faz o vídeo descer um pouco */ */
 .video-container {
     flex: 3;
     padding: 20px;
-    margin-top: 20px; /* Faz o vídeo descer um pouco */
 }
 
 /* Container do chat */
@@ -113,7 +112,6 @@ body {
     overflow: hidden;
 }
 
-/* Media Query para Retrato (já existente) */
 @media (max-width: 1768px) and (orientation: portrait) {
     body {
         flex-direction: column;
@@ -123,7 +121,6 @@ body {
         flex: 0 0 25%; /* Reduz a altura do vídeo para 35% da tela */
         height: 40%; /* Vídeo ocupa 40% da tela */
         padding: 10px;
-        margin-top: 20px; /* Mantém o deslocamento no modo retrato */
     }
 
     .chat-container {
@@ -133,7 +130,7 @@ body {
         border-top: 2px solid #333;
     }
 
-    /* Botão de menu */
+        /* Botão de menu */
     .menu-button {
         top: 580px;
         right: 5px;
@@ -143,49 +140,10 @@ body {
     .menu-options {
         top: 50px;
         right: 10px;
+
     }
 
     .w-chrome.notranslate {
         height: 100% !important; /* O vídeo ocupa toda a altura do container */
-    }
-}
-
-/* Nova Media Query para Paisagem em Celulares */
-@media (max-width: 768px) and (orientation: landscape) {
-    body {
-        flex-direction: row; /* Mantém vídeo e chat lado a lado */
-        height: 100vh;
-    }
-
-    .video-container {
-        flex: 2; /* Vídeo ocupa mais espaço */
-        padding: 10px;
-        margin-top: 10px; /* Menor margem no modo paisagem */
-        height: auto; /* Altura ajustada automaticamente */
-    }
-
-    .chat-container {
-        flex: 1; /* Chat ocupa menos espaço */
-        padding: 10px;
-        border-left: 2px solid #333;
-        border-top: none;
-        height: auto; /* Altura ajustada automaticamente */
-    }
-
-    /* Botão de menu */
-    .menu-button {
-        top: 10px; /* Volta ao topo */
-        right: 10px;
-    }
-
-    /* Menu de opções */
-    .menu-options {
-        top: 40px;
-        right: 10px;
-    }
-
-    .wistia_embed {
-        width: 100%;
-        height: 100%; /* Garante que o vídeo preencha o container */
     }
 }
