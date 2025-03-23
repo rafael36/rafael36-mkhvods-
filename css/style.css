@@ -55,7 +55,7 @@ body {
 
 /* Container do vídeo */
 .video-container {
-    flex: 3;
+    flex: 4;
     padding: 20px;
 }
 
