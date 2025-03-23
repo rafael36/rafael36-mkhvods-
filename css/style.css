@@ -57,6 +57,7 @@ body {
 .video-container {
     flex: 3;
     padding: 20px;
+    margin-top: 30px; /* Faz o vídeo descer um pouco */
 }
 
 /* Container do chat */
