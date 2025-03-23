@@ -98,7 +98,7 @@ body {
     margin: 10px 0;
     padding: 10px;
     border-bottom: 1px solid #333;
-    display: none; /* Inicialmente oculto, display: block; para iniciar video e chat ao mesmo tempo  */
+    display: none; /* Inicialmente oculto, display: block; */
     word-break: break-word; /* Quebra palavras longas para evitar overflow horizontal */
 }
 
