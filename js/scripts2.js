@@ -15,16 +15,16 @@ atOptions = {
 
 // Segundo bloco de opções do atOptions
 atOptions = {
-    'key': '142c5b0e4a499237d08d4810b53f01d7',
+    'key': 'a490009f130c46f4bdf2d0e5223f235a',
     'format': 'iframe',
-    'height': 250,
-    'width': 300,
+    'height': 300,
+    'width': 160,
     'params': {}
 };
 (function() {
     var s = document.createElement('script');
     s.type = 'text/javascript';
-    s.src = '//seriouspawailment.com/142c5b0e4a499237d08d4810b53f01d7/invoke.js';
+    s.src = '//seriouspawailment.com/a490009f130c46f4bdf2d0e5223f235a/invoke.js';
     document.body.appendChild(s);
 })();
 
