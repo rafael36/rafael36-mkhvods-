@@ -1,0 +1,2823 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Vídeo com Chat</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Botão de menu com três pontinhos -->
+    <button id="menuButton" class="menu-button">
+        <i class="fas fa-ellipsis-v"></i> <!-- Ícone de três pontinhos -->
+    </button>
+
+    <!-- Menu de opções -->
+    <div id="menuOptions" class="menu-options">
+        <button id="chatOption" class="menu-option">Chat</button>
+        <button id="disqusOption" class="menu-option">Disqus</button>
+        <button id="descriptionOption" class="menu-option">Descrição do Vídeo</button>
+        <button id="downloadOption" class="menu-option">Download</button>
+    </div>
+
+    <!-- Container do vídeo -->
+    <div class="video-container">
+        <div class="wistia_embed wistia_async_qmwz5wh4o9 videoFoam=true"></div>
+    </div>
+
+    <!-- Container do chat -->
+    <div class="chat-container" id="chat">
+        <!-- Mensagens do chat -->
+
+<div class="message">
+    <span class="timestamp">00:00:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/woeJ4bm1o-P48a083riaKS7zKBjhm-YwRg6IAHr1DS6LLnFBAXUiTEnzwzRnPkOT1f40I721"/>
+    <span class="author">Vini Sette Live</span>
+    <span class="text">https://livepix.gg/vinisette</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:00:10</span>
+    <img class="avatar" src="https://yt4.ggpht.com/SXSyASC2a79xgGAFSxWoTGYLatjlyDHIcYCeb3E2EJv2rldUPJj4XeyuuuwUKTth5dv1oFkCkQ"/>
+    <span class="author">Fabio S.W</span>
+    <span class="text">a</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:00:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">ele sempre volta</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:00:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">tá calor aí?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:00:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/eUERsotrnPnMMYzHBnczHGxa5bpT01BKUt0iJ4z3oJnCPgKOby5NCAPWVL_Pg7gVBXNljLMI0A"/>
+    <span class="author">scorpionmk</span>
+    <span class="text">boa tarde vinni</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:01:12</span>
+    <img class="avatar" src="https://yt4.ggpht.com/y-PjamwCN8vpYPrjcB52rrRLt6dNNmCNAmDh_r2fbAdbh5WAlLTASCCSPPKAnDiG4uRuoo8G4A"/>
+    <span class="author">Lucas Baker </span>
+    <span class="text">olha aew cadê os péla Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:01:12</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">almoçou já vini?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:01:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">vini só almoça fora</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:02:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">vini tem notebook?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:03:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X6E19zOqyxhrgWws6AryQKyqodwRQlgIQlmxwnqqUqJSGHR-wHxVWJad1lceWuZgXJBNl1CfOg"/>
+    <span class="author">Alexander Krycek</span>
+    <span class="text">boa tarde, Vinny</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:03:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bfcJRaG3j3O92txz1YQxpnuCjlZBK3XnSZYBrP7soSAIMo0qKo7SOV2EWVwGNFgtysdX5hMtgw"/>
+    <span class="author">Guinness</span>
+    <span class="text">Vini, o Gabriel Monteiro saiu da cadeia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:04:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kis-t_L6AAiwtNPvlGDMCWlL3BwULs03n9XHDd2YuJ_dA"/>
+    <span class="author">Saulo Rafael</span>
+    <span class="text">Vamo doando</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:04:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bfcJRaG3j3O92txz1YQxpnuCjlZBK3XnSZYBrP7soSAIMo0qKo7SOV2EWVwGNFgtysdX5hMtgw"/>
+    <span class="author">Guinness</span>
+    <span class="text">Passou 3 anos preso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:04:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bfcJRaG3j3O92txz1YQxpnuCjlZBK3XnSZYBrP7soSAIMo0qKo7SOV2EWVwGNFgtysdX5hMtgw"/>
+    <span class="author">Guinness</span>
+    <span class="text">Se fosse na cadeia comum iam fazer ele de boneca e depois iriam querer matar ele depois.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:05:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X6E19zOqyxhrgWws6AryQKyqodwRQlgIQlmxwnqqUqJSGHR-wHxVWJad1lceWuZgXJBNl1CfOg"/>
+    <span class="author">Alexander Krycek</span>
+    <span class="text">se ele fica numa cadeia comum comem o tóba dele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:05:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bfcJRaG3j3O92txz1YQxpnuCjlZBK3XnSZYBrP7soSAIMo0qKo7SOV2EWVwGNFgtysdX5hMtgw"/>
+    <span class="author">Guinness</span>
+    <span class="text">isso é verdade. Tem dias que demoram a passar e somos livres, quem dirá na cadeia que não tem absolutamente nada para fazer.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:06:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X6E19zOqyxhrgWws6AryQKyqodwRQlgIQlmxwnqqUqJSGHR-wHxVWJad1lceWuZgXJBNl1CfOg"/>
+    <span class="author">Alexander Krycek</span>
+    <span class="text">Vinny o inimigo se levantou na sua vida, mas não vai prosperar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:07:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bfcJRaG3j3O92txz1YQxpnuCjlZBK3XnSZYBrP7soSAIMo0qKo7SOV2EWVwGNFgtysdX5hMtgw"/>
+    <span class="author">Guinness</span>
+    <span class="text">eu estou acordando as 3 horas da manhã, faço minhas orações, 4:00 saio para caminhar na rua. ainda está o gelado da madrugada, é a melhor coisa que tem para se fazer.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:07:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kis-t_L6AAiwtNPvlGDMCWlL3BwULs03n9XHDd2YuJ_dA"/>
+    <span class="author">Saulo Rafael</span>
+    <span class="text">vamo perseguindo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:07:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bAuk97Td9fXi1YkZTEBu6iwUFh8A4YX2zfSm9_KdhHfBKLZz6c3mHuanjWmQd6dAp_br8bASkHo"/>
+    <span class="author">Parque do Zé Colmeia</span>
+    <span class="text">cafézinho da tarde</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:07:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nuNlfceTDiBSTQUhxQ56YDJFbBu1DjRfTpJMFP6ck9D0x3tsglom8eMUA2blBLpRVU8w"/>
+    <span class="author">Senhor_Raposo</span>
+    <span class="text">entendo vini, mas a fome tem que ser preenchida</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:07:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lDSJSDjAUAtuef0JTtAFXzaAujtvgNy8NZpTO3bv855fKQsLRkeAc5pd5228DEub_8fA"/>
+    <span class="author">Lorechinesa</span>
+    <span class="text">boa tarde vini tudo bem com o senhor</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:07:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nuNlfceTDiBSTQUhxQ56YDJFbBu1DjRfTpJMFP6ck9D0x3tsglom8eMUA2blBLpRVU8w"/>
+    <span class="author">Senhor_Raposo</span>
+    <span class="text">vini, tens de almoçar antes de dormir todos os dias</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:08:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">O senhor deveria marcar um almoço de live com o DJ Cascudo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:08:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nuNlfceTDiBSTQUhxQ56YDJFbBu1DjRfTpJMFP6ck9D0x3tsglom8eMUA2blBLpRVU8w"/>
+    <span class="author">Senhor_Raposo</span>
+    <span class="text">vini, vou pedir um kfc reforçado pra vc hoje a noite</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:08:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/KQXRNNHGpKLR4lUxTcwGU2Cd14dCyPt047qVyWW6wDWUsBH1cuLpmPltuMJ_JrgY7w4xNr6DGeQ"/>
+    <span class="author">Chakal</span>
+    <span class="text">Vini o Amarelão lançou a meta da prosperidade!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bfcJRaG3j3O92txz1YQxpnuCjlZBK3XnSZYBrP7soSAIMo0qKo7SOV2EWVwGNFgtysdX5hMtgw"/>
+    <span class="author">Guinness</span>
+    <span class="text">Uma oração de madrugada é a melhor coisa que alguém pode fazer. quando faço isso na madrugada parece que estou bem mais próximo do Senhor, eu sinto a presença dele mais forte.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">Vini quando eu não tomo café a minha cabeça dói</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nuNlfceTDiBSTQUhxQ56YDJFbBu1DjRfTpJMFP6ck9D0x3tsglom8eMUA2blBLpRVU8w"/>
+    <span class="author">Senhor_Raposo</span>
+    <span class="text">aqui em caxxias do sul tá quente 28 graus me sinto no Rio de Janeiro </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:10:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">Vini, meu vizinho anda fazendo macumba de madrugada me atrapalhando a dormir, o que eu faço?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:10:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/QFkuwlAJE6SRF75i0L7kH7pCvhXbUwC7C9JNWoe_L15qZ_OW0abaiTVr9zP4lrCFNfjypQpV2Kc"/>
+    <span class="author">Kalango</span>
+    <span class="text">Vini, esses pelas sacos estão de olho gordo na sua pensão de 1700 reais que eles descobriram que você recebe.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:10:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">os Neurônios se viciam em cafeína, se tu não tomar eles começam a doer</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:10:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nuNlfceTDiBSTQUhxQ56YDJFbBu1DjRfTpJMFP6ck9D0x3tsglom8eMUA2blBLpRVU8w"/>
+    <span class="author">Senhor_Raposo</span>
+    <span class="text">mas tá com previsão de chuva a partir de segunda a semana inteira aqui no Sul </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">entendi Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/X7DW5nYY8jC2_lsARFyXL_QyEE2tgOElr2p-KakwCDksLO6byLEWNnt568rXsLYu3qoYbPg-"/>
+    <span class="author">Daniel Potuk</span>
+    <span class="text">Boa Tarde Vini, você deveria fazer uma live com o Gil</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/SXSyASC2a79xgGAFSxWoTGYLatjlyDHIcYCeb3E2EJv2rldUPJj4XeyuuuwUKTth5dv1oFkCkQ"/>
+    <span class="author">Fabio S.W</span>
+    <span class="text">o vini adora falar de macumba</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">Essa vez que o senhor sentiu a macumba foi quando a Fabee foi no cemitério?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">vini tou mandando ver numa tangerina bem docinha</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nuNlfceTDiBSTQUhxQ56YDJFbBu1DjRfTpJMFP6ck9D0x3tsglom8eMUA2blBLpRVU8w"/>
+    <span class="author">Senhor_Raposo</span>
+    <span class="text">vamu duandu</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LWZ9GA7Mp6T97sJmIMLXPp69fKXjulGNEXX02Nen5j0_tYVX_0s8ezYEQbIWou5sRB0dmqMWgOA"/>
+    <span class="author">Tio SVD</span>
+    <span class="text">boa tarde Vini!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nuNlfceTDiBSTQUhxQ56YDJFbBu1DjRfTpJMFP6ck9D0x3tsglom8eMUA2blBLpRVU8w"/>
+    <span class="author">Senhor_Raposo</span>
+    <span class="text">nenhuma macumba ou feitiço jamais prevalecerá sobre o vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">o clima mudou, o Vini está bem mais calmo e pragmático</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nuNlfceTDiBSTQUhxQ56YDJFbBu1DjRfTpJMFP6ck9D0x3tsglom8eMUA2blBLpRVU8w"/>
+    <span class="author">Senhor_Raposo</span>
+    <span class="text">Vai bater e voltar a macumba</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nuNlfceTDiBSTQUhxQ56YDJFbBu1DjRfTpJMFP6ck9D0x3tsglom8eMUA2blBLpRVU8w"/>
+    <span class="author">Senhor_Raposo</span>
+    <span class="text">né</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bfcJRaG3j3O92txz1YQxpnuCjlZBK3XnSZYBrP7soSAIMo0qKo7SOV2EWVwGNFgtysdX5hMtgw"/>
+    <span class="author">Guinness</span>
+    <span class="text">O calor em Recife-PE está insuportável, estou pensando seriamente em me mudar daqui e ir para o Sul.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:14:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/2tGxfLFd1ScXcvDbSG2vuEAaRh_c194GpylHU2tuT7T0nSPs4_NePjZ8RWzHFjP_Ax5sqMBF"/>
+    <span class="author">SouUmaHiena</span>
+    <span class="text">pra esse povo só basta fé, quando ajoelha é pra falar com Deus e com ele não tem brincadeira né vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:14:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/cNUF23CgeSGqXEjQmN_9CJRQGNxGWjCmDjzWtP3xYw52MPpamgTwsQVqQwByzmDhkF34UHYdsA"/>
+    <span class="author">Big Smoke 2.0</span>
+    <span class="text">Boa tarde</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:14:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nuNlfceTDiBSTQUhxQ56YDJFbBu1DjRfTpJMFP6ck9D0x3tsglom8eMUA2blBLpRVU8w"/>
+    <span class="author">Senhor_Raposo</span>
+    <span class="text">vini, é verdade que mais da metade da populaçãoi carioca é oriunda do nordeste brasileiro</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LWZ9GA7Mp6T97sJmIMLXPp69fKXjulGNEXX02Nen5j0_tYVX_0s8ezYEQbIWou5sRB0dmqMWgOA"/>
+    <span class="author">Tio SVD</span>
+    <span class="text">o importante é crer em Deus, ele proverá por todos nós</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nuNlfceTDiBSTQUhxQ56YDJFbBu1DjRfTpJMFP6ck9D0x3tsglom8eMUA2blBLpRVU8w"/>
+    <span class="author">Senhor_Raposo</span>
+    <span class="text">verdade</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">macumba com sapo é perigoso?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bfcJRaG3j3O92txz1YQxpnuCjlZBK3XnSZYBrP7soSAIMo0qKo7SOV2EWVwGNFgtysdX5hMtgw"/>
+    <span class="author">Guinness</span>
+    <span class="text">É igual a estar numa igreja física. Fui nascido e criado na igreja, hoje em dia não faço parte de nenhuma, mas minha fé em Cristo é inabalável e sei que Ele é comigo. Eu entendo isso que o senhor diz.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kis-t_L6AAiwtNPvlGDMCWlL3BwULs03n9XHDd2YuJ_dA"/>
+    <span class="author">Saulo Rafael</span>
+    <span class="text">Vini, se o lula não morrer até ano que vem vai pegar muito mal pra você. você disse que teve uma visão de Deus que ele ia morrer no mandato. até desafiou</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bfcJRaG3j3O92txz1YQxpnuCjlZBK3XnSZYBrP7soSAIMo0qKo7SOV2EWVwGNFgtysdX5hMtgw"/>
+    <span class="author">Guinness</span>
+    <span class="text">A intimidade e crença em Deus é algo que a gente tem certeza. Podem vir falsos profetas, podem vir pessoas más falando coisas, mas sabemos filtrar as coisas.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">A quanto tempo o senhor é convertido?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">vini foi verdade que você desenterrou um trabalho através de uma visão divina?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bfcJRaG3j3O92txz1YQxpnuCjlZBK3XnSZYBrP7soSAIMo0qKo7SOV2EWVwGNFgtysdX5hMtgw"/>
+    <span class="author">Guinness</span>
+    <span class="text">Exato, Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nuNlfceTDiBSTQUhxQ56YDJFbBu1DjRfTpJMFP6ck9D0x3tsglom8eMUA2blBLpRVU8w"/>
+    <span class="author">Senhor_Raposo</span>
+    <span class="text">aqui no Sul o que pega é a bruxaria e ocultismo </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">já deve ter passado por muita coisa na vida depois de tanto tempo se dedicando ao evangelho.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LbSabySywFtdZBv6a01AzGEH2Vle0dEWqW1TiqR-_y6IYOmIG64LGH3rTiPw60rgpTySe5THmg"/>
+    <span class="author">Alavanca forte</span>
+    <span class="text">senhor raposo não ironicamente o sul é a melhor e mais bonita região do Brasil</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/bfcJRaG3j3O92txz1YQxpnuCjlZBK3XnSZYBrP7soSAIMo0qKo7SOV2EWVwGNFgtysdX5hMtgw"/>
+    <span class="author">Guinness</span>
+    <span class="text">Bruxaria, feitiçaria e macumba não pegam em quem tem intimidade e fé em Cristo!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kis-t_L6AAiwtNPvlGDMCWlL3BwULs03n9XHDd2YuJ_dA"/>
+    <span class="author">Saulo Rafael</span>
+    <span class="text">Eu lembro da época que o carrasco fez macumba para o Vini no cemitério</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/4__qbftlvck25B38kxIyI7-x20ALW5aXXBGACadXZtH0_uN2eEQmfbPPY2srz9kA3whBZ7Sq"/>
+    <span class="author">Tulio Maravilha</span>
+    <span class="text">Cade o macarrão?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nuNlfceTDiBSTQUhxQ56YDJFbBu1DjRfTpJMFP6ck9D0x3tsglom8eMUA2blBLpRVU8w"/>
+    <span class="author">Senhor_Raposo</span>
+    <span class="text">Barbaridade</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LWZ9GA7Mp6T97sJmIMLXPp69fKXjulGNEXX02Nen5j0_tYVX_0s8ezYEQbIWou5sRB0dmqMWgOA"/>
+    <span class="author">Tio SVD</span>
+    <span class="text">um colega meu Mumu disse que depois que ele começou a crer em Deus, a vida dele mudou positivamente</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">:face_with_open_mouth:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LWZ9GA7Mp6T97sJmIMLXPp69fKXjulGNEXX02Nen5j0_tYVX_0s8ezYEQbIWou5sRB0dmqMWgOA"/>
+    <span class="author">Tio SVD</span>
+    <span class="text">outro amigo chamado Pinha também</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nuNlfceTDiBSTQUhxQ56YDJFbBu1DjRfTpJMFP6ck9D0x3tsglom8eMUA2blBLpRVU8w"/>
+    <span class="author">Senhor_Raposo</span>
+    <span class="text">Estou chocado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/sXggVulCIylAv1VeKyurA6zeIpxjA21s_l8N7mAi_DPLzMbRhF66hYNW6I9hoEbm5N5VaQFq"/>
+    <span class="author">Gtrap</span>
+    <span class="text">É muita macumbaria contra o missionário</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:22:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nuNlfceTDiBSTQUhxQ56YDJFbBu1DjRfTpJMFP6ck9D0x3tsglom8eMUA2blBLpRVU8w"/>
+    <span class="author">Senhor_Raposo</span>
+    <span class="text">Vamu Duandu</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:22:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">O senhor precisa voltar com os shorts diários de comida pra atrair mais doadores novos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:22:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LbSabySywFtdZBv6a01AzGEH2Vle0dEWqW1TiqR-_y6IYOmIG64LGH3rTiPw60rgpTySe5THmg"/>
+    <span class="author">Alavanca forte</span>
+    <span class="text">a última macumba que fizeram pro vini funcionou deixou ele tombado por 3 dias e com voz ruim</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:22:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nuNlfceTDiBSTQUhxQ56YDJFbBu1DjRfTpJMFP6ck9D0x3tsglom8eMUA2blBLpRVU8w"/>
+    <span class="author">Senhor_Raposo</span>
+    <span class="text">Vini, só acredito com a história do milagre se houver testemunhas </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">eu imagino que não seja fácil sofrer o tempo todo calúnias e ataques pessoais, só mesmo Deus pra manter de pé, eu não teria essa envergadura espiritual.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/sXggVulCIylAv1VeKyurA6zeIpxjA21s_l8N7mAi_DPLzMbRhF66hYNW6I9hoEbm5N5VaQFq"/>
+    <span class="author">Gtrap</span>
+    <span class="text">Qual favela isso aconteceu vini ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">Aquela vez que o senhor foi viisitar a sua mãe o senhor ficou quase 1 semana sem fazer live</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/s90kS49ZR4k9q1fH1p2uMDjtWB8tds-pB9Z5981wqlraKl19VWV3W0CmhN933eAzWveKnrfX"/>
+    <span class="author">Danylo Holanda</span>
+    <span class="text">KKKKK</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">Vini, o Raiam esta muito tetudo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LbSabySywFtdZBv6a01AzGEH2Vle0dEWqW1TiqR-_y6IYOmIG64LGH3rTiPw60rgpTySe5THmg"/>
+    <span class="author">Alavanca forte</span>
+    <span class="text">ele tem q colocar uma camisa olha que teta feia, teta preta</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:31</span>
+    <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+    <span class="author">Lucas Silva </span>
+    <span class="text">kkkk o peito dele tá diferente um do outro</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">Será que ele está injetando óleo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LWZ9GA7Mp6T97sJmIMLXPp69fKXjulGNEXX02Nen5j0_tYVX_0s8ezYEQbIWou5sRB0dmqMWgOA"/>
+    <span class="author">Tio SVD</span>
+    <span class="text">leite de coco</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:28:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">Raiam como sempre um charlatão</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:28:12</span>
+    <img class="avatar" src="https://yt4.ggpht.com/sXggVulCIylAv1VeKyurA6zeIpxjA21s_l8N7mAi_DPLzMbRhF66hYNW6I9hoEbm5N5VaQFq"/>
+    <span class="author">Gtrap</span>
+    <span class="text">Inveja do porte atlético vini kkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:28:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">tbm não tenho empatia por ele, não me passa confiança.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:28:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LbSabySywFtdZBv6a01AzGEH2Vle0dEWqW1TiqR-_y6IYOmIG64LGH3rTiPw60rgpTySe5THmg"/>
+    <span class="author">Alavanca forte</span>
+    <span class="text">vini não gosta dele pq é preto</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:28:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/sXggVulCIylAv1VeKyurA6zeIpxjA21s_l8N7mAi_DPLzMbRhF66hYNW6I9hoEbm5N5VaQFq"/>
+    <span class="author">Gtrap</span>
+    <span class="text">É só vc fazer academia que vc consegue pelo menos chegar perto vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:28:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+    <span class="author">Lucas Silva </span>
+    <span class="text">esse raiam é só mais um que ganhou grana enganando as pessoas.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:28:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/awTO9b0wqRqy3oacjXPay7xdnjD5PeeJ_ownFg1IOynBcLNvDQTBSisTiskL6Ll2VybcIxyxsA"/>
+    <span class="author">Lucas Silva </span>
+    <span class="text">vendedor de curso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:28:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LbSabySywFtdZBv6a01AzGEH2Vle0dEWqW1TiqR-_y6IYOmIG64LGH3rTiPw60rgpTySe5THmg"/>
+    <span class="author">Alavanca forte</span>
+    <span class="text">desculpa professor</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">kkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LbSabySywFtdZBv6a01AzGEH2Vle0dEWqW1TiqR-_y6IYOmIG64LGH3rTiPw60rgpTySe5THmg"/>
+    <span class="author">Alavanca forte</span>
+    <span class="text">errei fui moleque</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:30:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/2tGxfLFd1ScXcvDbSG2vuEAaRh_c194GpylHU2tuT7T0nSPs4_NePjZ8RWzHFjP_Ax5sqMBF"/>
+    <span class="author">SouUmaHiena</span>
+    <span class="text">mas é fato que ele ficou rico pra caramba tbm</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:31:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Salve</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:31:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/s90kS49ZR4k9q1fH1p2uMDjtWB8tds-pB9Z5981wqlraKl19VWV3W0CmhN933eAzWveKnrfX"/>
+    <span class="author">Danylo Holanda</span>
+    <span class="text">Vini os cara mandam super chat de 100 reais pra fazer uma pergunta, você acha que são uns bandos de otários?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:32:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LbSabySywFtdZBv6a01AzGEH2Vle0dEWqW1TiqR-_y6IYOmIG64LGH3rTiPw60rgpTySe5THmg"/>
+    <span class="author">Alavanca forte</span>
+    <span class="text">pra fazer a pergunta tem q manda 100 reais ou mais</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:33:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LbSabySywFtdZBv6a01AzGEH2Vle0dEWqW1TiqR-_y6IYOmIG64LGH3rTiPw60rgpTySe5THmg"/>
+    <span class="author">Alavanca forte</span>
+    <span class="text">muito caro melhor fazer pergunta pro professor que é psicológico e conselheiro de graça</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:34:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/s90kS49ZR4k9q1fH1p2uMDjtWB8tds-pB9Z5981wqlraKl19VWV3W0CmhN933eAzWveKnrfX"/>
+    <span class="author">Danylo Holanda</span>
+    <span class="text">Tem que mostrar status</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:34:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">o cara só fala palavrão</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:34:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Eu sei que o sexo é uma benção de Deus, mas será que o único propósito de ter dinheiro é para gastar com isso? Esse povo precisa ler Eclesiastes urgente</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/s90kS49ZR4k9q1fH1p2uMDjtWB8tds-pB9Z5981wqlraKl19VWV3W0CmhN933eAzWveKnrfX"/>
+    <span class="author">Danylo Holanda</span>
+    <span class="text">Ninfomaníaco</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:36:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LbSabySywFtdZBv6a01AzGEH2Vle0dEWqW1TiqR-_y6IYOmIG64LGH3rTiPw60rgpTySe5THmg"/>
+    <span class="author">Alavanca forte</span>
+    <span class="text">vini vc tem coragem de mandar 100 reais pra fazer pergunta pro sociólogo raiam santos?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:36:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LWZ9GA7Mp6T97sJmIMLXPp69fKXjulGNEXX02Nen5j0_tYVX_0s8ezYEQbIWou5sRB0dmqMWgOA"/>
+    <span class="author">Tio SVD</span>
+    <span class="text">promiscuidade é pecado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/d5-v7-modravi0cmI3BGnEKuE45OF5dVkPz46Kw8sb9NrzYfv-h4qW4qLrCACSJ0ZucNHVjcGZc"/>
+    <span class="author">Kira </span>
+    <span class="text">Vini, o Raian é um negro bem afeiçoado, não é?????</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:39:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/2tGxfLFd1ScXcvDbSG2vuEAaRh_c194GpylHU2tuT7T0nSPs4_NePjZ8RWzHFjP_Ax5sqMBF"/>
+    <span class="author">SouUmaHiena</span>
+    <span class="text">ele é um nego ajeitado sim mais a mente dele é podre concordo com o Vini, só sabe pensar em mulher e dinheiro</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:40:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">com 19 anos escutar conselhos de um sujeito desse?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:40:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/d5-v7-modravi0cmI3BGnEKuE45OF5dVkPz46Kw8sb9NrzYfv-h4qW4qLrCACSJ0ZucNHVjcGZc"/>
+    <span class="author">Kira </span>
+    <span class="text">a juventude está se espelhando no sociologo bissexual Raian</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:40:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">João Pedro Teologia se vc é casado vc vai entender o que o Raiam está falando</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:40:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/2tGxfLFd1ScXcvDbSG2vuEAaRh_c194GpylHU2tuT7T0nSPs4_NePjZ8RWzHFjP_Ax5sqMBF"/>
+    <span class="author">SouUmaHiena</span>
+    <span class="text">com 19 o raiam tava no estados unidos jogando pelo time da faculdade ele sempre foi bem resolvido da vida</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:41:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LbSabySywFtdZBv6a01AzGEH2Vle0dEWqW1TiqR-_y6IYOmIG64LGH3rTiPw60rgpTySe5THmg"/>
+    <span class="author">Alavanca forte</span>
+    <span class="text">vini percebi que os inscritos dele sao tudo 171 tbm o cara fez uma pergunta e completou dizendo que tem 19 anos e faz 40 mil por mês, como um mlk de 19 anos faz esse valor?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:43:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">um garoto de 19 anos que faz 40 mil ao mês jamais estaria pedindo conselhos a ele. isso são robôs.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:44:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/2tGxfLFd1ScXcvDbSG2vuEAaRh_c194GpylHU2tuT7T0nSPs4_NePjZ8RWzHFjP_Ax5sqMBF"/>
+    <span class="author">SouUmaHiena</span>
+    <span class="text">essas perguntas são feitas pra vender curso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LbSabySywFtdZBv6a01AzGEH2Vle0dEWqW1TiqR-_y6IYOmIG64LGH3rTiPw60rgpTySe5THmg"/>
+    <span class="author">Alavanca forte</span>
+    <span class="text">é incrível como todos que mandam pergunta ai são ricos, pos graduados e bem sucedidos kkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Raiam tem um conhecimento que é o mesmo que Mário Schwartzmann Pablo Marçal tem que enriquece mas não sei o que tem , todo mundo que aprendeu com Mario fez sucesso só o boto rosa que não</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:46:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">concerteza é caô, o cara ainda pede um valor de 150 reais pra responder.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:46:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LbSabySywFtdZBv6a01AzGEH2Vle0dEWqW1TiqR-_y6IYOmIG64LGH3rTiPw60rgpTySe5THmg"/>
+    <span class="author">Alavanca forte</span>
+    <span class="text">é pq o valor pra fazer a pergunta é 100 reais vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:46:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Pablo Marçal e Raiam ambos são ricos e ambos foram alunos do Mario Schwartzmann</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/s90kS49ZR4k9q1fH1p2uMDjtWB8tds-pB9Z5981wqlraKl19VWV3W0CmhN933eAzWveKnrfX"/>
+    <span class="author">Danylo Holanda</span>
+    <span class="text">Aqui fazemos perguntas de graça e temos bons conselhos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">ele cria a ilusão de uma falsa prosperidade pra engajar o canal.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">pode ser Vini entretanto é inegável que raiam e o Pablo e Mário tem experiência com milhões</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/LbSabySywFtdZBv6a01AzGEH2Vle0dEWqW1TiqR-_y6IYOmIG64LGH3rTiPw60rgpTySe5THmg"/>
+    <span class="author">Alavanca forte</span>
+    <span class="text">ele sempre foi rico raiam o pai dele era piloto de avião</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/d5-v7-modravi0cmI3BGnEKuE45OF5dVkPz46Kw8sb9NrzYfv-h4qW4qLrCACSJ0ZucNHVjcGZc"/>
+    <span class="author">Kira </span>
+    <span class="text">Vini o Raian é um negão de tirar o chapéu?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">puta cara de sorte esse Raiam ele tem muito dinheiro é um cara bem apresentável e tem 24 cm de bilola</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EXHohHcUw_RcI4XdMYsxlXt21JLhKVMBFzzLmeVc3xkX98MSdHv-3VgJx5-Trg-JDl3CRyto0A"/>
+    <span class="author">Pedro Smizmaul </span>
+    <span class="text">Falando mal do Mario que era milionário?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/d5-v7-modravi0cmI3BGnEKuE45OF5dVkPz46Kw8sb9NrzYfv-h4qW4qLrCACSJ0ZucNHVjcGZc"/>
+    <span class="author">Kira </span>
+    <span class="text">Vini na época que o ogro ficou la disse que não tinha nem comida na casa e que ele passou fome</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EXHohHcUw_RcI4XdMYsxlXt21JLhKVMBFzzLmeVc3xkX98MSdHv-3VgJx5-Trg-JDl3CRyto0A"/>
+    <span class="author">Pedro Smizmaul </span>
+    <span class="text">Vini, porque tem tanta inveja assim dos outros?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/RqLUg2vY_nLax-DrmjNrUphv_Sl18QH_BNNCsE5dWiu6r1t4AGK8Ope3Eb0SDqZPFOqHeFXAnw"/>
+    <span class="author">Professor sete</span>
+    <span class="text">concordo Vini, preto não passa credibilidade nenhuma</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">não passam credibilidade mesmo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Um dos poucos que eu ouço é o Lásaro do Carmo Junior, ele realmente tem experiência e sensatez. Ele foi CEO da Jequiti durante muito tempo.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:50:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Mario tinha aquele AP no Morumbi Vini e ele comia churrasco todo dia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:50:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">ele quer copiar o Thiago Finch na verdade, que utiliza a mesma estratégia pra poder atrair os jovens pros cursos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:50:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">@Professor sete kkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:50:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/RqLUg2vY_nLax-DrmjNrUphv_Sl18QH_BNNCsE5dWiu6r1t4AGK8Ope3Eb0SDqZPFOqHeFXAnw"/>
+    <span class="author">Professor sete</span>
+    <span class="text">kkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:51:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Vini a mão vai pesar?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:51:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">único até hoje que eu levo os conselhos pra vida é o Silvio Santos ele sempre falou única forma de enriquecer é trabalhando muito</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:51:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Vini quem é corajoso foge ou fica para encarar? Me refiro ao Eduardo Bolsonaro</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:52:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">Vinão, o Rick 99 tira uma grana forte fazendo cortes do Raiam Santos, o cara tem engajamento</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:52:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Vini era bolsonarista fanatico, mas foi esperto não foi para a frente do quartel e nem foi quebrar patrimonio em brasilia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:52:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_npi9ebi54Nv1zUryTlpWKzeEcYo7vSIXk7ywspkI_D"/>
+    <span class="author">gabriele poetisa</span>
+    <span class="text">vini, queria ter a vida do mito. é nítido uma inveja com admiração</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:52:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">no início da carreira dizem que a tele Sena foi um grande golpe perpretado pelo Silvio Santos pra chegar onde chegou Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:52:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">qual a sua opinião sobre concurso público? voce acha que vale a pena?? esses concursos sao muito difíceis</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:53:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/RqLUg2vY_nLax-DrmjNrUphv_Sl18QH_BNNCsE5dWiu6r1t4AGK8Ope3Eb0SDqZPFOqHeFXAnw"/>
+    <span class="author">Professor sete</span>
+    <span class="text">vini o senhor esta elegante com essa camisa polo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:53:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">não consigo acreditar que um homem que vendia caneta alcançou tudo aquilo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:53:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Vini porque vc não foi para Brasilia quebrar o supremo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:53:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_npi9ebi54Nv1zUryTlpWKzeEcYo7vSIXk7ywspkI_D"/>
+    <span class="author">gabriele poetisa</span>
+    <span class="text">o q significa ser título de capitalização?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:53:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Eu gosto de ouvir empresários que construíram alguma coisa, tipo o Flávio Augusto, Ricardo Nunes (Ricardo Eletro), Abílio Diniz etc.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Vini tem um amigo youtube que gostaria de bater um papo com vc na live</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_npi9ebi54Nv1zUryTlpWKzeEcYo7vSIXk7ywspkI_D"/>
+    <span class="author">gabriele poetisa</span>
+    <span class="text">boneco, vdd que jean tá tirando uma grana?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">@gabriele poetisa nunca mais assistir o Jean</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_npi9ebi54Nv1zUryTlpWKzeEcYo7vSIXk7ywspkI_D"/>
+    <span class="author">gabriele poetisa</span>
+    <span class="text">sei kkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">na verdade aquela moça é filha do barsi Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:55:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">E agora que liberaram empréstimo para quem é CLT? A maioria dos trabalhadores não tem o mínimo de educação financeira, como eles vão fazer para pagar empréstimos com juros insanos?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:55:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_npi9ebi54Nv1zUryTlpWKzeEcYo7vSIXk7ywspkI_D"/>
+    <span class="author">gabriele poetisa</span>
+    <span class="text">vini, tbm seria grata se fosse filha de artista, mas N jogaria a oportunidade fora</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:55:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Crédito consignado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:55:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_npi9ebi54Nv1zUryTlpWKzeEcYo7vSIXk7ywspkI_D"/>
+    <span class="author">gabriele poetisa</span>
+    <span class="text">vini o azul disse q tu recebe pensão por mês do inss</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:55:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">Vinão, o Jean como empresário tem chance de prosperar na vida?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:55:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_npi9ebi54Nv1zUryTlpWKzeEcYo7vSIXk7ywspkI_D"/>
+    <span class="author">gabriele poetisa</span>
+    <span class="text">vini disse q tocou com a Sônia magal. mas ela nunca foi artista</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:56:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Kkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:56:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_npi9ebi54Nv1zUryTlpWKzeEcYo7vSIXk7ywspkI_D"/>
+    <span class="author">gabriele poetisa</span>
+    <span class="text">vini põe uma música da Sônia magal aí, N tem nenhuma na net</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:56:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">gabriele é uma doente mental</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:57:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">outra que me bloqueou, nem vejo as mensagens dela, vai se fuder, Gabriele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:57:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">o melhor é deixar que a vida se encarregue desses corações amargurados.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:57:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_npi9ebi54Nv1zUryTlpWKzeEcYo7vSIXk7ywspkI_D"/>
+    <span class="author">gabriele poetisa</span>
+    <span class="text">vini rindo de canto</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:57:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">Só tem doente mental nesse chat, Vini. Por quê?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:57:31</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_npi9ebi54Nv1zUryTlpWKzeEcYo7vSIXk7ywspkI_D"/>
+    <span class="author">gabriele poetisa</span>
+    <span class="text">olhem o sorriso dele de canto kkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:57:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_npi9ebi54Nv1zUryTlpWKzeEcYo7vSIXk7ywspkI_D"/>
+    <span class="author">gabriele poetisa</span>
+    <span class="text">vou pagar uma música da Sônia magal</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:57:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Você vai gravar novos vídeos no Mundial ou no Supermarket?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:57:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/RqLUg2vY_nLax-DrmjNrUphv_Sl18QH_BNNCsE5dWiu6r1t4AGK8Ope3Eb0SDqZPFOqHeFXAnw"/>
+    <span class="author">Professor sete</span>
+    <span class="text">whis pq todo mundo te bloqueia?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:58:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_npi9ebi54Nv1zUryTlpWKzeEcYo7vSIXk7ywspkI_D"/>
+    <span class="author">gabriele poetisa</span>
+    <span class="text">gente a Sônia magal mãe do Sidney magal n tem uma música gravada</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:58:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/FEekCmpusFNWGrHk76GjN83sMeC0r--B2Q9jQEy6Eu6xcQfn627j7Q9yufIt08VTbLPH-HuO"/>
+    <span class="author">V.</span>
+    <span class="text">claro que tá fraco, nao pode pedir mais nada fora religiao, os doadores vazaram</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:58:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Gostou do sabão em pó da surf? Aquele de côco?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:58:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">@Professor sete Pelo visto sim kkkkk, gente doida. </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:59:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_npi9ebi54Nv1zUryTlpWKzeEcYo7vSIXk7ywspkI_D"/>
+    <span class="author">gabriele poetisa</span>
+    <span class="text">vini ovelha vai vir a minha cidade, perguntarei de vc pra ele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:59:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">Aquele Tulio Maravilha conta fake instigando o caos no chat, eu tentei avisar pro Vini Sette e ele me bloqueou :rolling_on_the_floor_laughing:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:59:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/s90kS49ZR4k9q1fH1p2uMDjtWB8tds-pB9Z5981wqlraKl19VWV3W0CmhN933eAzWveKnrfX"/>
+    <span class="author">Danylo Holanda</span>
+    <span class="text">brokiada</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:59:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">Boa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:59:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Gabriela era o Xena. Vc lembra dele?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:00:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Vinão, você vai fazer live amanhã no Vini Silva?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:01:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">tem frequentado alguma igreja Vini?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:01:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Deus tem te falado alguma coisa sobre nós ou alguém ultimamente? O que O Senhor tem dito a você?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:01:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Gabriela era o Xena. Vc lembra dele Vini?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:01:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Você tem ido à Comunidade evangélica internacional da zona sul?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:01:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Como surgiu o apelido vini?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:02:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ka_OJb0XNJYDEohFXLN9aw8SQx2wooMyAYwzwnScVwBS5AeOdo4U3-cDL-EXswMyKilw"/>
+    <span class="author">A. K.</span>
+    <span class="text">boa tarde Vini. o Jean o Contador de História me bloqueou pq mandei só dois reais pra ele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:02:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">eu sabia, um apelido!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:02:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">manda o link do stream</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:02:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">Vinão, se o Repórter Ben Mendes entrasse na sua loja botando banca de advogado qual seria sua reação?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:03:12</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">stream yard</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:03:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">falou nn, vc dizia que se chamava tanto anisio, quanto vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:03:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ka_OJb0XNJYDEohFXLN9aw8SQx2wooMyAYwzwnScVwBS5AeOdo4U3-cDL-EXswMyKilw"/>
+    <span class="author">A. K.</span>
+    <span class="text">ronda do consumidor</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:03:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">tem um amigo que precisa de oração e queria falar com vc. </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:03:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">Ben Mendes é tipo Celso Russomanno</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:03:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">eu só descobri sua existência ano passado, Vini, se você falava antes, eu não sabia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:03:58</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Eu ainda acho que o fato daquele canal seu antigo ter caído foi agir de Deus. Deus está farto desse povo torpe da deep tube enchendo o saco.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:04:12</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">Agr, todos nós te chamaremos apenas por Anisio</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:04:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Vini vc ouviu falar que o verdadeiro lula morreu e esse atual é sosia dele e tem fortes provas disso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:04:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">e você vai ter que trocar o nome do canal.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:04:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ka_OJb0XNJYDEohFXLN9aw8SQx2wooMyAYwzwnScVwBS5AeOdo4U3-cDL-EXswMyKilw"/>
+    <span class="author">A. K.</span>
+    <span class="text">eu pensei q o Jean tinha parado de jogar e queria evoluir, ajudar o pai e mãe dele... me decepcionei</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:05:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Os bolsonarista tem a teoria que o Lula morreu e ese é um clone</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:05:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Eu sei, Vini. Porém eu creio que foi permissão de Deus para que as coisas começassem a mudar.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:05:12</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Nesse sentido</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:05:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">Pq? Vc não gosta do nome Anisio?? </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:05:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">vai gostar na marra.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:05:31</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Não sei não viu Vini o lula estava em péssimas condições uma época e do nada ele melhorou</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:05:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Os bolsonarista inclusives acreditam que esse é o segundo clone. O ultimo clone morreu ano passado durante a cirurgia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:05:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Vini vc não é bolsonarista raiz então</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:06:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ka_OJb0XNJYDEohFXLN9aw8SQx2wooMyAYwzwnScVwBS5AeOdo4U3-cDL-EXswMyKilw"/>
+    <span class="author">A. K.</span>
+    <span class="text">vc vai dar candidato ano q vem?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:06:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ka_OJb0XNJYDEohFXLN9aw8SQx2wooMyAYwzwnScVwBS5AeOdo4U3-cDL-EXswMyKilw"/>
+    <span class="author">A. K.</span>
+    <span class="text">*sair</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:06:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">Vc é bolsonarista, Vini? Que vergonha.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:06:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Vini é so vc ve nos grupos bolsonarista essa teoria é bem forte</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:06:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Até o Pablo Marçal? kkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:06:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Vini confundirao o Neymar com sósia dele por uma semana ele teve que vir a publico e falar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:06:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">Vini, o frederic ta quebrando o pau com ailly no chat dele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:06:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">a Carla zambelli foi condenada. o senhor ficou sabendo ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:07:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">milly*</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:07:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">Vinão, o Papa vai acenar pros fiéis direto da janela do hospital em Roma amanhã, o senhor vai assistir?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:07:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">Carla Zambelli é uma filha do capeta</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:07:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Vini a esquerda é capaz sim de colocar um sósia do lula lá, inclusive esse clone atual tem o olho mais redondo o lula era meio japonês da bahia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:08:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">o senhor acha que isso pode impactar a democracia no país ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:08:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Kkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:08:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">kkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:08:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/2tGxfLFd1ScXcvDbSG2vuEAaRh_c194GpylHU2tuT7T0nSPs4_NePjZ8RWzHFjP_Ax5sqMBF"/>
+    <span class="author">SouUmaHiena</span>
+    <span class="text">se fosse a negrini eu iria vini kkkkklkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:08:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">milly tá quebrando o pau com o frederic, disse que deu mais de 3000 euros a ele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:08:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Mandei no seu direct</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:08:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Eu gosto do Papa Francisco, o problema é que ele é anti-bíblico</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:08:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/eae_g5DUa08xRom6TLcELkarap9QmwLkA4Z-kysaoVoEweoWOLHsBOPT_YrlDvZLlZfNa_wF"/>
+    <span class="author">Wanderson</span>
+    <span class="text">Boa tarde, Vini.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:09:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Vini esses bolsonarista homens bomba se perderam no fanatismo ou ja eram loucos?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:09:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">vini vc usa fio dental?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:09:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/eae_g5DUa08xRom6TLcELkarap9QmwLkA4Z-kysaoVoEweoWOLHsBOPT_YrlDvZLlZfNa_wF"/>
+    <span class="author">Wanderson</span>
+    <span class="text">Francamente mano, já tá comendo uma pratada de macarrão ainda mete purê por cima.. 3 kg de carboidrato cara. Sem condições</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:09:58</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">de dentes, claro</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:09:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Você viu a cabeleireira que foi condenada a 14 anos de prisão simplesmente por ter escrito "perdeu mané" na estátua da Justiça do STF?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:10:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">kkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:10:10</span>
+    <img class="avatar" src="https://yt4.ggpht.com/eae_g5DUa08xRom6TLcELkarap9QmwLkA4Z-kysaoVoEweoWOLHsBOPT_YrlDvZLlZfNa_wF"/>
+    <span class="author">Wanderson</span>
+    <span class="text">Aquele almoço é a famosa comida que faz merda, com o perdão da escatologia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:10:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Absurdismo ao extremo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:10:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:10:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Vini esse que moreu tentando explodir era bolsonarista, foi ate candidato pelo PL</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:10:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Realmente, é a ditadura do judiciário</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:10:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/eae_g5DUa08xRom6TLcELkarap9QmwLkA4Z-kysaoVoEweoWOLHsBOPT_YrlDvZLlZfNa_wF"/>
+    <span class="author">Wanderson</span>
+    <span class="text">kkkkkkkkkkkkk pow, parecia purê cara</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:10:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Eu sou bolsonarista Vini participo de todas as manifestações Vini , eu apoio tudo que ele falou</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:11:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Vini entre Eduardo Bolsonaro e Tacisio em quem vc votaria?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:11:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">o que tem achado da conduta do Rodrigo manda Vini ? ele é prefeito de Osasco</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:11:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">Gusttavo Lima desistiu da candidatura, meu voto era dele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:12:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">não não Vini, 2026 a direita volta pro poder e o capitão será o presidente e a vice a Michele a melhor opção primeira dama da história da humanidade</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:12:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">O Bolsonaro deixou de fazer muita coisa que ele prometeu durante a campanha, mas eu entendo que a pandemia afetou muito o governo dele.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:12:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/K_hfwWvywLnrNsPHTLKDeVC7khNMhmUo_51ClVG8xobFGA7fsoqBLQdk_EmMegBynqoTbJAXe28"/>
+    <span class="author">ッWhis</span>
+    <span class="text">tchau</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:12:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">desculpe ...na verdade ele é prefeito de Sorocaba</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:12:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/3-aONtfnyOdAhu84SG4stS7W6A8zPyiPfBe3qY9qVCCB3rUjDgEq5rrwZAwDsT3bsEMnT1UkzFY"/>
+    <span class="author">Boneco o Retorno</span>
+    <span class="text">Vini vc apoia Michele Bolsonaro para senadora? Falta so ela ser politica. Faltava o Renen também, mas ele ja entrou na ultima eleição</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:13:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Frei Gilson é benção demais, gosto muito dele. Franciscano original.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:14:31</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Michele vai ser vice presidente nada vai tirar o capitão em 2026</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:15:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">imbroxavel</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:15:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">eu sou igual o Vini eu apoio tudo que o o Bolsonaro faz e ninguém vai me mudar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:16:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">esse pessoal só gosta de católico comunista ou progressista</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:21:12</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ka_OJb0XNJYDEohFXLN9aw8SQx2wooMyAYwzwnScVwBS5AeOdo4U3-cDL-EXswMyKilw"/>
+    <span class="author">A. K.</span>
+    <span class="text">de jóia o Bolsonaro entende</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:21:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/N5042ARd9laHTtDYgc6TAowQl7paKthuVNtEYyO6QPvQV8qrnDvMzKDeGI2mMcuykTd-ez4_nLI"/>
+    <span class="author">Coding Bruno</span>
+    <span class="text">Tu vem candidato em 2026 Vini?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:23:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">O que a falta do Espírito Santo na vida de alguém não faz né? O Paulinho não sabe nada da Bíblia cara, mania de querer falar do que não sabe.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:27:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Vini vc vai ficar chateado se eu for jogar meu vídeo game?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:29:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/4__qbftlvck25B38kxIyI7-x20ALW5aXXBGACadXZtH0_uN2eEQmfbPPY2srz9kA3whBZ7Sq"/>
+    <span class="author">Tulio Maravilha</span>
+    <span class="text">Tomando aquele café preto da tarde</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:29:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/2tGxfLFd1ScXcvDbSG2vuEAaRh_c194GpylHU2tuT7T0nSPs4_NePjZ8RWzHFjP_Ax5sqMBF"/>
+    <span class="author">SouUmaHiena</span>
+    <span class="text">coquinha estupidamente gelada vini?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:30:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Vini fizeram um corte seu falando do Gabriel Monteiro dois anos atrás e mandaram pra ele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:32:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Vini fizeram um corte seu falando mal do Gabriel de dois anos atrás e mandaram pra ele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:39:31</span>
+    <img class="avatar" src="https://yt4.ggpht.com/2tGxfLFd1ScXcvDbSG2vuEAaRh_c194GpylHU2tuT7T0nSPs4_NePjZ8RWzHFjP_Ax5sqMBF"/>
+    <span class="author">SouUmaHiena</span>
+    <span class="text">o frei gilson?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:39:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">frei Gilson é político ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:40:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/uOjyjC8xRobQNOEknyo-Oyua8a5zhv0nGSqEk8cFUGPMdqYPaVvtx4WWLYe1LPkeUQF72MqSqw"/>
+    <span class="author">ABUSADOPELO7</span>
+    <span class="text">Tudo isso pq o frei nao quis babar o ovo do medroso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:41:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">SALVE</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:42:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">ave maria</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:42:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">18:00 hrs</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:43:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/QFkuwlAJE6SRF75i0L7kH7pCvhXbUwC7C9JNWoe_L15qZ_OW0abaiTVr9zP4lrCFNfjypQpV2Kc"/>
+    <span class="author">Kalango</span>
+    <span class="text">Boa noite, Vinny!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:43:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_k77gSg2tlCH24ipgBZXANr-sjV5odmrKO-ipXvcQc"/>
+    <span class="author">lucas godoy</span>
+    <span class="text">fala aee</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:43:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Vini tem 200 pessoas vendo a live do bluezao e mandam Pix toda hora pra ele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:44:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Vini tá em decadência tem 200 pessoas na live do javali e mandan muito pix pra ele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:45:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Vj3eoyQwqauWYaWDxWm_dy1ZJKFbPnm1SXeqvhAVnpP4Yd5Pw6nJMHq_KChHaD9BJtbLgejHmwQ"/>
+    <span class="author">doutor Paulo klein </span>
+    <span class="text">vini voce ganhou parabens os advogados todos foram demitidos kkkkkkkk voce tava certo mesmo o tempo todo , e a tropa do deita ja disse que vai bancar voce pra sp la no hotel da paulista</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:45:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">essa música me dá arrepios porque eu quando criança tinha medo dos santos espalhados pela casa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:46:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/2tGxfLFd1ScXcvDbSG2vuEAaRh_c194GpylHU2tuT7T0nSPs4_NePjZ8RWzHFjP_Ax5sqMBF"/>
+    <span class="author">SouUmaHiena</span>
+    <span class="text">salve pra tropa do deita</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:46:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_n5ZNp1TTnSg73gcnNF8QoEz92HiT5XO21CUQK-5bipXQ"/>
+    <span class="author">viver é vida </span>
+    <span class="text">vini deixa eu te perguntar uma coisa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:47:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_n5ZNp1TTnSg73gcnNF8QoEz92HiT5XO21CUQK-5bipXQ"/>
+    <span class="author">viver é vida </span>
+    <span class="text">já colocou ou pretende botar o Delara na cadeia?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:47:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">oloco Delara, estou surpreso :hushed_face:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:48:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Esse mesmo Delara que fez bariátrica que participa do canal</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:49:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5Bx6GFAJUJjxl6vTMNJ_VbujRlwAKVvRLHnyc1Hyq_8-_MLi_rFLRR8O1wha4UgS3Kbi3B5F2A"/>
+    <span class="author">Missionário Sette</span>
+    <span class="text">missionário voce ganhou kkkkkkk o azulao ta ao vivo chorando perdeu 40k de advogado a mao de deus pesou kkkkkkkk e agora a tropa do deita ta cheio de advogado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:49:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Vini mas se o cara tá tomando gaia não é melhor ele saber?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:49:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_n5ZNp1TTnSg73gcnNF8QoEz92HiT5XO21CUQK-5bipXQ"/>
+    <span class="author">viver é vida </span>
+    <span class="text">Delara deve fazer parte do grupo do deita</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:51:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5Bx6GFAJUJjxl6vTMNJ_VbujRlwAKVvRLHnyc1Hyq_8-_MLi_rFLRR8O1wha4UgS3Kbi3B5F2A"/>
+    <span class="author">Missionário Sette</span>
+    <span class="text">a tropa do deita a tropa do sette o Taiguara e a jeh junto do exército do nosso missionário de Deus</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:51:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">kkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:51:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5Bx6GFAJUJjxl6vTMNJ_VbujRlwAKVvRLHnyc1Hyq_8-_MLi_rFLRR8O1wha4UgS3Kbi3B5F2A"/>
+    <span class="author">Missionário Sette</span>
+    <span class="text">parabens a todos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:51:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5Bx6GFAJUJjxl6vTMNJ_VbujRlwAKVvRLHnyc1Hyq_8-_MLi_rFLRR8O1wha4UgS3Kbi3B5F2A"/>
+    <span class="author">Missionário Sette</span>
+    <span class="text">desmentiram geral</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:51:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, NÃO SOU A FAVOR DO QUE A TROPA DO DEITA FAZ. ELES VÃO ATÉ A CASA DAS PESSOAS, ISSO É COVARDIA!!!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:51:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_n5ZNp1TTnSg73gcnNF8QoEz92HiT5XO21CUQK-5bipXQ"/>
+    <span class="author">viver é vida </span>
+    <span class="text">procurei o Delara aqui ele tem inscritos, acho que o vini deve tá querendo ganhar hype em cima dele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:51:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, NÃO SOU A FAVOR DO QUE A TROPA DO DEITA FAZ. ELES VÃO ATÉ A CASA DAS PESSOAS, ISSO É COVARDIA!!!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:51:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, NÃO SOU A FAVOR DO QUE A TROPA DO DEITA FAZ. ELES VÃO ATÉ A CASA DAS PESSOAS, ISSO É COVARDIA!!!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:53:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Mas vc oferecer grana em troca do endereço da hellman é o que vini ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:53:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">até relacionamento ele destrói Vini bluezao tentou de. tudo para fazer o Taiguara brigar com a mulher</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:53:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5Bx6GFAJUJjxl6vTMNJ_VbujRlwAKVvRLHnyc1Hyq_8-_MLi_rFLRR8O1wha4UgS3Kbi3B5F2A"/>
+    <span class="author">Missionário Sette</span>
+    <span class="text">a tropa do deita ta certa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:53:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Vi uma clipagem</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:53:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5Bx6GFAJUJjxl6vTMNJ_VbujRlwAKVvRLHnyc1Hyq_8-_MLi_rFLRR8O1wha4UgS3Kbi3B5F2A"/>
+    <span class="author">Missionário Sette</span>
+    <span class="text">e isso e tudo culpa dele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:53:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5Bx6GFAJUJjxl6vTMNJ_VbujRlwAKVvRLHnyc1Hyq_8-_MLi_rFLRR8O1wha4UgS3Kbi3B5F2A"/>
+    <span class="author">Missionário Sette</span>
+    <span class="text">vini ta certo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:53:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5Bx6GFAJUJjxl6vTMNJ_VbujRlwAKVvRLHnyc1Hyq_8-_MLi_rFLRR8O1wha4UgS3Kbi3B5F2A"/>
+    <span class="author">Missionário Sette</span>
+    <span class="text">nunca erra</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:53:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_n5ZNp1TTnSg73gcnNF8QoEz92HiT5XO21CUQK-5bipXQ"/>
+    <span class="author">viver é vida </span>
+    <span class="text">Tmnc seu ped4f1lo, tá querendo ganhar hype em cima do Guilherme Delara e do bloezao e no Deita, quem não te conhece Ratazana do crlh</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:54:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">que tão falando de mim aí</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:55:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">queremos que você vá descansar pra volta com tudo as 9</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:55:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ka_OJb0XNJYDEohFXLN9aw8SQx2wooMyAYwzwnScVwBS5AeOdo4U3-cDL-EXswMyKilw"/>
+    <span class="author">A. K.</span>
+    <span class="text">pede desculpas pro bluesão vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:55:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Se viu que caô Vini, javali falou que ia processar depois meteu que o advogado cobrou 30 mil só pra botar pilha</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:55:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ka_OJb0XNJYDEohFXLN9aw8SQx2wooMyAYwzwnScVwBS5AeOdo4U3-cDL-EXswMyKilw"/>
+    <span class="author">A. K.</span>
+    <span class="text">faz live no teu quarto deitado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:56:10</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Seguindo o ideal cristão o vini teria que perdoar o javali e orar por ele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:57:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">vini eu tenho que confessar que estou morrendo de inveja do ogro, ele faturou mais de 40 mil em 3 meses só sentando e falando M, eu pra ter esse valor preciso trabalhar 2 anos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:57:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Esquenta não Vini javali não pode processar ninguém ele é todo ferrado na justiça a própria mãe meteu ele no criminal</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:57:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ka_OJb0XNJYDEohFXLN9aw8SQx2wooMyAYwzwnScVwBS5AeOdo4U3-cDL-EXswMyKilw"/>
+    <span class="author">A. K.</span>
+    <span class="text">Vini o Rafão vai se unir com o bluesão pra destruir vc e o Jean e ficar com os doadores.c</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:58:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">A meta do javali é tirar grana do vini pedindo indenização</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:58:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">INVENTAR ESSES CARAS DA TROPA DO DEITA, É SUICÍDIO. ELES FICAM FALANDO QUE VÃO NA CASA DE TODO MUNDO. JÁ PENSOU SE VIRA MODA ISSO???</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:58:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">eu acabei descobrindo que o azulão o que ele tem de espectadores é bot, e o pix que cai na tela é ele que ativa pra aparecer lá, invés dele alterar o ganhos dele que tá 40 mil</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:58:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">INCENTIVAR ESSES CARAS DA TROPA DO DEITA, É SUICÍDIO. ELES FICAM FALANDO QUE VÃO NA CASA DE TODO MUNDO. JÁ PENSOU SE VIRA MODA ISSO???</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:58:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">vini quem matou o mar morto?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:59:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">INCENTIVAR ESSES CARAS DA TROPA DO DEITA, É SUICÍDIO. ELES FICAM FALANDO QUE VÃO NA CASA DE TODO MUNDO. JÁ PENSOU SE VIRA MODA ISSO???</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:59:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Guilherme Delara vc esta preparado para receber oficial de justiça na sua casa tropa do Vini tá de olho viu</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:59:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Guilherme Delara nós somos a tropa do Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:59:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ka_OJb0XNJYDEohFXLN9aw8SQx2wooMyAYwzwnScVwBS5AeOdo4U3-cDL-EXswMyKilw"/>
+    <span class="author">A. K.</span>
+    <span class="text">segundo o Rafão o Bluesão fatura entre 700 e 1.200 por dia.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:59:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">@ini gordão sette, eu tenho contacto do pessoal do YouTube eles me falaram tenho print e tudo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:00:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">kkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:00:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">é via e mail Vini, eu sou criador</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:00:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">pessoal vamos parar com esse assunto, já chega de confusões e intrigas</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:00:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/2tGxfLFd1ScXcvDbSG2vuEAaRh_c194GpylHU2tuT7T0nSPs4_NePjZ8RWzHFjP_Ax5sqMBF"/>
+    <span class="author">SouUmaHiena</span>
+    <span class="text">kkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:00:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">kkkkkkkkk pegou no pulo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:00:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">vini foi descoberto que o Guilherme de Lara que fez aquilo com a moça do Omegle no whatsapp</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:00:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/2tGxfLFd1ScXcvDbSG2vuEAaRh_c194GpylHU2tuT7T0nSPs4_NePjZ8RWzHFjP_Ax5sqMBF"/>
+    <span class="author">SouUmaHiena</span>
+    <span class="text">ta resolvendo a charada Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:00:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ka_OJb0XNJYDEohFXLN9aw8SQx2wooMyAYwzwnScVwBS5AeOdo4U3-cDL-EXswMyKilw"/>
+    <span class="author">A. K.</span>
+    <span class="text">kkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:00:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Guilherme Delara tem contato YouTube é? melhor vc não mexer com a tropa do Vini, a justiça vai te pegar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:00:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Vini ligou os pontos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:00:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">a casa caiu Guilherme</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:01:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">esse pianista parece o vinheteiro Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:01:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">não sou o Garcia pessoal</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:01:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">ces pensa que se eu fosse o Garcia viria na live do vini com minha foto e tudo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:01:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">e o Garcia é traira eu não sou</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:01:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Guilherme Delara a tropa do Vini está investigando? fica tranquilo se não é o Garcia vamos ficar sabendo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:02:10</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Ele tá falando do Victor vance</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:02:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_ka_OJb0XNJYDEohFXLN9aw8SQx2wooMyAYwzwnScVwBS5AeOdo4U3-cDL-EXswMyKilw"/>
+    <span class="author">A. K.</span>
+    <span class="text">Vini eu tenho muita pena de vê vc nessa miséria e o Bluesão sempre alugando casa de três quartos e cheio de equipamentos caros de som e vídeo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:02:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">AK bluezão aluga</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:02:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">não é dele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:02:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">@ini gordão sette, podem investigar a vontade</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:03:12</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">musica linda</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:03:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">:clapping_hands::clapping_hands::clapping_hands::clapping_hands:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:04:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">vini a gente consegue manter contacto no Instagram?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:04:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">que mandou essa canção que o altíssimo lhe cubra com bençãos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:05:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">O que ouve com a rádio lapa vini ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:05:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">:clapping_hands::clapping_hands::clapping_hands::clapping_hands:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:06:12</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">vini eu saí com minha vô no mercado hoje a tarde, e um homem me comprimentou com má intenções, perguntou se minha vô era sozinha</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:06:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_mIptK0VtOs5EEdpkr1iTrEScY2ondyvuCG6A3SQzaZNw"/>
+    <span class="author">Zeca Urubu</span>
+    <span class="text">boa noite vinni</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:06:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">volta mais tarde, vini.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:07:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Sábado é o melhor dia de chat Brasil</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:07:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Vini eu sou da capital de SP se vc permitir eu entrar na tropa do Vini eu posso ser muito útil</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:07:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, O PRÓXIMO PAPA SERÁ AFRICANO</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:07:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">Vini se te pagassem para você narrar um jogo de futebol Da Base você narraria ???</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:07:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/XwHTHDYcj9FsviGU2rvImjFaVEFi_V27qnyNIeRXz5sxwPwrc-6fdicde14XelpRlU6BynOLFA"/>
+    <span class="author">discman_02 -Em Busca de Redenção</span>
+    <span class="text">Professor, esse Vini Sette Gordão não tem um canal que lucra em cima do senhor?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:08:12</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Vini tem voz de dublador Delara</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:08:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">vini tem a voz do homer do os Simpsons</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:09:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">você não pensa em parar com as lives com o tempo esses ataques vão começar a afetar sua saúde</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:09:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Vini tem a voz do homm</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:10:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">que personagem é esse ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:10:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">homm</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:10:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/2tGxfLFd1ScXcvDbSG2vuEAaRh_c194GpylHU2tuT7T0nSPs4_NePjZ8RWzHFjP_Ax5sqMBF"/>
+    <span class="author">SouUmaHiena</span>
+    <span class="text">musica boa vini sabe</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:10:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Guilherme Delara eu ia falar que o Vini tem a voz do Homer e a aparência do amigo do Homer o Barney</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:11:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">vini sua voz sempre foi assim aguda?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:11:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kUgzOyGO4Xzuh1ZEE-Rd-IoY5xXC_6aTfyA9XYOao"/>
+    <span class="author">Geraldo Júlio Julio</span>
+    <span class="text">Liga o ar condicionado VINNI ! ta CALOR</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:12:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, SERIA BOM SE O PAPA FOSSE DO ORIENTE MÉDIO, DA TERRA DOS TERRORISTAS???</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:12:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kUgzOyGO4Xzuh1ZEE-Rd-IoY5xXC_6aTfyA9XYOao"/>
+    <span class="author">Geraldo Júlio Julio</span>
+    <span class="text">VINII! chá de hortelã da folha miúda para melhorar a Garganta!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:13:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/UWg4TV2fK8PWFdBocls-E6G4BL8MWRjpmkGXx1yQrt71mUiaayJwrzwPw2AXauKwQIJJhrjk79k"/>
+    <span class="author">MISSIONARIO BOLA SILVA</span>
+    <span class="text">BOA NOITE VINI SETTE</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:13:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/lUDdWZo5ij4WW8YfBFjXmlOns6E5DmLd2mMnRBLsli2grcovRsAT7M8eYEa7gJgCqxLmoKCEqA"/>
+    <span class="author">Cachorro do Profeta ®</span>
+    <span class="text">VINI, SERIA BOM SE O PAPA FOSSE DO ORIENTE MÉDIO, DA TERRA DOS TERRORISTAS???</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:13:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/UWg4TV2fK8PWFdBocls-E6G4BL8MWRjpmkGXx1yQrt71mUiaayJwrzwPw2AXauKwQIJJhrjk79k"/>
+    <span class="author">MISSIONARIO BOLA SILVA</span>
+    <span class="text">VAI TER OMEGLE HOJE?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:14:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Vini desde quando vc é terraplanista</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:14:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/UWg4TV2fK8PWFdBocls-E6G4BL8MWRjpmkGXx1yQrt71mUiaayJwrzwPw2AXauKwQIJJhrjk79k"/>
+    <span class="author">MISSIONARIO BOLA SILVA</span>
+    <span class="text">VINI É UM HOMEM DE DEUS, NÃO TERRAPLANISTA</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:14:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kUgzOyGO4Xzuh1ZEE-Rd-IoY5xXC_6aTfyA9XYOao"/>
+    <span class="author">Geraldo Júlio Julio</span>
+    <span class="text">VINII ! NAO PENSA EM DINHEIRO QUE ELE VEM FORTE DE REPENTE!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:15:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">existem fortes indícios que a terra é plana coberta por um domo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:15:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">os terraplanista diz que já bíblia a terra é plana</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:15:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/2tGxfLFd1ScXcvDbSG2vuEAaRh_c194GpylHU2tuT7T0nSPs4_NePjZ8RWzHFjP_Ax5sqMBF"/>
+    <span class="author">SouUmaHiena</span>
+    <span class="text">vini o que acha dos terraplanistas que tiram trecho da bíblia pra comprovar que é plana</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:15:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">na*</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:16:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kUgzOyGO4Xzuh1ZEE-Rd-IoY5xXC_6aTfyA9XYOao"/>
+    <span class="author">Geraldo Júlio Julio</span>
+    <span class="text">VINII! VOCE VAI EXPLUCARr isso de terra plana para o XANDAO !?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:16:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">mas quem escreveu a bíblia lá no antigo testamento naquela época acreditava na terra plana</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:16:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/UWg4TV2fK8PWFdBocls-E6G4BL8MWRjpmkGXx1yQrt71mUiaayJwrzwPw2AXauKwQIJJhrjk79k"/>
+    <span class="author">MISSIONARIO BOLA SILVA</span>
+    <span class="text">NÃO TENHO GRANA VINI</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:16:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">Vini eu acho que hoje vai ser difícil de arrecadar donativos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:17:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/UWg4TV2fK8PWFdBocls-E6G4BL8MWRjpmkGXx1yQrt71mUiaayJwrzwPw2AXauKwQIJJhrjk79k"/>
+    <span class="author">MISSIONARIO BOLA SILVA</span>
+    <span class="text">MELHOR IR EMBORA E ABRIR MAIS TARDE VINI</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:17:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kUgzOyGO4Xzuh1ZEE-Rd-IoY5xXC_6aTfyA9XYOao"/>
+    <span class="author">Geraldo Júlio Julio</span>
+    <span class="text">VAI NADA ! TA CEDOO</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:17:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/UWg4TV2fK8PWFdBocls-E6G4BL8MWRjpmkGXx1yQrt71mUiaayJwrzwPw2AXauKwQIJJhrjk79k"/>
+    <span class="author">MISSIONARIO BOLA SILVA</span>
+    <span class="text">ABRI MAIS TARDE</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:17:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">quem falou da terra bola foi Galileu galilei</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:17:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kUgzOyGO4Xzuh1ZEE-Rd-IoY5xXC_6aTfyA9XYOao"/>
+    <span class="author">Geraldo Júlio Julio</span>
+    <span class="text">ESQUECE DESSE COLCHAO OELO AMOR !</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:17:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">Te amo professor, Deus disse que nós temos que amar o próximo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:17:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/UWg4TV2fK8PWFdBocls-E6G4BL8MWRjpmkGXx1yQrt71mUiaayJwrzwPw2AXauKwQIJJhrjk79k"/>
+    <span class="author">MISSIONARIO BOLA SILVA</span>
+    <span class="text">ABRE UMAS 8:30</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:17:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">dorme por aí e bota o despertador</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:18:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/hIQIrn2bNMjqRbR7-o6rkPuzfLO2SRu_0BHOoatRY1zL_KbguO8Y0ScS4QEk3f_gfifyrW5w"/>
+    <span class="author">NAUGHTY</span>
+    <span class="text">Tocaram juntos?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:19:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/UWg4TV2fK8PWFdBocls-E6G4BL8MWRjpmkGXx1yQrt71mUiaayJwrzwPw2AXauKwQIJJhrjk79k"/>
+    <span class="author">MISSIONARIO BOLA SILVA</span>
+    <span class="text">MAIS TARDE EU VOLTO NA LIVE VINI</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:19:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/m-W5EaTn2gw_qKj71cXFTUKNmLG2pgE1rI8ZVoeyaclkAWsJAKMpEfB5G52V2wWFZlE97JkJGA"/>
+    <span class="author">clonazepam</span>
+    <span class="text">boa noite vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:19:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/hIQIrn2bNMjqRbR7-o6rkPuzfLO2SRu_0BHOoatRY1zL_KbguO8Y0ScS4QEk3f_gfifyrW5w"/>
+    <span class="author">NAUGHTY</span>
+    <span class="text">Roy esteve casado com Mara Maravilha??</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:20:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Guilherme Delara vc tá no Paraná?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:20:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">o diabo da mas ele cobra seu preço</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:21:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">@ini gordão sette, investiga aí, e marque comigo uma interrogação !!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:21:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kUgzOyGO4Xzuh1ZEE-Rd-IoY5xXC_6aTfyA9XYOao"/>
+    <span class="author">Geraldo Júlio Julio</span>
+    <span class="text">VINII ! a Mara Maravilha Foi pra cima de um deles MESMO!?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:21:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/hIQIrn2bNMjqRbR7-o6rkPuzfLO2SRu_0BHOoatRY1zL_KbguO8Y0ScS4QEk3f_gfifyrW5w"/>
+    <span class="author">NAUGHTY</span>
+    <span class="text">Vini foi guarda-costas do Menudo, no Rio??</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:22:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Guilherme Delara eu não cara pra que vou perder tempo com isso só tô perguntando de boa eu sou de SP</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:23:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">eu amo o vini, Deus disse em um versículo Marcos 12:30–31, amar o próximo, eu jamais iria ser traíra com alguém!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:24:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">era o parque de diversões pra um predador</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:24:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_mCz6KIcmJt4GBORoMenD7TLnQkU1D2YHMUY2Z5GpBrXg"/>
+    <span class="author">evenuniforme</span>
+    <span class="text">Vini eu saí com essa moça ai</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:24:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kUgzOyGO4Xzuh1ZEE-Rd-IoY5xXC_6aTfyA9XYOao"/>
+    <span class="author">Geraldo Júlio Julio</span>
+    <span class="text">VINI FOI GUARDA COSTA DA MARAA</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:25:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_mCz6KIcmJt4GBORoMenD7TLnQkU1D2YHMUY2Z5GpBrXg"/>
+    <span class="author">evenuniforme</span>
+    <span class="text">ela tá na casa do seu madruga? é a mesma parede</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:25:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/2tGxfLFd1ScXcvDbSG2vuEAaRh_c194GpylHU2tuT7T0nSPs4_NePjZ8RWzHFjP_Ax5sqMBF"/>
+    <span class="author">SouUmaHiena</span>
+    <span class="text">essa mulher aí é gata ein, essas mulheres puxadas pra asiatica sao lindas</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:25:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/4hGoNsdgmurh1biWmusl4_n5B6DDZ0-sdIH6FViBIxKP4GRfhS_tpW9qhA7IY4uZwWu4kYYy"/>
+    <span class="author">Dr. Rodrigo</span>
+    <span class="text">vini marmitinha da Lynn foi frango a parmegiana, top demais</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:26:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/4hGoNsdgmurh1biWmusl4_n5B6DDZ0-sdIH6FViBIxKP4GRfhS_tpW9qhA7IY4uZwWu4kYYy"/>
+    <span class="author">Dr. Rodrigo</span>
+    <span class="text">professor dormiu</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:27:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kUgzOyGO4Xzuh1ZEE-Rd-IoY5xXC_6aTfyA9XYOao"/>
+    <span class="author">Geraldo Júlio Julio</span>
+    <span class="text">Vini vai proteger o Rick do R00y!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:27:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kUgzOyGO4Xzuh1ZEE-Rd-IoY5xXC_6aTfyA9XYOao"/>
+    <span class="author">Geraldo Júlio Julio</span>
+    <span class="text">AJUUDA ELEES VINIII!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:27:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">Vini eu me lasquei investindo na primeira vez, Pow veio uns impostos pra mim, agora não sei se o investimento paga automaticamente esses impostos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:28:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">delara você deve declarar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:28:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">que vídeo chato mermão papinho furado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:28:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">quais investimentos você fez ? sou contador</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:28:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">@Claudio Verorézzio, é via pagbank, agora não sei se o imposto cobra automaticamente desse valor quando for sacar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:28:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">aí não preciso declarar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:28:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">né?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:29:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">você investiu em um CDB ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:29:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">isso Cláudio</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:29:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kUgzOyGO4Xzuh1ZEE-Rd-IoY5xXC_6aTfyA9XYOao"/>
+    <span class="author">Geraldo Júlio Julio</span>
+    <span class="text">E AGORA VINII ? QUEM SERA OS INOCENTES?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:29:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">foi em CDB</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:29:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">então é automático</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:29:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">não precisa declarar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:29:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">Caramba mermão que vídeo perverso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:29:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Vini estou te ajudando Delara não está no interior de SP ele está no Paraná</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:30:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">então ele não é aquele do interior de SP que vc disse</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:30:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">esquece de mim hater kkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:30:58</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">não tenho nada a ver com isso não</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:31:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kUgzOyGO4Xzuh1ZEE-Rd-IoY5xXC_6aTfyA9XYOao"/>
+    <span class="author">Geraldo Júlio Julio</span>
+    <span class="text">VINII VAI PROCURAR O ROY PARA UMA LIVE</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:31:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">O Guilherme delara já falou uma vez que é do Paraná</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:31:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">kkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:31:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Jimmy de santa tá vendo eu nem sabia que ele já tinha falado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:32:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">Pessoal do chat, recomendo que vocês possam lê o versículo Marcos 12:30–31</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:33:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">10 k pra 100 k</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:33:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">baster é entre o 6 e o 12</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:34:10</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Voltei</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:34:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Do que se trata o vídeo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:34:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">João esse é um dos homens mais honestos no mundo dos investimentos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:34:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">@Claudio Vetorézzio, Quais aplicações de investimento você me recomenda a ter mais lucros sem precisar declarar imposto assim como o pagbank</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:34:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">???</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:35:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kUgzOyGO4Xzuh1ZEE-Rd-IoY5xXC_6aTfyA9XYOao"/>
+    <span class="author">Geraldo Júlio Julio</span>
+    <span class="text">Explica TUDOO aí Vinii</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:35:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Que bacana, Cláudio! Quem é ele? (Nome)</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:36:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">delara apenas o CDB ....acima de 100% do CDI com aplicações constantes</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:36:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">baster</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:36:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">João</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:37:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">@Claudio Vetorézzio, eu estou começando de baixo, tipo com valores mínimos, eu tiro esses valores baixo que eu tenho e invisto no CDB, tenho 19 anos e estou começando a investir</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:37:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">Vini eu tenho medo de usar esses bancos, e eles sumirem com meu dinheiro que eu demorei pra guardar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:37:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">você está na sua melhor idade delara</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:38:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">todos os meses aplicar um valor</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:38:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/4__qbftlvck25B38kxIyI7-x20ALW5aXXBGACadXZtH0_uN2eEQmfbPPY2srz9kA3whBZ7Sq"/>
+    <span class="author">Tulio Maravilha</span>
+    <span class="text">Vai até meia noite direto ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:38:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ITGcoW88JQTjIDmsXjT5SdQ290jAazAw_itAlprKfMFYWl76KlnE9Z9omT_Id3IYDgwD63JPog"/>
+    <span class="author">Jimmy de santa </span>
+    <span class="text">vídeo bom, essa o doador acertou em cheio</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:38:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_n-5Uyy4uBf1cepaJOjOz08ZJYmQ28dvmHuEThaoTdfRc9dbQYzmqUndF_0hW2OfKNQ5g"/>
+    <span class="author">Ivone Pinseta</span>
+    <span class="text">Boa noite</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:38:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kUgzOyGO4Xzuh1ZEE-Rd-IoY5xXC_6aTfyA9XYOao"/>
+    <span class="author">Geraldo Júlio Julio</span>
+    <span class="text">.É mesmo Tulio?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:38:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kDVsj9hLvoBQOLzjE2nL1bDBX9GW_KSmsdaKSmAdiuJmsO7Wk2UinkxnzouI6qS8O9Pg"/>
+    <span class="author">Vini gordão sette </span>
+    <span class="text">teve dois bancos digital que entraram em contato comigo por conta da quantia que eu tenho na poupança oferecendo 110%CDI, mas tenho medo prefiro fundos imobiliários</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:39:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">@Claudio Vetorézzio, Vou adicionar isso na minha caderneta, todos os meses aplicar um valor, desse não sabia, agora vou aplicar todos os meses um valor pra ter X lucros</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:39:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">delara você com 19 anos fazendo isso constantemente vai garantir uma aposentadoria tranquila</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:39:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">faça por você mesmo não dependa do governo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:39:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">pois vai quebrar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:40:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">Que Deus te ouça @Claudio Vetorézzio</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:40:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">e sempre mantenha uma reserva de emergência em CDB pra não precisar tirar da aposentadoria</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:40:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Quantos reais eu devo investir em uma renda fixa para poder ter uma renda de 2.000 — 3.000 Reais, que dá para custear o básico?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:40:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">reserva de emergência é para situações inusitadas da vida ...guarde em poupança ou CDB</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:42:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">@Claudio Vetorézzio, eu não conhecia " investimento " não sabia onde começar, aos 18 procurei estudar e saber como funciona e ETC, agora com 19 com os meus conhecimentos estou começando AGIR</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:42:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Bl3hi1EymQgh8XBtrvjShY4dkJZL7yMT6YSh5kEWNGhBgcHs_g8tWtQufoGX_IqBsNnow13IMw"/>
+    <span class="author">Claudio Vetorézzio</span>
+    <span class="text">João Pedro pra você conseguir esse rendimento vai ter que ter no mínimo uns 600 mil investidos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:42:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Eu sei que o valor investido tem de ser alto, pensei que com o novo governo o rendimento melhoraria. Investimento seguro e que rende alguma coisa decente é um devaneio?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:43:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lP0Tk1-_b-AGrAfXVDEVKA2wx9zL5tc_uSJabKb6U"/>
+    <span class="author">Fabio De Lima</span>
+    <span class="text">Manda um abraço para os seus familiares aqui da Bahia, estamos todos com saudade</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">02:43:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/EprA54n0YPCJogY8-_tZr_WFGCQORJV6ATmpT68pRTMJx9YpT-m7FNQOh7ley3TlWlRmTQDJ99A"/>
+    <span class="author">Guilherme Delara </span>
+    <span class="text">Vixi vini, tá começando a esfriar aqui agora</span>
+    </div>
+    
+
+
+    <!-- Container do Disqus -->
+    <div id="disqus" class="chat-container" style="display: none;">
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    <!-- Container da descrição do vídeo -->
+    <div id="description" class="chat-container" style="display: none;">
+        <h3>Descrição do Vídeo</h3>
+        <p>Nenhuma descrição foi adicionada ao vídeo.</p>
+    </div>
+
+    <!-- Link de download (oculto inicialmente) -->
+    <a id="downloadLink" href="https://embed-ssl.wistia.com/deliveries/6f8f03828f26b3b663d63e0140599b697cf08c80.bin?disposition=attachment&filename=Come%C3%A7ando+mais+um+dia-ixCLvwhmd3w.mp4" style="display: none;"></a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>
