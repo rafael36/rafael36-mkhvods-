@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>MKHvods</title>
+    <link rel="stylesheet" href="css/style2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos para a paginação - Versão Escura e Alinhada */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+            gap: 6px;
+            padding: 0;
+        }
+        
+        .page-item {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .page-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 16px;
+            height: 100%;
+            color: #e0e0e0;
+            background-color: #2d2d2d;
+            border: 1px solid #444;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            min-width: 40px;
+        }
+        
+        .page-link:hover {
+            background-color: #3d3d3d;
+            border-color: #555;
+            color: #fff;
+        }
+        
+        .page-item.active .page-link {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .page-item.disabled .page-link {
+            color: #666;
+            pointer-events: none;
+            background-color: #2d2d2d;
+            border-color: #444;
+        }
+        
+        .page-link-dots {
+            padding: 0 16px;
+            color: #999;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        
+        /* Seta de navegação */
+        .page-link[aria-label="Anterior"],
+        .page-link[aria-label="Próximo"] {
+            font-size: 18px;
+            padding: 0 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-container">
+            <h1>Vods</h1>
+            <nav>
+                <a href="/">Início</a>
+            </nav>
+        </div>
+        <div class="video-grid">
+            <!-- Seus vídeos aqui -->
+            <div class="video-thumbnail" onclick="window.location.href='veggano/8.html'">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczPNjkwXFLrBsVvRXA-5DcME1Hi_TIeqfAPSl6gvVydaeSwupAcfJOftKZsocoCB_e_7HrI42EPXDHWFbbRbMsyFyW_txLy4MdZlg-o8634gukZUHN-fGyOGXI_igR4Mmo19eG9ibkvKxzbD32_FMGpH=w1145-h644-s-no-gm" alt="Thumbnail do Vídeo 1">
+                <div class="video-info">
+                    <h3>anonimo taew？</h3>
+                    <p>25/03/2025</p>
+                </div>
+            </div>
+            
+            <!-- Outros vídeos... -->
+            
+        </div>
+        
+        <!-- Paginação numérica - Versão Alinhada e Escura -->
+        <ul class="pagination">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Anterior">
+                    &laquo;
+                </a>
+            </li>
+            <li class="page-item active">
+                <a class="page-link" href="index.html">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="pagina2.html">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="pagina3.html">3</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="pagina2.html" aria-label="Próximo">
+                    &raquo;
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script src="js/scripts2.js"></script>
+    <div id="disqus_thread"></div>
+    <noscript>
+        Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+</body>
+</html>

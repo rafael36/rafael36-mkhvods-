@@ -13,6 +13,76 @@ body {
     padding: 20px;
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+    gap: 6px;
+    padding: 0;
+}
+
+.page-item {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    height: 100%;
+    color: #e0e0e0;
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 40px;
+}
+
+.page-link:hover {
+    background-color: #3d3d3d;
+    border-color: #555;
+    color: #fff;
+}
+
+.page-item.active .page-link {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    color: white;
+    font-weight: 600;
+}
+
+.page-item.disabled .page-link {
+    color: #666;
+    pointer-events: none;
+    background-color: #2d2d2d;
+    border-color: #444;
+}
+
+.page-link-dots {
+    padding: 0 16px;
+    color: #999;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* Seta de navegação */
+.page-link[aria-label="Anterior"],
+.page-link[aria-label="Próximo"] {
+    font-size: 18px;
+    padding: 0 12px;
+}
+
+
 /* Contêiner Flexível para os Títulos */
 .header-container {
     display: flex;
