@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Vídeo com Chat</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <button id="menuButton" class="menu-button">
+        <i class="fas fa-ellipsis-v"></i>
+    </button>
+    <div id="menuOptions" class="menu-options">
+        <button id="chatOption" class="menu-option">Chat</button>
+        <button id="disqusOption" class="menu-option">Disqus</button>
+        <button id="descriptionOption" class="menu-option">Descrição do Vídeo</button>
+        <button id="downloadOption" class="menu-option">Download</button>
+    </div>
+    <div class="video-container">
+        <div class="wistia_embed wistia_async_lj6vurw5wi videoFoam=true"></div>
+    </div>
+    <div class="chat-container" id="chat">
+            <div class="message">
+    <span class="timestamp">00:02:30</span>
+    <span class="author">Z1K4D0R_TROPADOVEGG</span>
+    <span class="text">fofo é tu dog @Helciooo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:02:58</span>
+    <span class="author">Helciooo</span>
+    <span class="text">@Z1K4D0R_TROPADOVEGG</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:02:59</span>
+    <span class="author">JotapeOusado</span>
+    <span class="text">Hoje a porrada vai cantar no Argentina x Brasil</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:03:12</span>
+    <span class="author">Helciooo</span>
+    <span class="text">zikador veooo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:06:37</span>
+    <span class="author">VincentVanGlock8</span>
+    <span class="text">Eu me posicionando de twitter</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:07:37</span>
+    <span class="author">Loki2500</span>
+    <span class="text">tryharda legal dog</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:08:49</span>
+    <span class="author">Z1K4D0R_TROPADOVEGG</span>
+    <span class="text">limpa legal @Loki2500</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:08:51</span>
+    <span class="author">Z1K4D0R_TROPADOVEGG</span>
+    <span class="text">!leitou @Loki2500</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:11</span>
+    <span class="author">Loki2500</span>
+    <span class="text">poe o comando ai zizi</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:19</span>
+    <span class="author">Z1K4D0R_TROPADOVEGG</span>
+    <span class="text">n da veo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:19</span>
+    <span class="author">Loki2500</span>
+    <span class="text">ou esse bot n tem</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:27</span>
+    <span class="author">Z1K4D0R_TROPADOVEGG</span>
+    <span class="text">bot poqt</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:31</span>
+    <span class="author">Loki2500</span>
+    <span class="text">bot lixo da porra</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:32</span>
+    <span class="author">smo244</span>
+    <span class="text">qual teu recorde de punheta em um dia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:51</span>
+    <span class="author">Agroboyi</span>
+    <span class="text">Shalom vegano</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:20</span>
+    <span class="author">Billypill</span>
+    <span class="text">shalom</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:36:33</span>
+    <span class="author">victorhrmp</span>
+    <span class="text">encarnar não kk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:36:49</span>
+    <span class="author">victorhrmp</span>
+    <span class="text">incorporar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:36:54</span>
+    <span class="author">victorhrmp</span>
+    <span class="text">a minha tbm kkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:38:33</span>
+    <span class="author">VincentVanGlock8</span>
+    <span class="text">Biel, você acredita na existência do demônio sumério Pazuzu?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:12</span>
+    <span class="author">Z1K4D0R_TROPADOVEGG</span>
+    <span class="text">ansioso pro jogo de hoje</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:17</span>
+    <span class="author">Z1K4D0R_TROPADOVEGG</span>
+    <span class="text">preparar uma pizza cabulosa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:20</span>
+    <span class="author">Z1K4D0R_TROPADOVEGG</span>
+    <span class="text">daquelas explode bucho</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:51</span>
+    <span class="author">Z1K4D0R_TROPADOVEGG</span>
+    <span class="text">mutado dog</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:46:41</span>
+    <span class="author">Loki2500</span>
+    <span class="text">ja faz o queijo ai @Z1K4D0R_TROPADOVEGG</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:46:43</span>
+    <span class="author">Loki2500</span>
+    <span class="text">@Loki2500 leitou firme 🍆 💦 @Z1K4D0R_TROPADOVEGG Q dlc 🥵</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:46:47</span>
+    <span class="author">Z1K4D0R_TROPADOVEGG</span>
+    <span class="text">ow</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:46:51</span>
+    <span class="author">Z1K4D0R_TROPADOVEGG</span>
+    <span class="text">k</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:04</span>
+    <span class="author">Z1K4D0R_TROPADOVEGG</span>
+    <span class="text">mutado dog @veggano11</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:05</span>
+    <span class="author">isaac_1862</span>
+    <span class="text">Zikador está com cara de quem vai torcer pra Argentina</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:18</span>
+    <span class="author">Z1K4D0R_TROPADOVEGG</span>
+    <span class="text">Deus me livre isaquezin boca de pelo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:16</span>
+    <span class="author">isaac_1862</span>
+    <span class="text">😅</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:55:10</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">Dale Argentina</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:55:22</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">Ta rolando dog julgamento do bolso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:05:14</span>
+    <span class="author">RudoDuro</span>
+    <span class="text">bolso foi de ralo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:06:29</span>
+    <span class="author">umcaralegal</span>
+    <span class="text">esse cestari é sangue bom? Fiquei sabendo q ele ja bateu nos filho e na mulher dele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:07:49</span>
+    <span class="author">victorhrmp</span>
+    <span class="text">mano fmz</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:08:43</span>
+    <span class="author">umcaralegal</span>
+    <span class="text">solana ta em alta dnv</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:11:29</span>
+    <span class="author">BostaComSangue</span>
+    <span class="text">salve caraio</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:11:38</span>
+    <span class="author">victorhrmp</span>
+    <span class="text">Dmr dog</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:11:39</span>
+    <span class="author">Loki2500</span>
+    <span class="text">vai legal dog</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:12:41</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">vlw dogster</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:12:45</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">dale argentina</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:13:23</span>
+    <span class="author">Loki2500</span>
+    <span class="text">internet é foda dog</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:13:27</span>
+    <span class="author">Loki2500</span>
+    <span class="text">só machão atras do monitor</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:13:50</span>
+    <span class="author">Tygorj</span>
+    <span class="text">k</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:14:30</span>
+    <span class="author">BostaComSangue</span>
+    <span class="text">zé porva</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:16:00</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">https://x.com/viniciuscfp82/status/1904558140474949972</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:16:28</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">https://x.com/NewsLiberdade/status/1904601622233153866</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:16:54</span>
+    <span class="author">BostaComSangue</span>
+    <span class="text">no canal da band jornalismo se pah ta tendo o ao vivo no stf</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:18:58</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">os caras literal fizeram um ultimato</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:19:01</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">pro bolso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:20:09</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">ta mutado dog</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:20:38</span>
+    <span class="author">victorhrmp</span>
+    <span class="text">eu acho</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:20:41</span>
+    <span class="author">RudoDuro</span>
+    <span class="text">acho</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:20:45</span>
+    <span class="author">BostaComSangue</span>
+    <span class="text">Ah, a política é meio bizarra né</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:20:55</span>
+    <span class="author">BostaComSangue</span>
+    <span class="text">o lula tava preso e foi solto</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:20:55</span>
+    <span class="author">RudoDuro</span>
+    <span class="text">se cair o pix ele fica bem</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:20:57</span>
+    <span class="author">victorhrmp</span>
+    <span class="text">se n o filho dele tinha voltado pro Brasil</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:21:30</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">se ja chego ai</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:21:33</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">bem provavel</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:23:25</span>
+    <span class="author">damon1x</span>
+    <span class="text">veggano oq tu acha da prisao do mito</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:23:59</span>
+    <span class="author">damon1x</span>
+    <span class="text">brasil ta lastreado em fezes, meu mano veggas</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:24:58</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">foi condenado ainda</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:27:36</span>
+    <span class="author">BostaComSangue</span>
+    <span class="text">kkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:28:00</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">nordestina</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:28:02</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">kkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:28:17</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">faz filho a rodo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:28:29</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">parece chines</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:29:30</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">olha os nossos ministros do STF</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:29:33</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">so figura</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:29:35</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">kkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:29:38</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">slc</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:30:17</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">tao falando q o tarcisio vai junta com zema</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:30:26</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">tarcisio presidente e zema vice</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:34:58</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">pra mim tinha q acaba com STF</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:35:01</span>
+    <span class="author">Erichlc</span>
+    <span class="text">Rlx dog , o Lula fez a solução https://imgur.com/a/Azikui0</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:35:38</span>
+    <span class="author">Loki2500</span>
+    <span class="text">emprestimo do lula</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:35:42</span>
+    <span class="author">BostaComSangue</span>
+    <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:35:43</span>
+    <span class="author">Erichlc</span>
+    <span class="text">e o inprestimo que o governo fez , msm pra nome sujo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:35:44</span>
+    <span class="author">damon1x</span>
+    <span class="text">emprestimo do governo kkkk pra comprar comida debita automatico</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:35:47</span>
+    <span class="author">damon1x</span>
+    <span class="text">emprestimo ''</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:35:47</span>
+    <span class="author">Loki2500</span>
+    <span class="text">usando o fgts de garantia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:35:48</span>
+    <span class="author">Erichlc</span>
+    <span class="text">de ota da folha salarial</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:35:53</span>
+    <span class="author">BostaComSangue</span>
+    <span class="text">krl 50 bilhoes</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:36:20</span>
+    <span class="author">damon1x</span>
+    <span class="text">esquerdista comemorando que no governo o juros é 3% e nos banqueiro é 5%</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:36:34</span>
+    <span class="author">BostaComSangue</span>
+    <span class="text">3 anos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:37:47</span>
+    <span class="author">BostaComSangue</span>
+    <span class="text">No meu clt eu ganho 2kg de café por dia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:37:48</span>
+    <span class="author">BostaComSangue</span>
+    <span class="text">ta bizarro</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:38:00</span>
+    <span class="author">damon1x</span>
+    <span class="text">nao tenho mais poder de compra para adquirir um tênis da DC SHOES ta dificil esse país to usando sapatenis</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:38:37</span>
+    <span class="author">BostaComSangue</span>
+    <span class="text">carai aí é foda</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:38:48</span>
+    <span class="author">BostaComSangue</span>
+    <span class="text">dc shoes é bom pra carai, só usava esse pra andar de skate</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:38:50</span>
+    <span class="author">BostaComSangue</span>
+    <span class="text">bgl dura mo cota</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:39:37</span>
+    <span class="author">damon1x</span>
+    <span class="text">2021 comprei por 300$ hj ta por 1k quase 4x</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:39:54</span>
+    <span class="author">BostaComSangue</span>
+    <span class="text">pior mano, mo cota atra paguei 350</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:39:56</span>
+    <span class="author">damon1x</span>
+    <span class="text">meu salario n subiu 4x</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:41:42</span>
+    <span class="author">Loki2500</span>
+    <span class="text">vc empreenderia noq se tivesse grana dog?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:43:02</span>
+    <span class="author">BostaComSangue</span>
+    <span class="text">vou trocar meu nick na kick perae</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:43:33</span>
+    <span class="author">RickyLD</span>
+    <span class="text">Acho que trocou agr</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:43:53</span>
+    <span class="author">damon1x</span>
+    <span class="text">aquele dia que vc discutiu com os esquerdista na rua deu nojo so de pensar que aquele tipo de pessoa pode decidir o destino do país pqp brutal</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:45:45</span>
+    <span class="author">damon1x</span>
+    <span class="text">ss</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:47:30</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">o mundo hj em dia so esta de pé por conta do captalismo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:47:33</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">fato</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:47:37</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">qm discorda e maluco</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:47:51</span>
+    <span class="author">Loki2500</span>
+    <span class="text">k ^</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:47:57</span>
+    <span class="author">Loki2500</span>
+    <span class="text">k ^</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:48:11</span>
+    <span class="author">Loki2500</span>
+    <span class="text">KKKKK</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:49:19</span>
+    <span class="author">Loki2500</span>
+    <span class="text">eterno pais do futuro</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:51:38</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">nomade raiz?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:51:42</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">video novo tem</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:59:09</span>
+    <span class="author">victorhrmp</span>
+    <span class="text">vlw dog</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:59:10</span>
+    <span class="author">Loki2500</span>
+    <span class="text">vlw dog</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:59:54</span>
+    <span class="author">FOXBRZ</span>
+    <span class="text">vlw dog</span>
+    </div>
+
+    </div>
+    <div id="disqus" class="chat-container" style="display: none;">
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <div id="description" class="chat-container" style="display: none;">
+        <h3>Descrição do Vídeo</h3>
+        <p>Nenhuma descrição foi adicionada ao vídeo.</p>
+    </div>
+    <a id="downloadLink" href="https://embed-ssl.wistia.com/deliveries/b2d0a290ba5c7fa11601e69cd6e98cb115592e5f.bin?disposition=attachment&filename=anonimo+taew%EF%BC%9F+2025-03-25+14_28+%5B91451607-anonimo-taew%5D.mp4" style="display: none;"></a>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+    <script src="../js/scripts3.js"></script>
+</body>
+</html>
