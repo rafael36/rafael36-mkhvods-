@@ -1,0 +1,2116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Vídeo com Chat</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Botão de menu com três pontinhos -->
+    <button id="menuButton" class="menu-button">
+        <i class="fas fa-ellipsis-v"></i> <!-- Ícone de três pontinhos -->
+    </button>
+
+    <!-- Menu de opções -->
+    <div id="menuOptions" class="menu-options">
+        <button id="chatOption" class="menu-option">Chat</button>
+        <button id="disqusOption" class="menu-option">Disqus</button>
+        <button id="descriptionOption" class="menu-option">Descrição do Vídeo</button>
+        <button id="downloadOption" class="menu-option">Download</button>
+    </div>
+
+    <!-- Container do vídeo -->
+    <div class="video-container">
+        <div class="wistia_embed wistia_async_o4l5odc3ol videoFoam=true"></div>
+    </div>
+
+    <!-- Container do chat -->
+    <div class="chat-container" id="chat">
+        <!-- Mensagens do chat -->
+        
+<div class="message">
+    <span class="timestamp">00:00:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/woeJ4bm1o-P48a083riaKS7zKBjhm-YwRg6IAHr1DS6LLnFBAXUiTEnzwzRnPkOT1f40I721"/>
+    <span class="author">Vini Sette Live</span>
+    <span class="text">https://livepix.gg/vinisette</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:00:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">O canal não caiu!!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:00:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Como já dizia meu avô: a gente trupica, mas não cai</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:00:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">até vou parar de ouvir a sequência de MPB aqui pra ver a live</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:00:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, aquele kit de desodorante que eu comprei nas lojas sette é top</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:00:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Melhor custo benefício </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:01:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nEaD_Rk3gYEqhmikjMp7vwgj1kjo_1clhZVFPoWzf4kyAVnj5RvUUogQGgDuScZLz2rA"/>
+    <span class="author">Carlos Pitanga Alencar </span>
+    <span class="text">vini, acordei cedo hoje soltando vários gases bem fididos, o que pode ser ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:01:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Mesmo depois de jogar futebol eu não fiquei com suvaqueira </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:01:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">É antitranspirante da Nivea</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:01:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Antitranspirante Nivea </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:01:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, seu PC tá travando muito </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:01:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Tá dando umas pipocadas</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:02:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Não é travando, ele dá umas pipocadas</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:02:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Agr tá fluindo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:02:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Ele stream yard puxa muita memória RAM</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:03:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Roda algum pra gente ver</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:03:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">40 graus no rio de janeiro, o processador não aguenta não</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:04:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Joga um baralho online</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:04:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">kkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:04:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">gamão é das antigas</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:04:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Eu não sei jogar gamão </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:04:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Antigamente era dama e gamão, tu lembra</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:04:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nEaD_Rk3gYEqhmikjMp7vwgj1kjo_1clhZVFPoWzf4kyAVnj5RvUUogQGgDuScZLz2rA"/>
+    <span class="author">Carlos Pitanga Alencar </span>
+    <span class="text">o que é bom para prisão de gases Vini ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:05:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">boa tarde</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:05:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Esses dias tava vendo o filme Scarface, muito bom</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:05:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">Vinão, o Pc do Rica Games roda qualquer jogo do mundo mas ele só usa o pc pra acessar Omegle</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:06:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:06:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Wb81FnowwP4dN7MeUwOOypjIzh4SRHCF2mv-5KA99t-iNg7PFEtuve2YW89_aDWVSflZuveDxw"/>
+    <span class="author">Saulo NT</span>
+    <span class="text">Fala Vini, quais serão suas providências para os próximos capitulos dessas pessoas que te acusam de crimes etc?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:06:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Para de fazer essas piadas cara, eu não posso rir no trabalho</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:06:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Tu tá afim de me ferrar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:06:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/y-9KeXV0-xy7464-STkLB-1_pL8zCLwj04Y-_5IDY65N-AtHiQm3SrQbUjrHOUDyzI3fbelZbFs"/>
+    <span class="author">Brenno Richard</span>
+    <span class="text">Boa tarde vinão, a paz do senhor para nós todos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:07:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">A oração de ontem foi forte em vini. Acordei muito melhor hoje</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:07:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, um Omegle essa hora é furada?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:07:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Cq63soMzvrIOJ9F-NJHYzT3mPNpwatja5NCCqdmh5Jzf00Ccmq6ruWo6nJLk0aNFzlYBSM-n9A"/>
+    <span class="author">υηє@νєяѕє000</span>
+    <span class="text">vini oque você acha do rica games antes dizer que mulher não fazia falta pra ele, e agora estar querendo uma mulher</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:08:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Wb81FnowwP4dN7MeUwOOypjIzh4SRHCF2mv-5KA99t-iNg7PFEtuve2YW89_aDWVSflZuveDxw"/>
+    <span class="author">Saulo NT</span>
+    <span class="text">Foi só uma pergunta mano, nao sabia que vc nao gostaVA, to aqui na paz </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:08:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">esse que é o problema</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:08:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Tem ido aonde?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:08:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Cq63soMzvrIOJ9F-NJHYzT3mPNpwatja5NCCqdmh5Jzf00Ccmq6ruWo6nJLk0aNFzlYBSM-n9A"/>
+    <span class="author">υηє@νєяѕє000</span>
+    <span class="text">e agora o rica games tem dinheiro, ele consegue mulher facil</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:08:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Po professor, que isso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:08:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">Live da Familia Brasileira</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:08:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Tu desistiu da pipoca então?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Cq63soMzvrIOJ9F-NJHYzT3mPNpwatja5NCCqdmh5Jzf00Ccmq6ruWo6nJLk0aNFzlYBSM-n9A"/>
+    <span class="author">υηє@νєяѕє000</span>
+    <span class="text">vini se esse Mateus começar a encher muito o saco vc tira a moderação</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">kk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Não Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Calma</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">O tempo é contigo, fica tranquilo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:09:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">pipoca faz em casa, mais barato</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:10:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">saco da pipoca 3 a 4 reais bem mais em conta</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:10:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">yoki</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:10:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Cq63soMzvrIOJ9F-NJHYzT3mPNpwatja5NCCqdmh5Jzf00Ccmq6ruWo6nJLk0aNFzlYBSM-n9A"/>
+    <span class="author">υηє@νєяѕє000</span>
+    <span class="text">vini compra um fogão logo, tem uns usados baratinho</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:10:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">Fogão bom é só no gás mesmo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">O tempo que tu puder ir tu vai po, eu queria ver mesmo é tu comendo a pipoca com contra filé</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">Liquinho vini </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Eu não tenho pressa não po</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kx7LRXG9JxEQPwGG5Y-3-amHKIcX2nDJF5PElO758mf4e-_81WiP_1aIdW3MoO0j1Pgg"/>
+    <span class="author">BUTICO</span>
+    <span class="text">vini coloca uma lareira aí</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Mas agora o tempo vai melhorar, verão acabou </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Cq63soMzvrIOJ9F-NJHYzT3mPNpwatja5NCCqdmh5Jzf00Ccmq6ruWo6nJLk0aNFzlYBSM-n9A"/>
+    <span class="author">υηє@νєяѕє000</span>
+    <span class="text">compra nas lojas sette, e tudo mais barato vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Come a de camarão então</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Come a de Nutella</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:11:56</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">carne de gato</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">De novo com essa blusa vini, deve tá fedendo um suor brabo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">não escuta esse mateus dantas. é golpi. contra file com pipoca?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">@Drakan kkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kx7LRXG9JxEQPwGG5Y-3-amHKIcX2nDJF5PElO758mf4e-_81WiP_1aIdW3MoO0j1Pgg"/>
+    <span class="author">BUTICO</span>
+    <span class="text">vini orei pelo senhor hj, para acabar com a macumba do pesado de curitiba</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/qCq7e3eAbEhG4Fgswp2adqYC5Rw03yARTZnXGg2ATPs2lIyJMTa3UFIO98oVIO_TE_CMprBB"/>
+    <span class="author">SAGA</span>
+    <span class="text">nunca vi isso aí Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">eu como lá no seu lugar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Eu não tenho essas frescuras</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">contra file aqui em bh 48 o kg</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Cq63soMzvrIOJ9F-NJHYzT3mPNpwatja5NCCqdmh5Jzf00Ccmq6ruWo6nJLk0aNFzlYBSM-n9A"/>
+    <span class="author">υηє@νєяѕє000</span>
+    <span class="text">essas comidas assim mais exóticas tipo camarão, não são pra pessoas como o vini que tão acostumados com comidas mais em conta, o Mateus não entende</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/qCq7e3eAbEhG4Fgswp2adqYC5Rw03yARTZnXGg2ATPs2lIyJMTa3UFIO98oVIO_TE_CMprBB"/>
+    <span class="author">SAGA</span>
+    <span class="text">eu acho que é pipoca de microondas sabor contra filé</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">esse mateus vai te colocar em uma furada</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Eu vou</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:12:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Bora</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">Boa tarde Professor!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kx7LRXG9JxEQPwGG5Y-3-amHKIcX2nDJF5PElO758mf4e-_81WiP_1aIdW3MoO0j1Pgg"/>
+    <span class="author">BUTICO</span>
+    <span class="text">o mateus lisinho fez a chuca por isso não tem problema de se cagae</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">kkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">Professor o sr pega uber moto?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">kkk fedeno</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Mas não tá fazendo mais calor</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Vini falou com tantos detalhes que acho que osso já ocorreu com ele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Verão já acabou</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">Vinão, pro senhor ter esse medo, essa situação já deve ter acontecido contigo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:13:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kx7LRXG9JxEQPwGG5Y-3-amHKIcX2nDJF5PElO758mf4e-_81WiP_1aIdW3MoO0j1Pgg"/>
+    <span class="author">BUTICO</span>
+    <span class="text">se vier falar de deeptube vou banir</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:14:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">30 minutos cair nada vou dormir</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:14:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">nunca cagou na roupa ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:14:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">vai com fralda geriatrica</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:14:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">kkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:14:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kx7LRXG9JxEQPwGG5Y-3-amHKIcX2nDJF5PElO758mf4e-_81WiP_1aIdW3MoO0j1Pgg"/>
+    <span class="author">BUTICO</span>
+    <span class="text">vini pq vc nao faz chuca pra evitar isso?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:14:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">@BUTICO kkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:14:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">tem q entrar na praia e cagar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Eu já comi feijoada num lugar muito refinado e de noite tive problema de barriga à noite</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">kkkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Só sai aquela água fedida kkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">caga igual pato so agua</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">se cagar no carro do uber tem que pagar a higienizaçao</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:15:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kx7LRXG9JxEQPwGG5Y-3-amHKIcX2nDJF5PElO758mf4e-_81WiP_1aIdW3MoO0j1Pgg"/>
+    <span class="author">BUTICO</span>
+    <span class="text">vini vc deixaria a mulher da Bahia cagar no teu banheiro?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">@Mateus Dantas Tem que fazer uma live com o Vinão no Bela Mix</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Sei qual é</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">O do salgado de madrugada</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Nunca fui alí</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">vini tive um sonho estranho tinha acabado de acontecer o reveillon de 2040 fuí abrir o youtube e o senhor ligeiramente mais velho estava em live</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">vini, você caga em qualquer lugar ou só no banheiro da sua casa?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:16:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/SWtxyfa6PKXkj1e3U-cWcf0qa9GCpEqdXXzuaYMPinGTR3f-FysMpguawqBspq6HBJRJzXZONQ"/>
+    <span class="author">Suvaco da Cobra</span>
+    <span class="text">ta com a mesma blusa nova de ontem ta limpinha</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:17:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">Isso é falta de higiene</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:17:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/XBRQ8CaCm8yoSljUWlUKDUBV_-wkrJQ8ZU3je8u7N8c6gyWhUriU8WL-Tdkr8OPtFc6KS1VXmA"/>
+    <span class="author">Bokinha Nervosa </span>
+    <span class="text">VINI, TE ACOSELHO A NÃO CITAR MAS ISSO DE TROPA DO AZULAO, ACABEI DE CONSULTAR O PROCESSO NO SITE E O MINISTÉRIO PÚBLICO MANDOU TOCAR EM FRENTE</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:17:10</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Essa blusa deve exalar um aroma muito agradável</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:17:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">kk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:17:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">Vini está com a skin de porteiro, igualzinho</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:17:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">brokiado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:17:43</span>
+    <img class="avatar" src="https://yt4.ggpht.com/XBRQ8CaCm8yoSljUWlUKDUBV_-wkrJQ8ZU3je8u7N8c6gyWhUriU8WL-Tdkr8OPtFc6KS1VXmA"/>
+    <span class="author">Bokinha Nervosa </span>
+    <span class="text">OU SEJA NÃO É BRINCADEIRA MAS NÃO, OS CARAS VÃO RESPONDER CRIMINALMENTE</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Mermão esse papo de processo tá me deixando com mal pressentimento</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini essa semana faço aniversário</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">vai abrir live denovo no horario nobre?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, tu conhece o André Barcinski?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">éeeeee</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">Mateus vai convidar o Vini pra festa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">Professor o restaurante Labuta Mar na Glória tem uma parmegiana top!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Vini como vc conheceu o Mateus dantas ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:18:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">@Mateus Dantas Parabéns pelos 30</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, tu conhece o André Barcinski?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">vini, você vai na festa do Mateus?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">vini o senhor não gosta de comida chinesa?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Tão jogando pedra ai</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:31</span>
+    <img class="avatar" src="https://yt4.ggpht.com/SWtxyfa6PKXkj1e3U-cWcf0qa9GCpEqdXXzuaYMPinGTR3f-FysMpguawqBspq6HBJRJzXZONQ"/>
+    <span class="author">Suvaco da Cobra</span>
+    <span class="text">vini vai levar seu lisinho pro motel pra comemorar seu niver fica tranquilo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">Vini, o senhor precisa fazer short de comida TODO DIA para melhorar o algoritmo e atrair novos inscritos.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">Vini você gosta de comida italiana?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Então vc conheceu o dantas antes do YouTube ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:19:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">um salmão grelhado é top</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">Mas aí o senhor atrai novos doadores</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">vini come até pedra</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">amizade de longa data</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Nossa então é muito tempo de relação</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_mk08Q43YhOapeS3iUn8juMQp6rgXW7HWUWmQYYXSYA9qI"/>
+    <span class="author">Pedro Gomes</span>
+    <span class="text">Saaaalve mestre vinolaaao da massaaaa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">e está desse tamanho?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">naquelas barriguinha na Lapa tem um yakissoba bom e barato!!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:20:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">@msbap277 kkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">não come camarão?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Não curte uma moela de caldo vini ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">vini deveria fazer um almoço com inscritos, Mateus, max sandler e o parque do zé colmeia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:12</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">@Mateus Dantas E a pipoca de churrasco, já provou?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">aonde que o sr come aquelas sopas?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">come coração de frango?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">eu gosto de mocotó com farofa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">Vini, o Rica Games tem 46 anos de idade</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Muito enjoado pra comer</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">so come cachorro quente</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/XBRQ8CaCm8yoSljUWlUKDUBV_-wkrJQ8ZU3je8u7N8c6gyWhUriU8WL-Tdkr8OPtFc6KS1VXmA"/>
+    <span class="author">Bokinha Nervosa </span>
+    <span class="text">MEU IRMÃO, JÁ TIVE UMAS 3 DIARREIAS DPS DE COMER NO KILOGRAKA</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">@Leandro Nunca, mas deve ser bom</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">coração de frango empanado é uma delicia</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:21:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/XBRQ8CaCm8yoSljUWlUKDUBV_-wkrJQ8ZU3je8u7N8c6gyWhUriU8WL-Tdkr8OPtFc6KS1VXmA"/>
+    <span class="author">Bokinha Nervosa </span>
+    <span class="text">KILOGRAMA, JÁ DISSE PRA TU TOMAR CUIDADO</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:22:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">kkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:22:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">Professor o sr tem que voltar na confeitaria Colombo!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Nesses restaurantes de 5 reais vc repete muito vini ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">Vini, por que a batata de marechal é tão vendida se não tem nada demais nela?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">vini quanto tempo faz que o sr não vai em niterói?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Tão arrebentando ai</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini me ajuda</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">eita</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">eitaaaa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">BRIGA</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">que isso Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">briga aí na sala comercial</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">kkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Tão quebrrando tudo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">@Mateus Dantas Sacanagem que aquele dia que o Vinão foi, vc pagou, eles não tinham carne lá</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">vini, será que eles trocam o óleo para fritar a batata?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:23:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Os menino do morro foram ai cobrar alguém</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">kkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">credo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:46</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Lucas</span>
+    <span class="text">o podrão de lá e bom</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:47</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">óleo reutilizado é perigoso pra saude </span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:24:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">aí não da</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">Já comeu Barreado Professor?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">Vinão, aqueles meninos que você doou oque sobrou da Batata de Marechal eram moradores de rua?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">Pior que tem muita gente que frita batata com óleo velho de peixe mesmo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:31</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Comida caseira é melhor</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Lucas</span>
+    <span class="text">o óleo q se usa já e pergoso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Passa ao mal no rego e te servem a comida</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Lucas</span>
+    <span class="text">óleo de côco e saudável frita</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kx7LRXG9JxEQPwGG5Y-3-amHKIcX2nDJF5PElO758mf4e-_81WiP_1aIdW3MoO0j1Pgg"/>
+    <span class="author">BUTICO</span>
+    <span class="text">vini ser comido na rua e perigoso?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:25:58</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">essas cozinhas de restaurantes se voce entrar voce nao come na rua mais</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kx7LRXG9JxEQPwGG5Y-3-amHKIcX2nDJF5PElO758mf4e-_81WiP_1aIdW3MoO0j1Pgg"/>
+    <span class="author">BUTICO</span>
+    <span class="text">tao expulsando o vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">você come cu de galinha?? sambiquira</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini, 3 anos que aquele nosso amigo faleceu</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Olha como tempo passa rápido</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">Professor já comeu Barreado?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">Vinão, aqueles meninos que você doou o que sobrou da Batata de Marechal eram moradores de rua?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Bota ordem ai vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:26:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">Azeite é só na salada</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">vini viu que o nome do brizola apareceu nos documentos do JFK?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">que isso Vini, ta tendo panelaço aí</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:24</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">O teu melhor amigo foi um pouco antes né</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Lucas</span>
+    <span class="text">melhor culinária e a mineira</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">Barreado é um prato típico do litoral paranaense!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">RAMUDUANDU SE NAO CAIR NADA EM 15 MINUTOS VOU DORMIR</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:27:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">Eu passo mal com dendê, Vini. Muito gorduroso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:28:50</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">dende, só conheço o morro</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:28:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">na bahia e so dende</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:28:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lDSJSDjAUAtuef0JTtAFXzaAujtvgNy8NZpTO3bv855fKQsLRkeAc5pd5228DEub_8fA"/>
+    <span class="author">Lorechinesa</span>
+    <span class="text">a comida baiana foi a melhor q provei vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:28:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+    <span class="author">Gabriel Áquila</span>
+    <span class="text">vini já parou pra pensar que isso daqui um dia irá acabar?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/PncxWik78nTJGVPgNZNSxVPlnpSlu-lXJxgnpnzdOnPvbfTMffdrvujQxrhhVeLDCsV7fwROsU4"/>
+    <span class="author">luizxd01</span>
+    <span class="text">boa tarde, eu desenvolvi uma tese de que todas as mulheres do job são macumbeiras, concorda comigo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini quero mandar reeact mas to preso no trabalho</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">ME AJUDA</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Sorte que o canal não caiu em vini ficou a pistola na capa da live por minutos kkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">kkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:29:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">e nao reportou</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:30:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lDSJSDjAUAtuef0JTtAFXzaAujtvgNy8NZpTO3bv855fKQsLRkeAc5pd5228DEub_8fA"/>
+    <span class="author">Lorechinesa</span>
+    <span class="text">isso é bobeira, ingredientes que eles usam são fortes sim, mais comida de oferenda nao se come, pelo menos n em restaurante kkkkkk isso é bobeira</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:30:08</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">vini deu mole</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:30:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">Professor já ganhou algum dinheiro no jogo do bicho?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:30:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">lkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:30:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">tem q reportar os pela saco</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:30:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">e no tigrinho nunca apostou?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:31:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">deu viado quando voce jogou??</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:31:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Vc não é baiano vini ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:31:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Leandro</span>
+    <span class="text">Vini, qual o maior prêmio que o senhor já ganhou na loteria/bixo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:31:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">se não vier nada eu vou embora éééééé</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:31:45</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lmjqcIoF91Lmxrkuf_DpDYGJ_thwhPG7ie4zK7cYK7dYk"/>
+    <span class="author">URSO DO CABELO DUROO (URSO DO CABELO DUROO)</span>
+    <span class="text">A MUIE Q FALOU MERDA DO NEYMAR A DO JOB TEM 29 PROCESSOS TA FUDIDA KKKKKKKKKKKKKKKKKKKKKK</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:32:31</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">Professor já gastou dinheiro com as do job?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:32:58</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Lucas</span>
+    <span class="text">sobra nada o máximo uma advertência</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:33:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">O Javaporco falou que o Deita estava por trás dos ataques!!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:33:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Cq63soMzvrIOJ9F-NJHYzT3mPNpwatja5NCCqdmh5Jzf00Ccmq6ruWo6nJLk0aNFzlYBSM-n9A"/>
+    <span class="author">υηє@νєяѕє000</span>
+    <span class="text">vini oque você acha sobre não ter consequências prós atos cometidos contra o lixo? eu sei que ele merece, mas algo assim pode acontecer com outras pessoas também</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:33:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Javali vai cair por calúnia e difamação kkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:33:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Lucas</span>
+    <span class="text">o cara invadiu esse castelo do capeta aqui na Dutra quebrou as imagens do cara falo que ia mata o cara foi liberado no dia seguinte</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:34:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">kkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:34:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">É verdade que ele era namorado do Papai Alemão?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:34:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Cq63soMzvrIOJ9F-NJHYzT3mPNpwatja5NCCqdmh5Jzf00Ccmq6ruWo6nJLk0aNFzlYBSM-n9A"/>
+    <span class="author">υηє@νєяѕє000</span>
+    <span class="text">lombrigato tá preso ainda?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_l7I9Z2ruLwb_8O5wqZX3BeggKDhG9XW1jritguKKq0ERDMHNocJbKZGdEYuVaEVLicvQ"/>
+    <span class="author">Lucas</span>
+    <span class="text">mestre jonan procura aí o vídeo pro cara deu nada</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kis-t_L6AAiwtNPvlGDMCWlL3BwULs03n9XHDd2YuJ_dA"/>
+    <span class="author">Saulo Rafael</span>
+    <span class="text">"na rua"</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">Dnv o Lombri foi preso? mds</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">de novo?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">vini, por que você não procura um advogado pra receber o bpc lias?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Meu Deus</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:35:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Cq63soMzvrIOJ9F-NJHYzT3mPNpwatja5NCCqdmh5Jzf00Ccmq6ruWo6nJLk0aNFzlYBSM-n9A"/>
+    <span class="author">υηє@νєяѕє000</span>
+    <span class="text">vini faz reclamação aí por barulho, essa hora não pode não</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:36:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Vini vc iria pra SP gravar com o taiguara e a betty ?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:36:33</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">Vini, será que o Lombrigato foi preso por posse ilegal de drogas?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:36:44</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kis-t_L6AAiwtNPvlGDMCWlL3BwULs03n9XHDd2YuJ_dA"/>
+    <span class="author">Saulo Rafael</span>
+    <span class="text">você ainda é fechado com o carrasco?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:36:58</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Lombrigato não tá preso ele só saiu da deep</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Cq63soMzvrIOJ9F-NJHYzT3mPNpwatja5NCCqdmh5Jzf00Ccmq6ruWo6nJLk0aNFzlYBSM-n9A"/>
+    <span class="author">υηє@νєяѕє000</span>
+    <span class="text">por briga saga</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Tiro</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Segura o react</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:30</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">3 minutos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Ele fez live semana passada falando que ia sair da deep</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">oloko</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Cq63soMzvrIOJ9F-NJHYzT3mPNpwatja5NCCqdmh5Jzf00Ccmq6ruWo6nJLk0aNFzlYBSM-n9A"/>
+    <span class="author">υηє@νєяѕє000</span>
+    <span class="text">ele foi preso esses dias agora drakan, o amigo dele lá que subia nas streans falo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:37:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">O Rafão vai voltar o podcast!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:38:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/CiB2Am_lOPHb5U5wARpSspT5oEJk0EQUqzLA7mVH8b-hRyavIEeZYxJxw6nVn1CdsIQrltt_cg"/>
+    <span class="author">Drakan</span>
+    <span class="text">Universe caraka</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:38:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">queimou o cocktop</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:39:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">Vini, a magazine luiza entrega rápido?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:39:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">foi o Deita!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:39:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Algum inscrito tá ficando calvo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:39:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Kkkkkkkkkkkkkkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:39:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">é o lalau</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:40:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ebQG3rR-DZTZO5AKww4ionU0BMPD7Ef33AFV7YoAuA82jE2aAK_ltL13dJSaza0H3nfJZnLU"/>
+    <span class="author">Mister Goiano</span>
+    <span class="text">eu fiz uma compra na Amazônia mais só vou pagar quando entregarem</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:40:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">tem que colocar as lojas sette na camisa do Botafogo!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:40:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_lDSJSDjAUAtuef0JTtAFXzaAujtvgNy8NZpTO3bv855fKQsLRkeAc5pd5228DEub_8fA"/>
+    <span class="author">Lorechinesa</span>
+    <span class="text">vou comprar alguma coisa pra ajudar, cade o link</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:40:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Cq63soMzvrIOJ9F-NJHYzT3mPNpwatja5NCCqdmh5Jzf00Ccmq6ruWo6nJLk0aNFzlYBSM-n9A"/>
+    <span class="author">υηє@νєяѕє000</span>
+    <span class="text">desses 99 reais o vini recebe uns 90 centavos</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:41:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Cuidado ai Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:41:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nO5_AnrR5wC3yikrkeRVMEqqK2JYLnvMQub5cKxd-mCQNDacSpJv5wGRkTMh4pgO6TqQ"/>
+    <span class="author">Mayke </span>
+    <span class="text">Vini João Batista foi o último profeta? porque muita gente pregando fala que é profeta mas Lucas 16 16 disse que os profetas foram até João</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:41:29</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Sai daí então</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:41:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Cq63soMzvrIOJ9F-NJHYzT3mPNpwatja5NCCqdmh5Jzf00Ccmq6ruWo6nJLk0aNFzlYBSM-n9A"/>
+    <span class="author">υηє@νєяѕє000</span>
+    <span class="text">deixa de frescura Mateusinha franga</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:41:58</span>
+    <img class="avatar" src="https://yt4.ggpht.com/I70r9Nxh0lYBx6sPxL5jnwiF3c-uGMc0YHM_9QQ_ldCN-9KfTCjJBSZFdnI7cvRRrEVzN2pFkQ"/>
+    <span class="author">BARATA REVOLUCIONARIA DO ESCRITORIO DA OPRESSAO 🪳</span>
+    <span class="text">Mateus Dantas oi vida</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:42:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">Oloko Vini, o mercado livre é o melhor</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:42:35</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">o Rafão está com loja online também, lojas otaku</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:43:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/7jjGsgpi3_fiQd0f8bvNydaZyL3LQgWtPZdiMfhi922MaXQ_guVkdGoKgrU2iw4JAfq9M_IP"/>
+    <span class="author">Kefalonia</span>
+    <span class="text">compra uma sanduicheira nova tbm que a gente viu q tá toda quebrada</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:43:03</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">aí sim.</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:43:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/7jjGsgpi3_fiQd0f8bvNydaZyL3LQgWtPZdiMfhi922MaXQ_guVkdGoKgrU2iw4JAfq9M_IP"/>
+    <span class="author">Kefalonia</span>
+    <span class="text">compra uma sanduicheira nova tbm que a gente viu q tá toda quebrada</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:43:28</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">vini tá quebrado</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:43:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Cq63soMzvrIOJ9F-NJHYzT3mPNpwatja5NCCqdmh5Jzf00Ccmq6ruWo6nJLk0aNFzlYBSM-n9A"/>
+    <span class="author">υηє@νєяѕє000</span>
+    <span class="text">vini uma vez o Frederic disse que a ideia de fazer uma loja foi dele, disse que quando ele foi abrir as lojas rochedos, você foi na frente e fez a sua antes</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:43:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/7jjGsgpi3_fiQd0f8bvNydaZyL3LQgWtPZdiMfhi922MaXQ_guVkdGoKgrU2iw4JAfq9M_IP"/>
+    <span class="author">Kefalonia</span>
+    <span class="text">50 reais o fogão e ainda quer desconto???</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:44:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">a voltagem do escritório é 110 v ou 220?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:04</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">compra uma chaleira elétrica é melhor!!!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Olha o react</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Olha o chat</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:26</span>
+    <img class="avatar" src="https://yt4.ggpht.com/7jjGsgpi3_fiQd0f8bvNydaZyL3LQgWtPZdiMfhi922MaXQ_guVkdGoKgrU2iw4JAfq9M_IP"/>
+    <span class="author">Kefalonia</span>
+    <span class="text">compra uma sanduicheira nova tbm que a gente viu q a sua tá toda quebrada</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:36</span>
+    <img class="avatar" src="https://yt4.ggpht.com/7jjGsgpi3_fiQd0f8bvNydaZyL3LQgWtPZdiMfhi922MaXQ_guVkdGoKgrU2iw4JAfq9M_IP"/>
+    <span class="author">Kefalonia</span>
+    <span class="text">compra uma sanduicheira nova tbm que a gente viu q a sua tá toda quebrada</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:45:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">aqui no interior de SP também é tudo 110v</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:46:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/axJ7PgV1vW7yvD34TOHHeK8tqLEVwphKtoFJl0Uz5KrT4U1hkWRanmmPyWHyxaKG3rN5xE8AgQ"/>
+    <span class="author">indilinga</span>
+    <span class="text">Professor o sr mora perto do casarão que desmoronou aí no centro?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:46:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">gente, o vini não está na casa dele</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:46:23</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nO5_AnrR5wC3yikrkeRVMEqqK2JYLnvMQub5cKxd-mCQNDacSpJv5wGRkTMh4pgO6TqQ"/>
+    <span class="author">Mayke </span>
+    <span class="text">Vini João Batista foi o último profeta? vejo muitos pregadores falando que é profeta mas Lucas 16 16 disse que os profetas e a lei foram até João</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:46:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">para coisas simples</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:16</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">mandei</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:47:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">caiu</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:05</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">10% de comissão?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nO5_AnrR5wC3yikrkeRVMEqqK2JYLnvMQub5cKxd-mCQNDacSpJv5wGRkTMh4pgO6TqQ"/>
+    <span class="author">Mayke </span>
+    <span class="text">da pra cozinhar num desses Vini fazer um feijão?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">kkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:48:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">não vai aparecer seus dados, é só parar o compartilhamento</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:01</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_mk08Q43YhOapeS3iUn8juMQp6rgXW7HWUWmQYYXSYA9qI"/>
+    <span class="author">Pedro Gomes</span>
+    <span class="text">2000 w é muita coisa? :face_with_tears_of_joy:</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:02</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nO5_AnrR5wC3yikrkeRVMEqqK2JYLnvMQub5cKxd-mCQNDacSpJv5wGRkTMh4pgO6TqQ"/>
+    <span class="author">Mayke </span>
+    <span class="text">uma costela na pressão?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">mandei</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:17</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">tem que ser o mais barato né</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">Ixi Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">mandei react</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nO5_AnrR5wC3yikrkeRVMEqqK2JYLnvMQub5cKxd-mCQNDacSpJv5wGRkTMh4pgO6TqQ"/>
+    <span class="author">Mayke </span>
+    <span class="text">kkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:53</span>
+    <img class="avatar" src="https://yt4.ggpht.com/6XSVQ2JQa6SB-7j_GHOs--6wNLC6F4NOj5_jtNHBSqWLU7eqnVYweNhr4TCrhWFvWx99KnkBtQ"/>
+    <span class="author">Um Míope Qualquer</span>
+    <span class="text">boa tarde vini, boa tarde chat boa tarde matheus</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">tem alguém madeirando uma mulher ai</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:55</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">Cozinha salsicha numa chama e faz um cafezinho na outra</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:49:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nO5_AnrR5wC3yikrkeRVMEqqK2JYLnvMQub5cKxd-mCQNDacSpJv5wGRkTMh4pgO6TqQ"/>
+    <span class="author">Mayke </span>
+    <span class="text">quem tá transando aí kkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:50:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">tá macetando</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:50:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">mandei react</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:50:32</span>
+    <img class="avatar" src="https://yt4.ggpht.com/6XSVQ2JQa6SB-7j_GHOs--6wNLC6F4NOj5_jtNHBSqWLU7eqnVYweNhr4TCrhWFvWx99KnkBtQ"/>
+    <span class="author">Um Míope Qualquer</span>
+    <span class="text">boa tarde mnatheus lisinho</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:50:34</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">Vini, as do job sempre carregam isso</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:50:37</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nO5_AnrR5wC3yikrkeRVMEqqK2JYLnvMQub5cKxd-mCQNDacSpJv5wGRkTMh4pgO6TqQ"/>
+    <span class="author">Mayke </span>
+    <span class="text">tá pega será que é o angolano Vini</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:50:38</span>
+    <img class="avatar" src="https://yt4.ggpht.com/NetlJ8FNszah7GYEI9UGQYLhxMq7rndUiq_WvD87NN522L-bMtrgIvr6RjJkCSlS5rd954fM94I"/>
+    <span class="author">Homem Tinta</span>
+    <span class="text">Isso é barulho de cama batendo Vinão</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:50:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/6XSVQ2JQa6SB-7j_GHOs--6wNLC6F4NOj5_jtNHBSqWLU7eqnVYweNhr4TCrhWFvWx99KnkBtQ"/>
+    <span class="author">Um Míope Qualquer</span>
+    <span class="text">boa tarde mnatheus lisinho</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:51:14</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">tão largando o aço</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:51:18</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Mju38Ff1wtcio5mv6yW6ekz4Lr8IFrzBWNhW8cpYOb1uQJf7V9vbBLTN5gQLwYwUAQ_R13IsVM4"/>
+    <span class="author">João Pedro Teologia</span>
+    <span class="text">Salve Vini!</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:51:52</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">mandei react</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:52:09</span>
+    <img class="avatar" src="https://yt4.ggpht.com/7jjGsgpi3_fiQd0f8bvNydaZyL3LQgWtPZdiMfhi922MaXQ_guVkdGoKgrU2iw4JAfq9M_IP"/>
+    <span class="author">Kefalonia</span>
+    <span class="text">vc disse q vai ter que ficar 2 dia aí esperando a entrega não é mais fácil mandar entregar em casa?</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:52:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">no mercado livre vem amanhã se for pela entrega full</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:53:21</span>
+    <img class="avatar" src="https://yt4.ggpht.com/6XSVQ2JQa6SB-7j_GHOs--6wNLC6F4NOj5_jtNHBSqWLU7eqnVYweNhr4TCrhWFvWx99KnkBtQ"/>
+    <span class="author">Um Míope Qualquer</span>
+    <span class="text">boa tarde mnatheus lisinho</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:53:27</span>
+    <img class="avatar" src="https://yt4.ggpht.com/I70r9Nxh0lYBx6sPxL5jnwiF3c-uGMc0YHM_9QQ_ldCN-9KfTCjJBSZFdnI7cvRRrEVzN2pFkQ"/>
+    <span class="author">BARATA REVOLUCIONARIA DO ESCRITORIO DA OPRESSAO 🪳</span>
+    <span class="text">Vini vou falar isso porque alguém tem que ser homem e falar, se for pra abrir live e ficar pesquisando produtos pra comprar melhor nem abrir, ou uma coisa ou outra ninguém é obrigado a ver vc comprar</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:07</span>
+    <img class="avatar" src="https://yt4.ggpht.com/gjhmvkLERzowGot7laVrQWneR4opwzgYZ3qTVGi5tC5YC1sMmd5POKYRsI-s-jlzJex8YlEm"/>
+    <span class="author">camavinga</span>
+    <span class="text">concordo plenamente com oque a barata falou</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:20</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">mandei react</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">kkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nO5_AnrR5wC3yikrkeRVMEqqK2JYLnvMQub5cKxd-mCQNDacSpJv5wGRkTMh4pgO6TqQ"/>
+    <span class="author">Mayke </span>
+    <span class="text">kkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:49</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">kkkkkkkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:51</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">travou</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">mas barata pra comprar tem que ter dinheiro</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:58</span>
+    <img class="avatar" src="https://yt4.ggpht.com/6XSVQ2JQa6SB-7j_GHOs--6wNLC6F4NOj5_jtNHBSqWLU7eqnVYweNhr4TCrhWFvWx99KnkBtQ"/>
+    <span class="author">Um Míope Qualquer</span>
+    <span class="text">boa tarde mnatheus lisinho</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:54:59</span>
+    <img class="avatar" src="https://yt4.ggpht.com/gjhmvkLERzowGot7laVrQWneR4opwzgYZ3qTVGi5tC5YC1sMmd5POKYRsI-s-jlzJex8YlEm"/>
+    <span class="author">camavinga</span>
+    <span class="text">kkkkkkkk</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:55:22</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">o Vini falou pra barata e dps travou</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:55:40</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">travou</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:55:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">na hora do meu react cara</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:55:54</span>
+    <img class="avatar" src="https://yt4.ggpht.com/gjhmvkLERzowGot7laVrQWneR4opwzgYZ3qTVGi5tC5YC1sMmd5POKYRsI-s-jlzJex8YlEm"/>
+    <span class="author">camavinga</span>
+    <span class="text">Mateus aproveita q a live travou e bloqueia o banho de rio na encolha</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:56:13</span>
+    <img class="avatar" src="https://yt4.ggpht.com/Cq63soMzvrIOJ9F-NJHYzT3mPNpwatja5NCCqdmh5Jzf00Ccmq6ruWo6nJLk0aNFzlYBSM-n9A"/>
+    <span class="author">υηє@νєяѕє000</span>
+    <span class="text">ele já anda fazendo isso tem tempo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:56:39</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">não posso bloquear</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:56:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">acho que ele foi reclamar com os vizinhos do barulho</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:56:48</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Cara, ele vai botar meu react na hora que eu for embora</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:56:57</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Mandei o negócio tem 15 minutos já</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:57:42</span>
+    <img class="avatar" src="https://yt4.ggpht.com/8P-X6fRcBHO6eJTX4DCH4K0JKddURggnjsnEtbXEimstrLJH4_McSO1SjGOC-48PT2bnuvpqZMM"/>
+    <span class="author">SAGA 3.0</span>
+    <span class="text">mexeram na fiação, o pessoal que está demolindo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:58:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">já era meu react</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:58:15</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Bota de noite Vini, agr to indo pra casa</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:58:19</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Não vou conseguir ver não</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:58:25</span>
+    <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+    <span class="author">Mateus Dantas</span>
+    <span class="text">Bota meu react de noite</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:58:41</span>
+    <img class="avatar" src="https://yt4.ggpht.com/I70r9Nxh0lYBx6sPxL5jnwiF3c-uGMc0YHM_9QQ_ldCN-9KfTCjJBSZFdnI7cvRRrEVzN2pFkQ"/>
+    <span class="author">BARATA REVOLUCIONARIA DO ESCRITORIO DA OPRESSAO 🪳</span>
+    <span class="text">Queria o que fiação parecendo ninho de passarinho não sei como não explodiu ainda</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">00:59:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">é a falta de doadores</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:00:06</span>
+    <img class="avatar" src="https://yt4.ggpht.com/I70r9Nxh0lYBx6sPxL5jnwiF3c-uGMc0YHM_9QQ_ldCN-9KfTCjJBSZFdnI7cvRRrEVzN2pFkQ"/>
+    <span class="author">BARATA REVOLUCIONARIA DO ESCRITORIO DA OPRESSAO 🪳</span>
+    <span class="text">antes do Vini nascer esse prédio que ele faz live já era velho uma hora a fiação ia pifar mesmo</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:01:00</span>
+    <img class="avatar" src="https://yt4.ggpht.com/5BrcWruNxK4b1fRRVVxmN9c67WeZvyUsfR16L7loEzpFsFcvp_z0RR3I5Gf9jTqUVi8p_grHBQ"/>
+    <span class="author">msbap277</span>
+    <span class="text">vini precisa de um bolsa família</span>
+    </div>
+    <div class="message">
+    <span class="timestamp">01:07:11</span>
+    <img class="avatar" src="https://yt4.ggpht.com/1Bqixl2KjxC4HUULE_NBDCBZ16x5_EkVSGZDYFKQZW-RhMrudg85oJLhD5bciaWbKdlz-QYa"/>
+    <span class="author">Marco Aparecido E. Silva</span>
+    <span class="text">o que aconteceu??</span>
+    </div>
+    
+</div>
+
+
+    <!-- Container do Disqus -->
+    <div id="disqus" class="chat-container" style="display: none;">
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    <!-- Container da descrição do vídeo -->
+    <div id="description" class="chat-container" style="display: none;">
+        <h3>Descrição do Vídeo</h3>
+        <p>Nenhuma descrição foi adicionada ao vídeo.</p>
+    </div>
+
+    <!-- Link de download (oculto inicialmente) -->
+    <a id="downloadLink" href="https://embed-ssl.wistia.com/deliveries/7b62c7d49ffb564747b8eb7e4c4caef1f80127fe.bin?disposition=attachment&filename=Come%C3%A7ando+a+semana-2vveI6UhLFM.mp4" style="display: none;"></a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>
