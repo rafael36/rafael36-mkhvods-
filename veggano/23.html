@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Vídeo com Chat</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <button id="menuButton" class="menu-button">
+        <i class="fas fa-ellipsis-v"></i>
+    </button>
+    <div id="menuOptions" class="menu-options">
+        <button id="chatOption" class="menu-option">Chat</button>
+        <button id="disqusOption" class="menu-option">Disqus</button>
+        <button id="descriptionOption" class="menu-option">Descrição do Vídeo</button>
+        <button id="downloadOption" class="menu-option">Download</button>
+    </div>
+    <div class="video-container">
+        <div class="wistia_embed wistia_async_506yjkxs6z videoFoam=true"></div>
+    </div>
+    <div class="chat-container" id="chat">
+        <p>Sem mensagens de chat disponíveis.</p>
+    </div>
+    <div id="disqus" class="chat-container" style="display: none;">
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <div id="description" class="chat-container" style="display: none;">
+        <h3>Descrição do Vídeo</h3>
+        <p>Nenhuma descrição foi adicionada ao vídeo.</p>
+    </div>
+    <a id="downloadLink" href="https://embed-ssl.wistia.com/deliveries/eed5942ce7f2ab55c2a65301a52e84f2.bin?disposition=attachment&filename=1 2025-04-07 05_58 [72746523-1].mp4" style="display: none;"></a>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+    <script src="../js/scripts3.js"></script>
+</body>
+</html>
