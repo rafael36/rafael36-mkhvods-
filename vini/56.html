@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player de Vídeo com Chat</title>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-    <link rel="stylesheet" href="../css/style3.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="video-container">
@@ -39,7 +39,29 @@
         </div>
     </div>
 
+    <!-- Container do Disqus -->
+    <div id="disqus" class="chat-container" style="display: none;"></div>
+
+    <!-- Container da descrição -->
+    <div id="description" class="chat-container" style="display: none;">
+        <p>Descrição do vídeo vai aqui.</p>
+    </div>
+
+    <!-- Botão de menu -->
+    <button id="menuButton" class="menu-button">☰</button>
+
+    <!-- Menu de opções -->
+    <div id="menuOptions" class="menu-options" style="display: none;">
+        <button id="chatOption" class="menu-option">Chat</button>
+        <button id="disqusOption" class="menu-option">Comentários (Disqus)</button>
+        <button id="descriptionOption" class="menu-option">Descrição</button>
+        <button id="downloadOption" class="menu-option">Download</button>
+    </div>
+
+    <!-- Link de download oculto -->
+    <a id="downloadLink" href="https://ipfs.io/ipfs/QmcDw9wD2f1ZhSEv5H46iRXTPS9cXTAWN1DZ55e6siP5hi" download style="display: none;"></a>
+
     <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-    <script src="../js/scripts4.js"></script>
+    <script src="../js/scripts.js"></script>
 </body>
 </html>
