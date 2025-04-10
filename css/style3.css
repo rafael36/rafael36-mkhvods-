@@ -13,6 +13,9 @@ body {
     flex: 4;
     padding: 20px;
     position: relative;
+    display: flex; /* Adicionado para centralizar o Plyr */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
 }
 
 .chat-container {
@@ -79,15 +82,17 @@ body {
 /* Estilo específico para o Plyr */
 .plyr {
     width: 100%;
-    height: 100%;
+    height: auto; /* Alterado para auto para respeitar a proporção do vídeo */
+    max-width: 100%; /* Garante que não exceda o contêiner */
+    max-height: 100%; /* Garante que não exceda o contêiner */
     border-radius: 10px;
     overflow: hidden;
 }
 
 .plyr video {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto; /* Respeita a proporção original */
+    object-fit: contain; /* Exibe o vídeo inteiro sem cortes */
 }
 
 /* Estilos do menu */
