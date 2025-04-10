@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Vídeo com Chat</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link rel="stylesheet" href="../css/style3.css">
+</head>
+<body>
+    <div class="video-container">
+        <video
+            id="player"
+            playsinline
+            controls
+            data-plyr-config='{"controls": ["play-large", "play", "progress", "current-time", "mute", "volume", "settings", "fullscreen"], "settings": ["speed"], "speed": {"selected": 1, "options": [0.5, 1, 1.5, 2]}}'>
+            <source src="https://ipfs.io/ipfs/QmcDw9wD2f1ZhSEv5H46iRXTPS9cXTAWN1DZ55e6siP5hi" type="video/mp4" />
+        </video>
+    </div>
+
+    <div class="chat-container" id="chat">
+        <div class="message">
+            <span class="timestamp">00:41:15</span>
+            <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_m2gSlRZ8pnKJyCcGdJLGFQ9gRQp0EvqSYZSulf8MYqwOgLgQf6khYraMqkL0JYWSFS6w"/>
+            <span class="author">Eduardo Nunes 🇦🇲</span>
+            <span class="text">até 00:00</span>
+        </div>
+        <div class="message">
+            <span class="timestamp">00:41:16</span>
+            <img class="avatar" src="https://yt4.ggpht.com/K2geEDdfIZ7NlkfOdXvEkt9m-P3wKBGQuD2wdyOmpo4xp1LaULNad05K7PQxjf2w3DR8FlQd"/>
+            <span class="author">Brobbey</span>
+            <span class="text">F2S é forte:face-red-heart-shape:</span>
+        </div>
+        <div class="message">
+            <span class="timestamp">00:41:35</span>
+            <img class="avatar" src="https://yt4.ggpht.com/JMek6uPtyXeE9n-Kgo0xh5nFNdKeIC-CRUXjoTBtz6Iqkl_RvNze9EOdp9BQi6RV5n7Uw2h9Kw"/>
+            <span class="author">Lindo Rico</span>
+            <span class="text">PARA DE MURMURAR, ENQUANTO O SENHOR TÁ AÍ SENTANDINHO GANHANDO ESMOLA, TEM PESSOAS MORRENDO DO OUTRO LADO DO MUNDO</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script src="../js/scripts4.js"></script>
+</body>
+</html>
