@@ -5,21 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player de Vídeo com Chat</title>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style3.css">
 </head>
 <body>
-    <button id="menuButton" class="menu-button">
-        <i class="fas fa-ellipsis-v"></i>
-    </button>
-    <div id="menuOptions" class="menu-options">
-        <button id="chatOption" class="menu-option">Chat</button>
-        <button id="disqusOption" class="menu-option">Disqus</button>
-        <button id="descriptionOption" class="menu-option">Descrição do Vídeo</button>
-        <button id="downloadOption" class="menu-option">Download</button>
-    </div>
     <div class="video-container">
-        <div class="wistia_embed wistia_async_5pfpaygv9i videoFoam=true"></div>
+        <video
+            id="player"
+            playsinline
+            controls
+            data-plyr-config='{"controls": ["play-large", "play", "progress", "current-time", "mute", "volume", "settings", "fullscreen"], "settings": ["speed"], "speed": {"selected": 1, "options": [0.5, 1, 1.5, 2]}}'>
+            <source src="https://ipfs.io/ipns/k51qzi5uqu5dlf4v2uz60apuk3ny8ikedvbv734fxzly5pvistnt5fhanv2v9b/Nem%20cochilei-f9ePyZDSqDQ.mp4" type="video/mp4" />
+        </video>
     </div>
     <div class="chat-container" id="chat">
         <div class="message">
@@ -6912,17 +6908,26 @@
                 </div>
 
     </div>
-    <div id="disqus" class="chat-container" style="display: none;">
-        <div id="disqus_thread"></div>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
+    <!-- Container da descrição -->
     <div id="description" class="chat-container" style="display: none;">
-        <h3>Descrição do Vídeo</h3>
-        <p>Nenhuma descrição foi adicionada ao vídeo.</p>
+        <p>Descrição do vídeo vai aqui.</p>
     </div>
-    <a id="downloadLink" href="https://embed-ssl.wistia.com/deliveries/6e13fc7cc67a4366ea1d78dd7b5d7e71.bin?disposition=attachment&filename=Nem cochilei-f9ePyZDSqDQ.mp4" style="display: none;"></a>
+
+    <!-- Botão de menu -->
+    <button id="menuButton" class="menu-button">☰</button>
+
+    <!-- Menu de opções -->
+    <div id="menuOptions" class="menu-options" style="display: none;">
+        <button id="chatOption" class="menu-option">Chat</button>
+        <button id="disqusOption" class="menu-option">Comentários (Disqus)</button>
+        <button id="descriptionOption" class="menu-option">Descrição</button>
+        <button id="downloadOption" class="menu-option">Download</button>
+    </div>
+
+    <!-- Link de download oculto -->
+    <a id="downloadLink" href="https://ipfs.io/ipfs/QmcDw9wD2f1ZhSEv5H46iRXTPS9cXTAWN1DZ55e6siP5hi" download style="display: none;"></a>
+
     <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-    <script src="../js/scripts.js"></script>
+    <script src="../js/scripts4.js"></script>
 </body>
 </html>
