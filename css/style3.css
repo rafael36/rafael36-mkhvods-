@@ -84,11 +84,50 @@ body {
     overflow: hidden;
 }
 
-/* Garante proporção 16:9 */
 .plyr video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Estilos do menu */
+.menu-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-options {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.menu-option {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    background: none;
+    border: none;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.menu-option:hover {
+    background-color: #444;
 }
 
 @media (max-width: 1768px) and (orientation: portrait) {
@@ -107,5 +146,15 @@ body {
         padding: 10px;
         border-left: none;
         border-top: 2px solid #333;
+    }
+
+    .menu-button {
+        top: 5px;
+        right: 5px;
+    }
+
+    .menu-options {
+        top: 35px;
+        right: 5px;
     }
 }
