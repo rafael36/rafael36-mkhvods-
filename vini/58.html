@@ -166,9 +166,13 @@
 <!-- Popup de fallback quando o vídeo não carrega -->
 <div id="videoFailPopup" class="video-fail-popup" style="display: none;">
     <div class="video-fail-popup-content">
-        <h3>Vídeo não carregou?</h3>
-        <p>O vídeo pode estar temporariamente indisponível</p>
-        <button id="redirectButton" class="redirect-button">Clique aqui para assistir em nosso espelho</button>
+        <button id="closeFailPopup" class="close-fail-popup">×</button>
+        <h3>Problema ao carregar o vídeo</h3>
+        <p>Parece que estamos com dificuldades técnicas. Você pode:</p>
+        <ul class="options-list">
+            <li>Tentar recarregar a página</li>
+        </ul>
+        <button id="redirectButton" class="redirect-button">Acessar Espelho</button>
     </div>
 </div>
 

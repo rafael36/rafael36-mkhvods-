@@ -125,10 +125,13 @@ changeUrlPopup.addEventListener('click', (e) => {
 
 
 
+
+
 // Verificação de carregamento do vídeo
 document.addEventListener('DOMContentLoaded', function() {
     const videoFailPopup = document.getElementById('videoFailPopup');
     const redirectButton = document.getElementById('redirectButton');
+    const closeFailPopup = document.getElementById('closeFailPopup');
     const playerElement = document.getElementById('player');
     
     // Tempo de espera (8 segundos)
@@ -147,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Timeout para verificar se não carregou
     setTimeout(function() {
-        if (!videoLoaded && playerElement.readyState < 2) { // readyState 2 = dados carregados
+        if (!videoLoaded && playerElement.readyState < 2) {
             showFailPopup();
         }
     }, loadTimeout);
@@ -162,7 +165,12 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'https://mkhvods.vercel.app/';
     });
     
-    // Fechar popup ao clicar fora (opcional)
+    // Fechar popup com o botão X
+    closeFailPopup.addEventListener('click', function() {
+        videoFailPopup.style.display = 'none';
+    });
+    
+    // Fechar popup ao clicar fora
     videoFailPopup.addEventListener('click', function(e) {
         if (e.target === videoFailPopup) {
             videoFailPopup.style.display = 'none';
