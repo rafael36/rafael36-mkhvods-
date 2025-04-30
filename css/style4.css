@@ -1,0 +1,197 @@
+/* Estilos do popup de hash */
+.hash-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.hash-popup-content {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    text-align: center;
+}
+
+.hash-popup-content h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.hash-popup-content p {
+    word-break: break-all;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+}
+
+.hash-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.hash-button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    cursor: pointer;
+}
+
+.hash-button:hover {
+    background-color: #555;
+}
+
+#copyHashButton {
+    background-color: #4CAF50;
+}
+
+#copyHashButton:hover {
+    background-color: #45a049;
+}
+
+
+/* Estilos do popup para alterar URL */
+.change-url-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.change-url-popup-content {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    width: 400px;
+    text-align: center;
+}
+
+.change-url-popup-content h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.url-display {
+    word-break: break-all;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    color: #ccc;
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+.url-input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #222;
+    color: #fff;
+    font-family: monospace;
+}
+
+.url-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.url-button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.url-button.confirm {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.url-button.confirm:hover {
+    background-color: #45a049;
+}
+
+.url-button.cancel {
+    background-color: #444;
+    color: white;
+}
+
+.url-button.cancel:hover {
+    background-color: #555;
+}
+
+
+
+/* Estilos do popup de fallback */
+.video-fail-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+}
+
+.video-fail-popup-content {
+    background-color: #222;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 90%;
+    width: 400px;
+    text-align: center;
+    border: 2px solid #f44336;
+}
+
+.video-fail-popup-content h3 {
+    margin-top: 0;
+    color: #f44336;
+}
+
+.video-fail-popup-content p {
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.redirect-button {
+    padding: 12px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.redirect-button:hover {
+    background-color: #d32f2f;
+}
