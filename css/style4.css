@@ -61,6 +61,36 @@
     background-color: #45a049;
 }
 
+.tooltip {
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    font-size: 0.8rem;
+    transform: translateY(-30px);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.hash-button {
+    position: relative;
+}
+
+/* Quando visível */
+.tooltip.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+
+
+
 
 /* Estilos do popup para alterar URL */
 .change-url-popup {

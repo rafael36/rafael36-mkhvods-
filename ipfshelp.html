@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Como funciona o IPFS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #000000;
+      line-height: 1.6;
+      color: #a1a1a1;
+    }
+    h1 {
+      color: #1e88e5;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Como funciona o IPFS</h1>
+  
+  <p>
+    A rede IPFS (InterPlanetary File System) depende de nós para poder carregar o vídeo.
+    Isso acontece porque o IPFS é uma rede descentralizada de compartilhamento de arquivos.
+    Diferente dos servidores tradicionais, onde os arquivos ficam armazenados em um único
+    lugar, no IPFS os arquivos são distribuídos entre os computadores que participam da rede.
+  </p>
+
+  <p>
+    Quando você acessa um vídeo pelo IPFS, você está buscando esse conteúdo por meio de um identificador
+    único (o hash do conteúdo), e não por uma localização (como um URL). Se ninguém na rede estiver
+    hospedando esse conteúdo (ou seja, fazendo <strong>pin</strong> dele), ele pode se tornar inacessível.
+  </p>
+
+  <img src="https://lh3.googleusercontent.com/pw/AP1GczMwGXBJrJkfhTrACZjxErc_5yAaPxM5T7EbQj1x6YvvQSTDRfsWsWQeivdetmAdB7-vx2LjZHaFGIF3TVZQDhqTBmCOZwmnK9qbYlI7UPQ9yq8dvQ3_vxbxeM_ccT0OIUFUqT7RMX03T4QdVCrOkuLm=w1255-h639-s-no" alt="Ilustração da rede IPFS">
+
+  <p>
+    Por isso, quanto mais pessoas hospedarem (ou fizerem <strong>pin</strong> de) um vídeo, mais chances
+    ele terá de continuar disponível na rede. Além disso, a rede IPFS se torna <strong>mais rápida</strong>
+    quanto mais nós estiverem distribuindo o conteúdo, já que os dados podem ser baixados de múltiplas fontes
+    ao mesmo tempo. Você pode ajudar mantendo o vídeo salvo em seu nó IPFS, compartilhando o link com outras
+    pessoas ou até mesmo usando serviços que fazem pinning automático.
+  </p>
+
+  <p>
+    O IPFS é uma alternativa promissora à web tradicional, oferecendo resistência à censura,
+    maior controle sobre os dados e independência de servidores centralizados. Mas tudo isso
+    só funciona com a colaboração da comunidade.
+  </p>
+
+  <h2>Como começar a usar o IPFS</h2>
+
+<p>
+  Se você quiser contribuir com a rede IPFS e ajudar a manter vídeos e outros arquivos acessíveis, o primeiro passo é instalar o IPFS no seu computador.
+</p>
+
+<p>
+  A forma mais simples de começar é usando o <strong>IPFS Desktop</strong>, que tem uma interface gráfica fácil de usar. Você pode baixar a versão para Windows, Linux ou macOS diretamente pelo site oficial:
+</p>
+
+<p>
+  🔗 <a href="https://docs.ipfs.tech/install/ipfs-desktop/#windows" target="_blank">https://docs.ipfs.tech/install/ipfs-desktop/#windows</a>
+</p>
+
+<p>
+  Após instalar o IPFS Desktop, você poderá inicializar seu próprio nó na rede e começar a compartilhar arquivos — incluindo vídeos — com outras pessoas. Ao fixar (fazer <strong>pin</strong>) um conteúdo, você garante que ele continue disponível, mesmo que a origem inicial saia do ar.
+</p>
+
+<img src="https://lh3.googleusercontent.com/pw/AP1GczNFSjupm93q6qa_9xeDKhwbAdH82XRbaxIUreU8x2wSKGRbHBbK6ct1w9WPeDM2dJMyfnBmRXQBLoggKPb_RMUCdZrJn1oaQReycb02Gv46OV5a16NBnaIiOWYOXu68ZHCc-luLYcjW3qeVmXBCeXBX=w1253-h639-s-no" alt="Captura de tela do IPFS Desktop">
+
+<p>
+  Além disso, você poderá explorar a rede, visualizar os arquivos que estão sendo compartilhados e até mesmo adicionar seus próprios arquivos ao IPFS para que outras pessoas possam acessá-los.
+</p>
+
+<h2>Como assistir a um vídeo usando o CID no IPFS Desktop</h2>
+
+<p>
+  Agora que você já tem o IPFS Desktop instalado, vamos ver como assistir a um vídeo que está disponível na rede IPFS.
+</p>
+
+<h3>1. Pegue o CID do vídeo</h3>
+<p>
+    Entre no vídeo que deseja assistir.
+</p>
+
+<ol>
+  <li>Clique nos <strong>três pontinhos</strong> ao lado do vídeo.</li>
+  <li>Depois, clique em <strong>Hash</strong>.</li>
+  <li>Copie o <strong>Hash (CID)</strong> e também o <strong>nome do vídeo</strong>, adicionando <code>.mp4</code> ao final.</li>
+</ol>
+
+<img src="https://lh3.googleusercontent.com/pw/AP1GczOvyj4p3OZ4b4r0pyKhH6GEWEqyMP7md_MgdYTrFQeBvcFrsmp4NmWh4S-Xcro3dr5uWmSCV-HPjAEJb8EC3QSOCNvpIPlnSVSahn6J5bG7rvnO6aof97sJZnlBE1jI2ucqQcRib_OBP8T3Xnctr9fe=w1614-h818-s-no" alt="Captura de tela do IPFS Desktop">
+
+<p>
+  Um CID é um código único, como este exemplo:
+</p>
+
+<pre>QmXx...SeuCID...123</pre>
+
+<p>
+  Exemplo de nome completo do arquivo: <code>live.mp4</code>.
+</p>
+
+
+<img src="https://lh3.googleusercontent.com/pw/AP1GczP_6iwUYR87CVaMG5_6Y01odqmePsgpZGp5Ik8tFh-tHlmoD0sksp1HXKJwovtw1zB3JUDT87ria9MJ-XrmiwXzdXMnCywVoXyX3oxYzh2VmG_WH2iibB_g3ByXNKMt63EKO-rRo1EoDNOaXD0nODkB=w731-h353-s-no" alt="Captura de tela do IPFS Desktop">
+
+
+
+<h3>2. Importe o CID no IPFS Desktop</h3>
+
+<p>
+  Com o IPFS Desktop aberto, siga os passos abaixo para importar o vídeo usando o CID:
+</p>
+
+<ol>
+  <li>Clique no botão <strong>Import</strong> (ou “Importar”) na parte superior da interface.</li>
+  <li>Selecione a opção <strong>From IPFS</strong>.</li>
+  <li>No campo <strong>“CID”</strong>, cole o código que você copiou anteriormente.</li>
+  <li>No campo <strong>“File name”</strong>, digite o nome do vídeo com a extensão <code>.mp4</code>. Exemplo: <code>live.mp4</code>.</li>
+  <li>Clique em <strong>Import</strong> para iniciar o carregamento do vídeo.</li>
+</ol>
+
+<img src="https://lh3.googleusercontent.com/pw/AP1GczOW_RcnL9LT_MgOI3zE-0d4p4_EQaUNq8_M5nr1CzHMsLSS0-9VLlDydW8q0jte9-tS9NXq23otKE47P7DrU63iiF2gY_8Sl19VkBry-o2r0KRVQteN-bseDs8UeHsXuwdmB7b5Ha34s_eRH6TI4N5f=w1707-h870-s-no" alt="Tela de importação do CID no IPFS Desktop">
+
+<img src="https://lh3.googleusercontent.com/pw/AP1GczMOvaoHNhALjlQkP2fiHov69f4B6EJpfOrBJLEHQH6cAxpFPZrfRF88jzin0PdeXWyOw-VupNGJ7w-_-6WC-atQNLaoqlQzz3R5NRAnEGJ0XNP2qGV6d1a0IU8sP6IGVOCFFQXedbtFXhPtuSLbVTzU=w887-h777-s-no" alt="Tela de importação do CID no IPFS Desktop">
+
+<p>
+    O IPFS tentará localizar o conteúdo na rede. Se ele estiver disponível em algum nó ativo, o vídeo será carregado automaticamente e aparecerá na sua lista de arquivos no IPFS Desktop.
+  </p>
+  
+
+  <h3>3. Como assistir ao vídeo</h3>
+
+  <p>
+    Após importar o vídeo para o IPFS Desktop, siga estas etapas para assisti-lo:
+  </p>
+  
+  <ol>
+    <li>Dentro do IPFS Desktop, clique no vídeo que você importou.</li>
+    <li>O vídeo será carregado. Se ele não carregar imediatamente, espere alguns minutos para que o conteúdo seja recuperado da rede IPFS.</li>
+    <li>Agora, clique com o botão direito e copie o link do vídeo.</li>
+  </ol>
+  
+  <img src="https://lh3.googleusercontent.com/pw/AP1GczM7KzV_Y2M8UWU9skE4wejnDK5czoH8Wj7edpt_I98lOm0UwsPI6Wto5DbGhr3JgxTKzK6D9wTTXDhYKLx7YOk19EEVvo8XBr4S6d7I904vSq-OGCoGr29CMK6SKJ_0_2wUIRzFkOozk1dWLDI8LFOH=w917-h550-s-no" alt="Tela de importação do CID no IPFS Desktop">
+
+  <p>
+    Agora, para assistir ao vídeo:
+  </p>
+  
+  <ol>
+    <li>Agora entre no mesmo vídeo que você pegou o CID anteriormente.</li>
+    <li>Clique nos <strong>três pontinhos</strong> ao lado do vídeo e selecione a opção <strong>Alterar URL</strong>.</li>
+    <li>Cole o link copiado do IPFS Desktop no campo da URL e confirme.</li>
+    <li>Pronto! O vídeo será carregado diretamente e você poderá assistir junto com o chat.</li>
+  </ol>
+  
+  <img src="https://lh3.googleusercontent.com/pw/AP1GczPY5B8d-bBjLwjrvnHonyWFj5XCgUGLOkDE9Hp_sXbopd20EgvKjD-iqkHhmiTqT1JBXNv2gYOsYxf0pKMq2oukj-C0i713zaOgZcBlqylbHG9Ab8Pp2gsrn4-wQdhkvD-5dhjmHD7sIdc9kAA9uN3h=w1024-h464-s-no" alt="Tela de importação do CID no IPFS Desktop">
+
+  <img src="https://lh3.googleusercontent.com/pw/AP1GczOQzKppiXQDD7AaTXRqzziUtXnXyFecW5JXdRvnVVUYKIrCIp6pqwD1Qjlj6zyqnKeg8uEZivWiLPlv8A2h9ScnaQ4w0KdVWul-xagBO9O5LGLV7jVF17XtZlbtpdARm_rYjbmsvquFGZ5y1UorZuJj=w1707-h870-s-no" alt="Final">
+
+</body>
+</html>

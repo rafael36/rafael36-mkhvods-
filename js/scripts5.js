@@ -123,6 +123,37 @@ changeUrlPopup.addEventListener('click', (e) => {
     }
 });
 
+// Copiar título
+const copyTitleButton = document.getElementById('copyTitleButton');
+const videoTitle = document.getElementById('videoTitle');
+
+copyTitleButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(videoTitle.textContent)
+        .then(() => {
+            const originalText = copyTitleButton.textContent;
+            copyTitleButton.textContent = 'Copiado!';
+            setTimeout(() => {
+                copyTitleButton.textContent = originalText;
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Erro ao copiar título: ', err);
+            const textarea = document.createElement('textarea');
+            textarea.value = videoTitle.textContent;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            const originalText = copyTitleButton.textContent;
+            copyTitleButton.textContent = 'Copiado!';
+            setTimeout(() => {
+                copyTitleButton.textContent = originalText;
+            }, 2000);
+        });
+});
+
+
 
 
 
@@ -162,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Redirecionamento
     redirectButton.addEventListener('click', function() {
-        window.location.href = 'https://mkhvods.vercel.app/';
+        window.location.href = 'https://mkhvods.vercel.app/ipfshelp.html';
     });
     
     // Fechar popup com o botão X
