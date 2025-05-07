@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Vídeo com Chat</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link rel="stylesheet" href="../css/style3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style4.css">
+</head>
+<body>
+    <div class="video-container">
+        <video
+            id="player"
+            playsinline
+            controls
+            data-plyr-config='{"controls": ["play-large", "play", "progress", "current-time", "mute", "volume", "settings", "fullscreen"], "settings": ["speed"], "speed": {"selected": 1, "options": [0.5, 1, 1.5, 2]}}'>
+            <source src="https://ipfs.io/ipfs/QmdEgECYoUsseVJ9xdEu6EdAGfVx8QG4XwnHkr2vG1TphJ" type="video/mp4" />
+        </video>
+    </div>
+
+    <div class="chat-container" id="chat">
+        <div class="message">
+                        <span class="timestamp">00:00:00</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/6FAL6XCPCnPbxAdD0_ZPZ6vbPOwAfe1wx8n253p70a1A9A1_-JtCiwJyGhMpiSPASJEkgW4YIC0"/>
+                        <span class="author">Vini Sette Política</span>
+                        <span class="text">https://livepix.gg/vinisette</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:04:48</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nzKC8_y-r4AsD2pCiFIqw9zyUnk8Dl9E4WPYvDis-8zWAz8rXzv6evw5iLA-eIKV_1riAIrLxw"/>
+                        <span class="author">Fabio S.W</span>
+                        <span class="text">ê</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:04:54</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/BJavEw6YjRtAuh_-yRcFQiIOrCLJ9sKLHFc5uyMj_NPurqOUAmEPvHWAkt-EWcO6tgMgTd2CtHc"/>
+                        <span class="author">Diguinho lanche </span>
+                        <span class="text">Eae</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:04:56</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/WAk2Gdd4RV2HJ8tpsxkOZ8fTeSCovz-9SoNq_hxP8N2khcIbZJ5XsMdL10nQcEp10jTJrJooyA"/>
+                        <span class="author">Husband</span>
+                        <span class="text">Boa noite missionário </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:04:57</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/BJavEw6YjRtAuh_-yRcFQiIOrCLJ9sKLHFc5uyMj_NPurqOUAmEPvHWAkt-EWcO6tgMgTd2CtHc"/>
+                        <span class="author">Diguinho lanche </span>
+                        <span class="text">Primeiro vini</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:05:07</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nzKC8_y-r4AsD2pCiFIqw9zyUnk8Dl9E4WPYvDis-8zWAz8rXzv6evw5iLA-eIKV_1riAIrLxw"/>
+                        <span class="author">Fabio S.W</span>
+                        <span class="text">humor diversao e cabeça do senna</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:05:13</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Não caiu o canal</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:05:13</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/A7XR4W36oPtap3aopXsW0tiM64uo-InqMOj9c6h07pKQQK9peYP27LZMACTA5-KWBy4Eqz0q9A"/>
+                        <span class="author">Aquaman careca do rio Tietê</span>
+                        <span class="text">olha ae</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:05:26</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/BJavEw6YjRtAuh_-yRcFQiIOrCLJ9sKLHFc5uyMj_NPurqOUAmEPvHWAkt-EWcO6tgMgTd2CtHc"/>
+                        <span class="author">Diguinho lanche </span>
+                        <span class="text">Não tem ninguém vini vamo embora</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:05:44</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/32KCRsWNzsFCZQS1H5sEKN1Xc41CNEUAZ2U_baau4qxP3_b8xqwci5KgmiiUdjUrZ9639hGihjc"/>
+                        <span class="author">Homem Tinta</span>
+                        <span class="text">Homem Deita confirmou que voltou a cheirar, tá feia a situação</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:06:12</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/A7XR4W36oPtap3aopXsW0tiM64uo-InqMOj9c6h07pKQQK9peYP27LZMACTA5-KWBy4Eqz0q9A"/>
+                        <span class="author">Aquaman careca do rio Tietê</span>
+                        <span class="text">O sempre cheirou kkkk</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:06:17</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/1U-al3XnpsXomETviESNkfsWvbZFWaMyFaohePwzzO6wXVJ2qXcw7i2x7mZRN5yK9ub4rI1w0w"/>
+                        <span class="author">Tulio Maravilha</span>
+                        <span class="text">Bora começar essa bagaça</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:06:31</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/Cq63soMzvrIOJ9F-NJHYzT3mPNpwatja5NCCqdmh5Jzf00Ccmq6ruWo6nJLk0aNFzlYBSM-n9A"/>
+                        <span class="author">υηє@νєяѕє000</span>
+                        <span class="text">vini isso e hater tentando prejudicar</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:06:35</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_mfF5L6VbvsjD4Yr2fQGpd8mHdFnKt_6S9zh9v9zi0HKPw"/>
+                        <span class="author">Léo Souza</span>
+                        <span class="text">BOA NOITE VINAO, SP QUANDO?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:06:58</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Você acha que o deita pode parar na rua? </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:07:19</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/fLAjiaK3hvPc15gkyfKQceuMCKBC-JZz87COhRigPbsTjjWJvdcTFzL2fZvf5OV-UPIPGx2dkA"/>
+                        <span class="author">Panfleteiro de Santa Teresa</span>
+                        <span class="text">O diabo se levantou, mas ele vai cair Vini</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:08:00</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/G1v-lHkDorzFoVg49EW_PRT9GQ4NtjVYafd0BQR2txcRp1Na0gUZX5arbS60TRwTQ25jFXidE94"/>
+                        <span class="author">Sr. Mentiroso</span>
+                        <span class="text">lain te detonou no canal dele</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:08:03</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">São Paulo você vai sofrer , principalmente pra sair da sua casa com trânsito </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:08:13</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/kVUYm1PgN5TZvZKuThgRemKvSSvwpSG8-zcFSMIVx_1F_RMPiGGO68BqgVHRR170fbwZLGky"/>
+                        <span class="author">Ewerton Andalafat</span>
+                        <span class="text">Boa noite pessoal, Vini vc viu que o SAFADO está ao vivo em Live falou mal de vc agora pouco lá vamos dar um fim nesse cara.</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:08:26</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/fLAjiaK3hvPc15gkyfKQceuMCKBC-JZz87COhRigPbsTjjWJvdcTFzL2fZvf5OV-UPIPGx2dkA"/>
+                        <span class="author">Panfleteiro de Santa Teresa</span>
+                        <span class="text">Quando você pretende ir pro Ministério Público?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:09:41</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Você tem algum vício ?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:09:46</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/dPDXUssBopit9pZYwwYhqpc168epD5OyD-663fMKowU4_bpq8AnD-uSheAySU4wblpNkk9oNxOo"/>
+                        <span class="author">Pol Pot</span>
+                        <span class="text">Vini você deletou sua outra live? Foi por causa do aviso aos haters?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:10:09</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/iwWhsBoM1cudsnP8K-kM0tzo3SuTBZIUDd4PURrJb8VWYvDECqlv_LVro4HsJ3gMy2Emh8AN8w"/>
+                        <span class="author">pietroabd</span>
+                        <span class="text">hj eu descobri que todo dia umas 3 pessoas pulam na frente do metro de sp mais a imprensa não pode noticiar</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:11:33</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Tem um canal descrito show do vinni sette, só que os vídeos lá são do cara lá da V.Prudente </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:13:02</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/dPDXUssBopit9pZYwwYhqpc168epD5OyD-663fMKowU4_bpq8AnD-uSheAySU4wblpNkk9oNxOo"/>
+                        <span class="author">Pol Pot</span>
+                        <span class="text">Olha o povo do bar falando</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:14:06</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">Vini</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:14:11</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/gjhmvkLERzowGot7laVrQWneR4opwzgYZ3qTVGi5tC5YC1sMmd5POKYRsI-s-jlzJex8YlEm"/>
+                        <span class="author">camavinga</span>
+                        <span class="text">eu achava que você tinha seu próprio wi-fi mas pelo jeito são várias redes compartilhadas</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:14:13</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">Eu acabei dormindo no meio da sua live</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:14:32</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">Já pode o chat Brasil?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:14:42</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/dPDXUssBopit9pZYwwYhqpc168epD5OyD-663fMKowU4_bpq8AnD-uSheAySU4wblpNkk9oNxOo"/>
+                        <span class="author">Pol Pot</span>
+                        <span class="text">Vini mas o suicídio é uma forma de se livrar da dor mudana... A dor do dia dia é bem pior do que uma morte no trem</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:14:42</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">Já tô jantando arroz, purê de inhame e nurgets</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:14:47</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kAvXwKhF9W-758960a9XjLrXxvSdrZkX4XZl0vZ0CotMcCwuJe0HKveyMX8NMWQ9UFfw"/>
+                        <span class="author">Messi do Corinthians </span>
+                        <span class="text">começou a guerra entre Índia e Paquistão. Jesus está voltando</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:14:47</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">Com molho de tangerina</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:15:12</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nVG5trOBub4FKPni5L533YgZHYBbGnjGf7-xoZ9fbfflfgx4NrlPNIxNgu90DRzF6btQ"/>
+                        <span class="author">Veio horroroso</span>
+                        <span class="text">Fala baleia</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:15:16</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/dPDXUssBopit9pZYwwYhqpc168epD5OyD-663fMKowU4_bpq8AnD-uSheAySU4wblpNkk9oNxOo"/>
+                        <span class="author">Pol Pot</span>
+                        <span class="text">Kkkkkkkkk Jesus só volta quando tem desgraça Messi?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:15:16</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Que Pastor voce admira? </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:15:25</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">Vini, habevus papa!</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:15:43</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">Vini, habemvs papa!</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:15:51</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kAvXwKhF9W-758960a9XjLrXxvSdrZkX4XZl0vZ0CotMcCwuJe0HKveyMX8NMWQ9UFfw"/>
+                        <span class="author">Messi do Corinthians </span>
+                        <span class="text">começou a guerra entre Índia e Paquistão agora</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:15:59</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nVG5trOBub4FKPni5L533YgZHYBbGnjGf7-xoZ9fbfflfgx4NrlPNIxNgu90DRzF6btQ"/>
+                        <span class="author">Veio horroroso</span>
+                        <span class="text">Fala aí baleia sem dentes, voltou?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:16:17</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">Vini, se o papa é americano, como ele vai se chamar Pedro?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:16:28</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/dPDXUssBopit9pZYwwYhqpc168epD5OyD-663fMKowU4_bpq8AnD-uSheAySU4wblpNkk9oNxOo"/>
+                        <span class="author">Pol Pot</span>
+                        <span class="text">Vini você não tem empatia pelos suicidas?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:16:33</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Hernandes Dias Lopes </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:16:46</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_mk08Q43YhOapeS3iUn8juMQp6rgXW7HWUWmQYYXSYA9qI"/>
+                        <span class="author">Pedro Gomes</span>
+                        <span class="text">Vai votar em quem pro Papa, vinao?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:16:50</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nVG5trOBub4FKPni5L533YgZHYBbGnjGf7-xoZ9fbfflfgx4NrlPNIxNgu90DRzF6btQ"/>
+                        <span class="author">Veio horroroso</span>
+                        <span class="text">Tem ps5 na loja sette?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:16:59</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">Hernane é presbiteriano</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:17:14</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/dPDXUssBopit9pZYwwYhqpc168epD5OyD-663fMKowU4_bpq8AnD-uSheAySU4wblpNkk9oNxOo"/>
+                        <span class="author">Pol Pot</span>
+                        <span class="text">Quem disse que o Papa é americano mateus?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:17:47</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Ele não cobra, um dos poucos </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:18:14</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/8JODrZblTUnGBY-dElBkOCkw9eRJUX2vZYu5SrzfgnhJunfyu5aORpvlVCLUc1wBSPXTMtZLM84"/>
+                        <span class="author">Bernardo Callanzani</span>
+                        <span class="text">Boa noite, irmão Vini Silva</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:18:47</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">esse eu conheço</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:18:51</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">Ele já foi no Vilena</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:19:05</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Caio Fábio, que você acha ? </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:19:30</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/dPDXUssBopit9pZYwwYhqpc168epD5OyD-663fMKowU4_bpq8AnD-uSheAySU4wblpNkk9oNxOo"/>
+                        <span class="author">Pol Pot</span>
+                        <span class="text">O Jim Jones foi um ótimo pastor gente.. Escutem as pregações dele</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:19:31</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kAvXwKhF9W-758960a9XjLrXxvSdrZkX4XZl0vZ0CotMcCwuJe0HKveyMX8NMWQ9UFfw"/>
+                        <span class="author">Messi do Corinthians </span>
+                        <span class="text">eu admiro muito o valdemiro e o edir Macedo, eles sabem muito da bíblia.</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:19:50</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/8JODrZblTUnGBY-dElBkOCkw9eRJUX2vZYu5SrzfgnhJunfyu5aORpvlVCLUc1wBSPXTMtZLM84"/>
+                        <span class="author">Bernardo Callanzani</span>
+                        <span class="text">Boa noite, irmão Vini Silva</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:20:09</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/dPDXUssBopit9pZYwwYhqpc168epD5OyD-663fMKowU4_bpq8AnD-uSheAySU4wblpNkk9oNxOo"/>
+                        <span class="author">Pol Pot</span>
+                        <span class="text">Só o vini tem revelação da bíblia kkkkk</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:20:11</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/QdoroaQCeYjrK1uhw9GHea7meuQokItqfRscHB0Nr4L85j7wZo_sgq194V-doIKu0BGuTUbUtQ"/>
+                        <span class="author">Anônimo</span>
+                        <span class="text">Vini, o senhor não tem medo do Mateus se matar por você não dar atenção à ele?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:20:28</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Paulo Júnior, você gosta?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:20:32</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">boa noite, cade chat Brasil?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:20:42</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nVG5trOBub4FKPni5L533YgZHYBbGnjGf7-xoZ9fbfflfgx4NrlPNIxNgu90DRzF6btQ"/>
+                        <span class="author">Veio horroroso</span>
+                        <span class="text">Vini se eu mandar 5000 reais, você raspa a cabeça e a barba?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:21:03</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">professor acabei de ser informado de que aquela adolescente que o senhor mencionou em seu canal e expôs o perfil dela acaba de postar que entrou com um processo por exposição de imagem indevida</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:21:29</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nVG5trOBub4FKPni5L533YgZHYBbGnjGf7-xoZ9fbfflfgx4NrlPNIxNgu90DRzF6btQ"/>
+                        <span class="author">Veio horroroso</span>
+                        <span class="text">A cabeça também</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:21:37</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nVG5trOBub4FKPni5L533YgZHYBbGnjGf7-xoZ9fbfflfgx4NrlPNIxNgu90DRzF6btQ"/>
+                        <span class="author">Veio horroroso</span>
+                        <span class="text">Só a barba não</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:21:45</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">a cabeça ele raspa na 1</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:21:46</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nVG5trOBub4FKPni5L533YgZHYBbGnjGf7-xoZ9fbfflfgx4NrlPNIxNgu90DRzF6btQ"/>
+                        <span class="author">Veio horroroso</span>
+                        <span class="text">A cabeça e a barba</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:21:55</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">falou que raspa na 1, fica ralinho</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:22:22</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nVG5trOBub4FKPni5L533YgZHYBbGnjGf7-xoZ9fbfflfgx4NrlPNIxNgu90DRzF6btQ"/>
+                        <span class="author">Veio horroroso</span>
+                        <span class="text">Que isso Vini?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:22:33</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">manda os 5 mil véio</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:22:46</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">Ué, ele pode agora?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:22:53</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Kkkk</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:22:57</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/dPDXUssBopit9pZYwwYhqpc168epD5OyD-663fMKowU4_bpq8AnD-uSheAySU4wblpNkk9oNxOo"/>
+                        <span class="author">Pol Pot</span>
+                        <span class="text">Kkkkkkkkkkkkkkkkkkkkk</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:23:00</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nVG5trOBub4FKPni5L533YgZHYBbGnjGf7-xoZ9fbfflfgx4NrlPNIxNgu90DRzF6btQ"/>
+                        <span class="author">Veio horroroso</span>
+                        <span class="text">se raspar a cabeça e a barba eu manda</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:23:01</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Esse amarelo é um larápio </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:23:17</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">ele falou que raspa na 1, isso já é ótimo</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:23:28</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/1U-al3XnpsXomETviESNkfsWvbZFWaMyFaohePwzzO6wXVJ2qXcw7i2x7mZRN5yK9ub4rI1w0w"/>
+                        <span class="author">Tulio Maravilha</span>
+                        <span class="text">Ué o amarelo está liberado agora ?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:23:28</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/dPDXUssBopit9pZYwwYhqpc168epD5OyD-663fMKowU4_bpq8AnD-uSheAySU4wblpNkk9oNxOo"/>
+                        <span class="author">Pol Pot</span>
+                        <span class="text">Vini o amarelo já fez uma homenagem a você</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:23:32</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">manda logo véio, todo mundo sabe que você tá usando essa desculpa pra mentir</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:23:40</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Vou mandar vídeo do amarelo aí </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:23:47</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">seu foguinho deu sorte hj hein Vini</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:23:57</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kAvXwKhF9W-758960a9XjLrXxvSdrZkX4XZl0vZ0CotMcCwuJe0HKveyMX8NMWQ9UFfw"/>
+                        <span class="author">Messi do Corinthians </span>
+                        <span class="text">vini, imagina uma casa entre jean, deita e o maldito de SP, ia rolar cada coisa lá. Você iria nessa casa?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:23:57</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/dPDXUssBopit9pZYwwYhqpc168epD5OyD-663fMKowU4_bpq8AnD-uSheAySU4wblpNkk9oNxOo"/>
+                        <span class="author">Pol Pot</span>
+                        <span class="text">O amarelo já bateu uma pro vini</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:24:11</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/1U-al3XnpsXomETviESNkfsWvbZFWaMyFaohePwzzO6wXVJ2qXcw7i2x7mZRN5yK9ub4rI1w0w"/>
+                        <span class="author">Tulio Maravilha</span>
+                        <span class="text">kkk</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:24:23</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">Túlio maravilha tá aqui todo dia</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:24:30</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nVG5trOBub4FKPni5L533YgZHYBbGnjGf7-xoZ9fbfflfgx4NrlPNIxNgu90DRzF6btQ"/>
+                        <span class="author">Veio horroroso</span>
+                        <span class="text">Você consegue mastigar, sem dentes?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:24:43</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">"Jean nunca mais entra aqui ", quando eu digo que quando a grana aperta a moralidade afrouxa kkk</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:24:43</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">deve ser coisa de Victor Vance</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:25:06</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nVG5trOBub4FKPni5L533YgZHYBbGnjGf7-xoZ9fbfflfgx4NrlPNIxNgu90DRzF6btQ"/>
+                        <span class="author">Veio horroroso</span>
+                        <span class="text">O cara invejoso você Vini kkkkkkkkkkkk</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:25:15</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">não adianta, a grana manda kkk logo o mardito da vila prudente tá aí tbm</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:25:16</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Amarelo e o Miguel tem grandes semelhanças na forma de falar </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:25:23</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">kkkkkkkkkkkkkkk</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:25:34</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">tira esse vídeo daí</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:25:36</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/WAk2Gdd4RV2HJ8tpsxkOZ8fTeSCovz-9SoNq_hxP8N2khcIbZJ5XsMdL10nQcEp10jTJrJooyA"/>
+                        <span class="author">Husband</span>
+                        <span class="text">E ainda é filho de pastor esse amarelo </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:25:52</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/32KCRsWNzsFCZQS1H5sEKN1Xc41CNEUAZ2U_baau4qxP3_b8xqwci5KgmiiUdjUrZ9639hGihjc"/>
+                        <span class="author">Homem Tinta</span>
+                        <span class="text">Vini, esse amarelão é frango</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:25:59</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_nVG5trOBub4FKPni5L533YgZHYBbGnjGf7-xoZ9fbfflfgx4NrlPNIxNgu90DRzF6btQ"/>
+                        <span class="author">Veio horroroso</span>
+                        <span class="text">por que você tem inveja do Jean?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:26:07</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">que amarelo vocês tão falando?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:26:19</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/dPDXUssBopit9pZYwwYhqpc168epD5OyD-663fMKowU4_bpq8AnD-uSheAySU4wblpNkk9oNxOo"/>
+                        <span class="author">Pol Pot</span>
+                        <span class="text">O amarelo já bateu uma pro senhor</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:26:20</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Dá dinheiro para amarelo?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:26:48</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">O mais engraçado é pagarem para passar esse tipo de vídeo aqui no teu canal para você ver e ganhar para ver isso</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:26:52</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kAvXwKhF9W-758960a9XjLrXxvSdrZkX4XZl0vZ0CotMcCwuJe0HKveyMX8NMWQ9UFfw"/>
+                        <span class="author">Messi do Corinthians </span>
+                        <span class="text">eu fico impressionado vini, as pessoas mandam doações para o Jean, mas não mandam dinheiro para você que fala de Jesus e as coisas de Deus</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:27:11</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kAvXwKhF9W-758960a9XjLrXxvSdrZkX4XZl0vZ0CotMcCwuJe0HKveyMX8NMWQ9UFfw"/>
+                        <span class="author">Messi do Corinthians </span>
+                        <span class="text">começou a guerra entre Índia e Paquistão</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:27:52</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kAvXwKhF9W-758960a9XjLrXxvSdrZkX4XZl0vZ0CotMcCwuJe0HKveyMX8NMWQ9UFfw"/>
+                        <span class="author">Messi do Corinthians </span>
+                        <span class="text">ferris bela foto de perfil</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:27:53</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">valeu Vini</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:27:59</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">Hora de dormir pra mais um dia amanhã</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:28:06</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">hackearam o vini</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:28:09</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kAvXwKhF9W-758960a9XjLrXxvSdrZkX4XZl0vZ0CotMcCwuJe0HKveyMX8NMWQ9UFfw"/>
+                        <span class="author">Messi do Corinthians </span>
+                        <span class="text">vini, você curte vê os perfis com sua foto aqui no chat?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:28:09</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">Kkkkkkkkkkkkkkkkk</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:28:11</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+                        <span class="author">Gabriel Áquila</span>
+                        <span class="text">grande professor </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:28:14</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">repreende isso aí Vini</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:28:23</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">tá picotando a live professor</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:28:42</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/fLAjiaK3hvPc15gkyfKQceuMCKBC-JZz87COhRigPbsTjjWJvdcTFzL2fZvf5OV-UPIPGx2dkA"/>
+                        <span class="author">Panfleteiro de Santa Teresa</span>
+                        <span class="text">Você está passando por uma situação de insegurança alimentar? Vejo as doações cada vez mais escassas</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:29:03</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/AGvpv8ZT_aNPU2GaocIjYGexj1OReTEz4zd9qysBu7sH-k_JVjOSNb5rT2wdPiWdA9yXnM0b"/>
+                        <span class="author">Mateus Dantas</span>
+                        <span class="text">internet tá ruim, olha a qualidade</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:29:28</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/32KCRsWNzsFCZQS1H5sEKN1Xc41CNEUAZ2U_baau4qxP3_b8xqwci5KgmiiUdjUrZ9639hGihjc"/>
+                        <span class="author">Homem Tinta</span>
+                        <span class="text">Faz um teste de velocidade da internet ao vivo</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:29:36</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/hIQIrn2bNMjqRbR7-o6rkPuzfLO2SRu_0BHOoatRY1zL_KbguO8Y0ScS4QEk3f_gfifyrW5w"/>
+                        <span class="author">NAUGHTY</span>
+                        <span class="text">O cara é vi... só porque gosta de pés de homens??</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:29:40</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+                        <span class="author">Gabriel Áquila</span>
+                        <span class="text">ué voce já não disse que ja sabia tudo sobre o brunno garcia? até o endereço dele</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:30:08</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+                        <span class="author">Gabriel Áquila</span>
+                        <span class="text">internet de padaria</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:30:10</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">Garcia morreu ontem</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:30:40</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/32KCRsWNzsFCZQS1H5sEKN1Xc41CNEUAZ2U_baau4qxP3_b8xqwci5KgmiiUdjUrZ9639hGihjc"/>
+                        <span class="author">Homem Tinta</span>
+                        <span class="text">Fecha a live, tá muito ruim a transmissão</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:30:44</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/hIQIrn2bNMjqRbR7-o6rkPuzfLO2SRu_0BHOoatRY1zL_KbguO8Y0ScS4QEk3f_gfifyrW5w"/>
+                        <span class="author">NAUGHTY</span>
+                        <span class="text">Radinho AM??</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:31:05</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kAvXwKhF9W-758960a9XjLrXxvSdrZkX4XZl0vZ0CotMcCwuJe0HKveyMX8NMWQ9UFfw"/>
+                        <span class="author">Messi do Corinthians </span>
+                        <span class="text">está travando demais</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:31:06</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">Internet de padaria</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:31:07</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">tudo pixelado</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:31:12</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/WAk2Gdd4RV2HJ8tpsxkOZ8fTeSCovz-9SoNq_hxP8N2khcIbZJ5XsMdL10nQcEp10jTJrJooyA"/>
+                        <span class="author">Husband</span>
+                        <span class="text">144p</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:31:25</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">caramba tá igual quando usava o pc antigo</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:31:27</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/60lGrSb830UJrWrCXLNHz2VwJm8siLBipKEphzus-X0nOvBZMoUevrfxAUgmAZj-r6kXup5HEA"/>
+                        <span class="author">Adam</span>
+                        <span class="text">Está em câmera lenta e embasado </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:31:35</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/fLAjiaK3hvPc15gkyfKQceuMCKBC-JZz87COhRigPbsTjjWJvdcTFzL2fZvf5OV-UPIPGx2dkA"/>
+                        <span class="author">Panfleteiro de Santa Teresa</span>
+                        <span class="text">Angolanos tão baixando conteúdo adulto</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:31:36</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">Anísio esqueceu de pagar internet</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:31:46</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Qual última live q vc subiu?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:31:47</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+                        <span class="author">Gabriel Áquila</span>
+                        <span class="text">dá um soco aí no tapume e grita pros vizinhos pararem de usar a internet</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:31:48</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/32KCRsWNzsFCZQS1H5sEKN1Xc41CNEUAZ2U_baau4qxP3_b8xqwci5KgmiiUdjUrZ9639hGihjc"/>
+                        <span class="author">Homem Tinta</span>
+                        <span class="text">A placa de vídeo tá queimando</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:32:06</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">i rapa o pc novo foi de ralo</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:32:18</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:32:21</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Desliga a live </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:32:35</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">fecha e abre a live</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:32:35</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/32KCRsWNzsFCZQS1H5sEKN1Xc41CNEUAZ2U_baau4qxP3_b8xqwci5KgmiiUdjUrZ9639hGihjc"/>
+                        <span class="author">Homem Tinta</span>
+                        <span class="text">kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:32:41</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">dá pra entender nada</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:32:43</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kAvXwKhF9W-758960a9XjLrXxvSdrZkX4XZl0vZ0CotMcCwuJe0HKveyMX8NMWQ9UFfw"/>
+                        <span class="author">Messi do Corinthians </span>
+                        <span class="text">panfleteiro KKKKKKKK</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:32:43</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Travando demais </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:32:45</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">doador tem q mandar mais 10 mil agora pra um pc novo</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:32:51</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">isso porque o Pc é novo</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:32:56</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">olha a travada monstra</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:33:05</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">vai explodir melhor tirar da tomada</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:33:09</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">ninguém tá entendendo o que você fala não Vini</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:33:14</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">VINI NÃO DA NEM PRA ENTENDER OQ TU TÁ FALANDO</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:33:15</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/32KCRsWNzsFCZQS1H5sEKN1Xc41CNEUAZ2U_baau4qxP3_b8xqwci5KgmiiUdjUrZ9639hGihjc"/>
+                        <span class="author">Homem Tinta</span>
+                        <span class="text">Bora de chat Brasil</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:33:19</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">de tanto q tá travando</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:33:31</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+                        <span class="author">Gabriel Áquila</span>
+                        <span class="text">ter PC novo com internet lenta é o mesmo que colocar motor de avião num fusca</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:33:34</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">o HD tá fritando pai</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:33:39</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Cara recomeça a live </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:33:39</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">digita aqui no chat pq não dá pra entender</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:33:54</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/CrhYksaIrbFPvaSeSfoRJWd16f8bKODQJp68i0ZzXhVpKFo3bdhimZOrqMOPRh-i3-MumJoC"/>
+                        <span class="author">Pikachu</span>
+                        <span class="text">cara com uma internet podre depois tem coragem de falar mal do Jean e rafao</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:33:59</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">sabia que esse processador era do Paraguai</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:34:15</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+                        <span class="author">Gabriel Áquila</span>
+                        <span class="text">Crashou de vez</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:34:32</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">:rolling_on_the_floor_laughing::rolling_on_the_floor_laughing::rolling_on_the_floor_laughing::rolling_on_the_floor_laughing:</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:34:43</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/hIQIrn2bNMjqRbR7-o6rkPuzfLO2SRu_0BHOoatRY1zL_KbguO8Y0ScS4QEk3f_gfifyrW5w"/>
+                        <span class="author">NAUGHTY</span>
+                        <span class="text">hackearam</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:34:51</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">O pc mais caro da deeptube da sofrendo</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:35:12</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">vixi então a pastinha "haters" foi comprometida</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:35:18</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">boa Anísio</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:35:43</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">olha a lentidão</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:35:47</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/FHAqfw0rY9mEnZJ4uaj80P3XqRIUxNcz7PNpTSGHoNtx5kLpyVzZyLwREHsZuoo2snOfBHNK8Q"/>
+                        <span class="author">Fãsdadeeptube</span>
+                        <span class="text">INVASÃO:face-pink-tears::face-blue-wide-eyes::face-blue-wide-eyes::face-blue-wide-eyes::face-blue-wide-eyes:</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:35:47</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kAvXwKhF9W-758960a9XjLrXxvSdrZkX4XZl0vZ0CotMcCwuJe0HKveyMX8NMWQ9UFfw"/>
+                        <span class="author">Messi do Corinthians </span>
+                        <span class="text">o vini não tinha comprado peças para o PC?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:35:52</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">alguém me tira uma dúvida, se o nome dele é Anísio ent pq chamam de Vini?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:36:02</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+                        <span class="author">Gabriel Áquila</span>
+                        <span class="text">queimou o PC com internet com HD e com tudo </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:36:11</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">kkkkkkkkkkk</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:36:23</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">carrega Windows 95</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:36:25</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">dessa vez já era</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:36:37</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">exigiu demais da máquina</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:36:42</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">Anísio vai ficar sem pc</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:36:47</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/e5W0z72cdhhaiqtOvcfah6PPcZo--LM2QVSLBQXpN1JyFjIDfZTu0Vj4vkFvuAkO6rDiF_w-pA"/>
+                        <span class="author">Davi Pereira</span>
+                        <span class="text">que denuncia é esse sobre exposição de Instagram, isso é real? boa noite a todos amigos</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:36:51</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">exigiu demais da máquina</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:36:57</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">esse PC tá pior que o gás da katinha que acaba toda semana</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:36:58</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Vai ter preju no faturamento da semana</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:37:03</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/G1v-lHkDorzFoVg49EW_PRT9GQ4NtjVYafd0BQR2txcRp1Na0gUZX5arbS60TRwTQ25jFXidE94"/>
+                        <span class="author">Sr. Mentiroso</span>
+                        <span class="text">ele é tão rico que não tem uma internet que presta</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:37:21</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">claramente o processador foi pro saco</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:37:46</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">componente novo pra computador velho da nisso</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:38:28</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">O doador forte vai ter que mandar mais 10k pra comprar o terceiro computador</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:38:37</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/sx_3hVqfzEnX1s0_-quammNKp91WvsHPIs_wwafxT740VFlh6qMwn6vbJ2SLcZ7hsohVX2E5Jzk"/>
+                        <span class="author">lain da deep </span>
+                        <span class="text">Parece que a mão de Deus pesou mesmo</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:38:42</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">acho que é o fim da linha</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:38:58</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">KKKKKKKKKKKK a mão pesou</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:39:01</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+                        <span class="author">Gabriel Áquila</span>
+                        <span class="text">lain jogou praga no vini</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:39:05</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kAvXwKhF9W-758960a9XjLrXxvSdrZkX4XZl0vZ0CotMcCwuJe0HKveyMX8NMWQ9UFfw"/>
+                        <span class="author">Messi do Corinthians </span>
+                        <span class="text">KKKKKKKK</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:39:33</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">blackout total</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:39:33</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">o vírus do Garcia finamente agiu</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:39:44</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">se sobrou o Benjamim pelo menos...foi muito</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:40:01</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">estabilizador deve ter virado pô</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:40:06</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JpwbiMz5TiN9C4VwXZ57ckJZdVgS82G79XvDhtVk9l6ILoMmUDWOFReYVD1ir9k7TzxOhuU6Yg"/>
+                        <span class="author">bruno</span>
+                        <span class="text">pó</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:40:05</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/nCeN40S7L2dyQiqgzYo60Yjg8YkGMh7MhK7NMWXD88M7-adDOVK6LUJ4zqGLxFdEZBo6JjmC"/>
+                        <span class="author">Peashooter Ga</span>
+                        <span class="text">tomara que o HD queime:rolling_on_the_floor_laughing::smiling_face_with_horns:</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:40:13</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">alguém sabe quanto wlw já gastou nessas brincadeiras de PC? teve o primeiro ué disse que custou uns 8k, dps esse aí</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:41:17</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/enLrwS9b5OtoIVg5QQxhuhBH0mbhaN-GFrgBaJEbPOfb1bqL8ksbassYsXCl7-jlqiLFza6j"/>
+                        <span class="author">Cintra</span>
+                        <span class="text">vaquinha pra um pc novo pro vinão</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:41:20</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/WAk2Gdd4RV2HJ8tpsxkOZ8fTeSCovz-9SoNq_hxP8N2khcIbZJ5XsMdL10nQcEp10jTJrJooyA"/>
+                        <span class="author">Husband</span>
+                        <span class="text">Olha aew tá voltando </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:42:08</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/enLrwS9b5OtoIVg5QQxhuhBH0mbhaN-GFrgBaJEbPOfb1bqL8ksbassYsXCl7-jlqiLFza6j"/>
+                        <span class="author">Cintra</span>
+                        <span class="text">bicho tá pegando na india vini, guerra</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:42:29</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/G7iWVQTvx8PkAGnHUKE06Md8j2dNWa8EL16hcqcZPsJPLkITCFKp04l8vJGVgrbvlCDt6Z5d5w"/>
+                        <span class="author">Gabriel Áquila</span>
+                        <span class="text">vini tem que meter uma net da claro aí</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:42:32</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/mchWanOwfhejuU8YPW1abpptwyFEP6kaDa95d-annMBWosodaiqIJ6SBjKltG5QSnp3VR4nkGw"/>
+                        <span class="author">Phil Foden</span>
+                        <span class="text">Chat Brasil, Vini. Bora</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:42:44</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/mchWanOwfhejuU8YPW1abpptwyFEP6kaDa95d-annMBWosodaiqIJ6SBjKltG5QSnp3VR4nkGw"/>
+                        <span class="author">Phil Foden</span>
+                        <span class="text">Internet discada</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:42:57</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/mchWanOwfhejuU8YPW1abpptwyFEP6kaDa95d-annMBWosodaiqIJ6SBjKltG5QSnp3VR4nkGw"/>
+                        <span class="author">Phil Foden</span>
+                        <span class="text">CVnet tá melhor que isso daí</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:43:22</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/a4T3MsJ1pTQwU4uWexKNWolOSSR3V91E6vPmdYNZ0-Dnkj5_vIJSWaNCkHwuMpNaMuHTNYGRZA"/>
+                        <span class="author">sumo pontífice dos esqueminhas </span>
+                        <span class="text">que merda Hem</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:43:29</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/a4T3MsJ1pTQwU4uWexKNWolOSSR3V91E6vPmdYNZ0-Dnkj5_vIJSWaNCkHwuMpNaMuHTNYGRZA"/>
+                        <span class="author">sumo pontífice dos esqueminhas </span>
+                        <span class="text">não era Pc novo ?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:43:34</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/gjkZAA95YSasqFvWvmO9X2Dj5QifU9O5BOgsqFrxOTVmiy6bOki6mNAdq68pUCglDOMjfqNeVrE"/>
+                        <span class="author">Leonardo Cruz</span>
+                        <span class="text">Eita</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:43:53</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/a4T3MsJ1pTQwU4uWexKNWolOSSR3V91E6vPmdYNZ0-Dnkj5_vIJSWaNCkHwuMpNaMuHTNYGRZA"/>
+                        <span class="author">sumo pontífice dos esqueminhas </span>
+                        <span class="text">a mentira sempre cai por terra mesmo não tem jeito</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:43:55</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/mchWanOwfhejuU8YPW1abpptwyFEP6kaDa95d-annMBWosodaiqIJ6SBjKltG5QSnp3VR4nkGw"/>
+                        <span class="author">Phil Foden</span>
+                        <span class="text">Joga água no PC pra diminuir a quentura</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:43:58</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/1U-al3XnpsXomETviESNkfsWvbZFWaMyFaohePwzzO6wXVJ2qXcw7i2x7mZRN5yK9ub4rI1w0w"/>
+                        <span class="author">Tulio Maravilha</span>
+                        <span class="text">Os angolanos desligaram o roteador</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:44:01</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/mchWanOwfhejuU8YPW1abpptwyFEP6kaDa95d-annMBWosodaiqIJ6SBjKltG5QSnp3VR4nkGw"/>
+                        <span class="author">Phil Foden</span>
+                        <span class="text">Deve tá fervendo</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:44:28</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/a4T3MsJ1pTQwU4uWexKNWolOSSR3V91E6vPmdYNZ0-Dnkj5_vIJSWaNCkHwuMpNaMuHTNYGRZA"/>
+                        <span class="author">sumo pontífice dos esqueminhas </span>
+                        <span class="text">eu lembro que ele disse que tinha comprado um monte de componente :rolling_on_the_floor_laughing:</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:44:33</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JBq-Aafvr4C5jyZyvLsuTsv3aHQPm6Q_YqScXhgInICnyWj8GmyF3qHgkeVWCSHAsLbLstZujP4"/>
+                        <span class="author">Brocador</span>
+                        <span class="text">O anisio esqueceu de pagar a conta da net e cortaram</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:44:38</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/a4T3MsJ1pTQwU4uWexKNWolOSSR3V91E6vPmdYNZ0-Dnkj5_vIJSWaNCkHwuMpNaMuHTNYGRZA"/>
+                        <span class="author">sumo pontífice dos esqueminhas </span>
+                        <span class="text">pelo visto não resolveu</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:44:51</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/mchWanOwfhejuU8YPW1abpptwyFEP6kaDa95d-annMBWosodaiqIJ6SBjKltG5QSnp3VR4nkGw"/>
+                        <span class="author">Phil Foden</span>
+                        <span class="text">Que situação...</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:45:09</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JBq-Aafvr4C5jyZyvLsuTsv3aHQPm6Q_YqScXhgInICnyWj8GmyF3qHgkeVWCSHAsLbLstZujP4"/>
+                        <span class="author">Brocador</span>
+                        <span class="text">@mateus dantas vc tem carro desce lá no escritório do vini e roteiro a Internet com o seu celular pra ele</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:45:21</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/gjkZAA95YSasqFvWvmO9X2Dj5QifU9O5BOgsqFrxOTVmiy6bOki6mNAdq68pUCglDOMjfqNeVrE"/>
+                        <span class="author">Leonardo Cruz</span>
+                        <span class="text">Deu ruim mesmo</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:45:34</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kAvXwKhF9W-758960a9XjLrXxvSdrZkX4XZl0vZ0CotMcCwuJe0HKveyMX8NMWQ9UFfw"/>
+                        <span class="author">Messi do Corinthians </span>
+                        <span class="text">KKKKKKKKKK brocador</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:45:51</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/1U-al3XnpsXomETviESNkfsWvbZFWaMyFaohePwzzO6wXVJ2qXcw7i2x7mZRN5yK9ub4rI1w0w"/>
+                        <span class="author">Tulio Maravilha</span>
+                        <span class="text">Travou tudo</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:45:57</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/a4T3MsJ1pTQwU4uWexKNWolOSSR3V91E6vPmdYNZ0-Dnkj5_vIJSWaNCkHwuMpNaMuHTNYGRZA"/>
+                        <span class="author">sumo pontífice dos esqueminhas </span>
+                        <span class="text">vixi travando tudo</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:46:02</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/1U-al3XnpsXomETviESNkfsWvbZFWaMyFaohePwzzO6wXVJ2qXcw7i2x7mZRN5yK9ub4rI1w0w"/>
+                        <span class="author">Tulio Maravilha</span>
+                        <span class="text">Vixii a imagem tá 144p</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:46:03</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/mchWanOwfhejuU8YPW1abpptwyFEP6kaDa95d-annMBWosodaiqIJ6SBjKltG5QSnp3VR4nkGw"/>
+                        <span class="author">Phil Foden</span>
+                        <span class="text">É a Internet, né? kkkkk</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:46:06</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/a4T3MsJ1pTQwU4uWexKNWolOSSR3V91E6vPmdYNZ0-Dnkj5_vIJSWaNCkHwuMpNaMuHTNYGRZA"/>
+                        <span class="author">sumo pontífice dos esqueminhas </span>
+                        <span class="text">perdeu a fonte de renda</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:46:15</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JBq-Aafvr4C5jyZyvLsuTsv3aHQPm6Q_YqScXhgInICnyWj8GmyF3qHgkeVWCSHAsLbLstZujP4"/>
+                        <span class="author">Brocador</span>
+                        <span class="text">8K FUUL HD</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:46:18</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">CARA TU PERCEBEU QUE SÓ FOI TU MEXER NO NEGÓCIO DO CELULAR QUE ESTRAGOU TUDO??</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:46:20</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/enLrwS9b5OtoIVg5QQxhuhBH0mbhaN-GFrgBaJEbPOfb1bqL8ksbassYsXCl7-jlqiLFza6j"/>
+                        <span class="author">Cintra</span>
+                        <span class="text">capaz que essa guerra aí tá influenciando a net</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:46:42</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JBq-Aafvr4C5jyZyvLsuTsv3aHQPm6Q_YqScXhgInICnyWj8GmyF3qHgkeVWCSHAsLbLstZujP4"/>
+                        <span class="author">Brocador</span>
+                        <span class="text">A milícia cortou a net da rua ?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:46:47</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/gjkZAA95YSasqFvWvmO9X2Dj5QifU9O5BOgsqFrxOTVmiy6bOki6mNAdq68pUCglDOMjfqNeVrE"/>
+                        <span class="author">Leonardo Cruz</span>
+                        <span class="text">Travando tudo</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:46:48</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">A live está toda travada a mais de 15 minutos </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:46:49</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/mchWanOwfhejuU8YPW1abpptwyFEP6kaDa95d-annMBWosodaiqIJ6SBjKltG5QSnp3VR4nkGw"/>
+                        <span class="author">Phil Foden</span>
+                        <span class="text">CVnet aqui em Caxias tá melhor que essa daí da Lapa. 500 mega rodando liso, sem cair.</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:46:53</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/1U-al3XnpsXomETviESNkfsWvbZFWaMyFaohePwzzO6wXVJ2qXcw7i2x7mZRN5yK9ub4rI1w0w"/>
+                        <span class="author">Tulio Maravilha</span>
+                        <span class="text">Vixi</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:46:58</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/FHAqfw0rY9mEnZJ4uaj80P3XqRIUxNcz7PNpTSGHoNtx5kLpyVzZyLwREHsZuoo2snOfBHNK8Q"/>
+                        <span class="author">Fãsdadeeptube</span>
+                        <span class="text">QIE ACONTECEU? TO INTENDENDO NADA:face-red-droopy-eyes::face-red-droopy-eyes:</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:46:59</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/1U-al3XnpsXomETviESNkfsWvbZFWaMyFaohePwzzO6wXVJ2qXcw7i2x7mZRN5yK9ub4rI1w0w"/>
+                        <span class="author">Tulio Maravilha</span>
+                        <span class="text">Tá travando tudo vinao</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:47:03</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/a4T3MsJ1pTQwU4uWexKNWolOSSR3V91E6vPmdYNZ0-Dnkj5_vIJSWaNCkHwuMpNaMuHTNYGRZA"/>
+                        <span class="author">sumo pontífice dos esqueminhas </span>
+                        <span class="text">isso aí foi ataque DDOS</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:47:03</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">VC FALOU QUE IA MUDAR A INTERNET DA CASA PRA TUA E MEXER NO CELULAR AI A LIVE ESTRAGOU</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:47:06</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/1U-al3XnpsXomETviESNkfsWvbZFWaMyFaohePwzzO6wXVJ2qXcw7i2x7mZRN5yK9ub4rI1w0w"/>
+                        <span class="author">Tulio Maravilha</span>
+                        <span class="text">4k</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:47:13</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/a4T3MsJ1pTQwU4uWexKNWolOSSR3V91E6vPmdYNZ0-Dnkj5_vIJSWaNCkHwuMpNaMuHTNYGRZA"/>
+                        <span class="author">sumo pontífice dos esqueminhas </span>
+                        <span class="text">se soubesse um pouco de informática saberia disso</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:47:19</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/mchWanOwfhejuU8YPW1abpptwyFEP6kaDa95d-annMBWosodaiqIJ6SBjKltG5QSnp3VR4nkGw"/>
+                        <span class="author">Phil Foden</span>
+                        <span class="text">Isso é coisa de Felipe Neto</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:47:36</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/a4T3MsJ1pTQwU4uWexKNWolOSSR3V91E6vPmdYNZ0-Dnkj5_vIJSWaNCkHwuMpNaMuHTNYGRZA"/>
+                        <span class="author">sumo pontífice dos esqueminhas </span>
+                        <span class="text">componente novo kkkkkk</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:47:38</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JBq-Aafvr4C5jyZyvLsuTsv3aHQPm6Q_YqScXhgInICnyWj8GmyF3qHgkeVWCSHAsLbLstZujP4"/>
+                        <span class="author">Brocador</span>
+                        <span class="text">O que adianta um PC de 20 mil e uma net se padaria de 2 megas??</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:47:38</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/e5W0z72cdhhaiqtOvcfah6PPcZo--LM2QVSLBQXpN1JyFjIDfZTu0Vj4vkFvuAkO6rDiF_w-pA"/>
+                        <span class="author">Davi Pereira</span>
+                        <span class="text">boa noite amigo Vini, a live pode ser mantida</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:47:39</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/enLrwS9b5OtoIVg5QQxhuhBH0mbhaN-GFrgBaJEbPOfb1bqL8ksbassYsXCl7-jlqiLFza6j"/>
+                        <span class="author">Cintra</span>
+                        <span class="text">será que dar uns tapa no pc não resolve?</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:47:42</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">OLHA NO SEU RETORNO AÍ, NÃO DA PRA ENTENDER NADA DO Q VC FALA, NÃO É NOSSA CULPA</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:47:49</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/mchWanOwfhejuU8YPW1abpptwyFEP6kaDa95d-annMBWosodaiqIJ6SBjKltG5QSnp3VR4nkGw"/>
+                        <span class="author">Phil Foden</span>
+                        <span class="text">Tão conspirando contra a Internet do Vini</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:47:50</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/38iV38uLpPbleVtw8LFk-JRxBo_sq3N6xuT1EfSxeBZ5IZ00t8IchenbmX2_gUHSPRBNY-AOIg"/>
+                        <span class="author">Faísca Negão</span>
+                        <span class="text">Não dá para acompanhar assim. É desrespeito contra os inscritos, é melhor encerrar a live por hoje</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:47:56</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JBq-Aafvr4C5jyZyvLsuTsv3aHQPm6Q_YqScXhgInICnyWj8GmyF3qHgkeVWCSHAsLbLstZujP4"/>
+                        <span class="author">Brocador</span>
+                        <span class="text">Desce lá embaixo e vê se o angolano não desligou o modem</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:48:05</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JBq-Aafvr4C5jyZyvLsuTsv3aHQPm6Q_YqScXhgInICnyWj8GmyF3qHgkeVWCSHAsLbLstZujP4"/>
+                        <span class="author">Brocador</span>
+                        <span class="text">Os angolanos devem estar baixando torrent</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:48:12</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/enLrwS9b5OtoIVg5QQxhuhBH0mbhaN-GFrgBaJEbPOfb1bqL8ksbassYsXCl7-jlqiLFza6j"/>
+                        <span class="author">Cintra</span>
+                        <span class="text">hater quer que você encerre mesmo</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:48:29</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/1U-al3XnpsXomETviESNkfsWvbZFWaMyFaohePwzzO6wXVJ2qXcw7i2x7mZRN5yK9ub4rI1w0w"/>
+                        <span class="author">Tulio Maravilha</span>
+                        <span class="text">Vixi</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:48:30</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kAvXwKhF9W-758960a9XjLrXxvSdrZkX4XZl0vZ0CotMcCwuJe0HKveyMX8NMWQ9UFfw"/>
+                        <span class="author">Messi do Corinthians </span>
+                        <span class="text">KKKKKKKKKK brocador</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:48:39</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Kkkkk</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:48:43</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/enLrwS9b5OtoIVg5QQxhuhBH0mbhaN-GFrgBaJEbPOfb1bqL8ksbassYsXCl7-jlqiLFza6j"/>
+                        <span class="author">Cintra</span>
+                        <span class="text">vini tá botando moral aí nos audios</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:48:54</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/a4T3MsJ1pTQwU4uWexKNWolOSSR3V91E6vPmdYNZ0-Dnkj5_vIJSWaNCkHwuMpNaMuHTNYGRZA"/>
+                        <span class="author">sumo pontífice dos esqueminhas </span>
+                        <span class="text">hoje a coisa tá braba pra você, computador quase explodindo, internet fraca ....</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:49:03</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/UB98IhZ9VlJjrAHBtwMOEwyJ25SIIVniTWUToe_GuiYfh9bHyFOqry8ZQdUMWn2ivexJj7zoDg"/>
+                        <span class="author">Ferris Bueller Sette</span>
+                        <span class="text">tudo meu é top</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:49:09</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/mchWanOwfhejuU8YPW1abpptwyFEP6kaDa95d-annMBWosodaiqIJ6SBjKltG5QSnp3VR4nkGw"/>
+                        <span class="author">Phil Foden</span>
+                        <span class="text">Os vizinhos baixando arquivos pesados nessa Internet aí. Quero nem imaginar o que seja...</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:49:18</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JBq-Aafvr4C5jyZyvLsuTsv3aHQPm6Q_YqScXhgInICnyWj8GmyF3qHgkeVWCSHAsLbLstZujP4"/>
+                        <span class="author">Brocador</span>
+                        <span class="text">Liga pro Fa.biano e fala pra ele resetar o modem</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:49:40</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JBq-Aafvr4C5jyZyvLsuTsv3aHQPm6Q_YqScXhgInICnyWj8GmyF3qHgkeVWCSHAsLbLstZujP4"/>
+                        <span class="author">Brocador</span>
+                        <span class="text">Os angolanos estão roubando a sua net vinao ,desce lá e saca a peça</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:49:48</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/a4T3MsJ1pTQwU4uWexKNWolOSSR3V91E6vPmdYNZ0-Dnkj5_vIJSWaNCkHwuMpNaMuHTNYGRZA"/>
+                        <span class="author">sumo pontífice dos esqueminhas </span>
+                        <span class="text">internet da pensão da disputada</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:49:49</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/cTtR21d9cvncJ67OkRzMXZOsh_y6EfAXjfAA9RB5FJIKT1LK0Xkc3jxDKV89qxBO3VlG-2t8"/>
+                        <span class="author">ZNS</span>
+                        <span class="text">os refugiados do Haiti estão baixando gta 6</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:49:54</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/enLrwS9b5OtoIVg5QQxhuhBH0mbhaN-GFrgBaJEbPOfb1bqL8ksbassYsXCl7-jlqiLFza6j"/>
+                        <span class="author">Cintra</span>
+                        <span class="text">reseta o modem pra ver se melhora vini</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:49:56</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/JMek6uPtyXeE9n-Kgo0xh5nFNdKeIC-CRUXjoTBtz6Iqkl_RvNze9EOdp9BQi6RV5n7Uw2h9Kw"/>
+                        <span class="author">Lindo Rico</span>
+                        <span class="text">Tá na hora da peça cantar,Vini</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:50:01</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/gjkZAA95YSasqFvWvmO9X2Dj5QifU9O5BOgsqFrxOTVmiy6bOki6mNAdq68pUCglDOMjfqNeVrE"/>
+                        <span class="author">Leonardo Cruz</span>
+                        <span class="text">Sem condições hoje</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:50:02</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/ytc/AIdro_kAvXwKhF9W-758960a9XjLrXxvSdrZkX4XZl0vZ0CotMcCwuJe0HKveyMX8NMWQ9UFfw"/>
+                        <span class="author">Messi do Corinthians </span>
+                        <span class="text">kkkkkkkkkkkkk</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:50:09</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/a4T3MsJ1pTQwU4uWexKNWolOSSR3V91E6vPmdYNZ0-Dnkj5_vIJSWaNCkHwuMpNaMuHTNYGRZA"/>
+                        <span class="author">sumo pontífice dos esqueminhas </span>
+                        <span class="text">:rolling_on_the_floor_laughing::rolling_on_the_floor_laughing::rolling_on_the_floor_laughing::rolling_on_the_floor_laughing::rolling_on_the_floor_laughing::rolling_on_the_floor_laughing:</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:50:12</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/KgnZAuauncumyWoBgRiSwJeRHbACHZPTjvKdAHc7nEHKQZkgy5D3veY4b2GYcNtpf3g94dYf"/>
+                        <span class="author">Lorota </span>
+                        <span class="text">Nem todo dia é dia </span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:50:13</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/FHAqfw0rY9mEnZJ4uaj80P3XqRIUxNcz7PNpTSGHoNtx5kLpyVzZyLwREHsZuoo2snOfBHNK8Q"/>
+                        <span class="author">Fãsdadeeptube</span>
+                        <span class="text">:text-green-game-over:</span>
+                    </div>
+<div class="message">
+                        <span class="timestamp">00:50:14</span>
+                        <img class="avatar" src="https://yt4.ggpht.com/mchWanOwfhejuU8YPW1abpptwyFEP6kaDa95d-annMBWosodaiqIJ6SBjKltG5QSnp3VR4nkGw"/>
+                        <span class="author">Phil Foden</span>
+                        <span class="text">Vini não tankou</span>
+                    </div>
+
+    </div>
+
+    <!-- Container do Disqus -->
+    <div id="disqus" class="chat-container" style="display: none;">
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    <!-- Container da descrição -->
+    <div id="description" class="chat-container" style="display: none;">
+        <p>Descrição do vídeo vai aqui.</p>
+    </div>
+
+    <!-- Botão de menu -->
+    <button id="menuButton" class="menu-button">☰</button>
+
+    <!-- Menu de opções -->
+    <div id="menuOptions" class="menu-options" style="display: none;">
+        <button id="chatOption" class="menu-option">Chat</button>
+        <button id="disqusOption" class="menu-option">Comentários (Disqus)</button>
+        <button id="descriptionOption" class="menu-option">Descrição</button>
+        <button id="downloadOption" class="menu-option">Download</button>
+        <button id="hashOption" class="menu-option">Hash</button>
+        <button id="changeUrlOption" class="menu-option">Alterar URL</button>
+    </div>
+
+    <!-- Popup de fallback quando o vídeo não carrega -->
+    <div id="videoFailPopup" class="video-fail-popup" style="display: none;">
+        <div class="video-fail-popup-content">
+            <button id="closeFailPopup" class="close-fail-popup">×</button>
+            <h3>Problema no carregamento via IPFS</h3>
+            <p>O conteúdo pode estar com replicação limiteda na rede descentralizada. Alternativas:</p>
+            <ul class="options-list">
+                <li>Aguarde alguns minutos - a rede IPFS pode precisar de tempo para encontrar os nós</li>
+                <li>Acesse o hash diretamente em no seu computador</li>
+            </ul>
+            <button id="redirectButton" class="redirect-button">Como acessar via IPFS local</button>
+        </div>
+    </div>
+
+    <!-- Popup para alterar URL -->
+    <div id="changeUrlPopup" class="change-url-popup" style="display: none;">
+        <div class="change-url-popup-content">
+            <h3>Alterar URL do Vídeo</h3>
+            <input type="text" id="newUrlInput" class="url-input" placeholder="Insira a nova URL do vídeo">
+            <div class="url-buttons">
+                <button id="confirmUrlButton" class="url-button confirm">Confirmar</button>
+                <button id="cancelUrlButton" class="url-button cancel">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup do Hash -->
+    <div id="hashPopup" class="hash-popup" style="display: none;">
+        <div class="hash-popup-content">
+            <h3>Hash do Vídeo</h3>
+            <h5 id="videoTitle">Voltei.mp4</h5>
+            <p id="hashText">QmdEgECYoUsseVJ9xdEu6EdAGfVx8QG4XwnHkr2vG1TphJ</p>
+            <div class="hash-buttons">
+                <button id="copyHashButton" class="hash-button">Copiar Hash</button>
+                <button id="copyTitleButton" class="hash-button">
+                    Copiar Título
+                    <span id="tooltipTitle" class="tooltip">Copiado!</span>
+                </button>
+                <button id="closeHashButton" class="hash-button">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link de download oculto -->
+    <a id="downloadLink" href="https://ipfs.io/ipfs/QmdEgECYoUsseVJ9xdEu6EdAGfVx8QG4XwnHkr2vG1TphJ" download style="display: none;"></a>
+
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script src="../js/scripts4.js"></script>
+    <script src="../js/scripts5.js"></script>
+</body>
+</html>
